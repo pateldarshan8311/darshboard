@@ -1,0 +1,64 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* App Container */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  color: #4CAF50;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.content h2 {
+  margin-bottom: 10px;
+}
+
+.content p {
+  line-height: 1.6;
+}
