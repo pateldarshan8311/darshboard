@@ -14,7 +14,7 @@ function Home() {
 function About() {
   return (
     <div>
-      <h2>About114444441</h2>
+      <h2>About Dashu</h2>
       <p>This is the About page.</p>
     </div>
   );
