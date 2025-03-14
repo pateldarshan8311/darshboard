@@ -1,73 +1,45 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
+import Footer from './components/Footer';
 
-function Home() {
+const App = () => {
+  const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true); // ✅ Default loading state true
+
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      setLoading(true);
+      try {
+        setLoading(true); // 🔄 Jab API call start ho
+        const response = await axios.get('https://darshboard.com/wp-json/wp/v2/menu-items?menus=2', {
+          headers: {
+            Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RhcnNoYm9hcmQuY29tIiwiaWF0IjoxNzQxOTM5NjUxLCJuYmYiOjE3NDE5Mzk2NTEsImV4cCI6MTc0MjU0NDQ1MSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.CJbGRISPyraQOBVEQlhXUFFAFDOlFUAlieTEH81VgUw`, // ✅ Correct token use karein
+          },
+        });
+        console.log('✅ API Response:', response.data);
+        setMenuItems(response.data);
+      } catch (error) {
+        console.error('❌ Error fetching menu items:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+
+    fetchMenuItems();
+  }, []);
+
   return (
     <div>
-      <h2>Home</h2>
-      <p>Welcome to the Home page!</p>
+    <Header menuItems={menuItems} loading={loading} />  
+      <Sidebar />
+      <MainContent />
+      <Footer />
     </div>
   );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About Dashu</h2>
-      <p>This is the About page.</p>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div>
-      <h2>Contact</h2>
-      <p>This is the Contact page.</p>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <Router>
-      <div className="app">
-        {/* Header */}
-        <header className="header">
-          <h1>Darshboard</h1>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </nav>
-        </header>
-
-        {/* Main Content */}
-        <div className="main-content">
-          {/* Sidebar */}
-          <aside className="sidebar">
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </aside>
-
-          {/* Content Area */}
-          <section className="content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </section>
-        </div>
-      </div>
-    </Router>
-  );
-}
+};
 
 export default App;

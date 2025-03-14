@@ -34,6 +34,15 @@
   color: white;
   padding: 20px;
 }
+ul {
+  display: block !important;
+  background: yellow;
+}
+li {
+  display: block !important;
+  color: red;
+  font-size: 20px;
+}
 
 .sidebar ul {
   list-style: none;
