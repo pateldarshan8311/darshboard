@@ -1,6 +1,0 @@
-/* Sidebar.css */
-@media (max-width: 768px) {
-    .sidebar {
-      display: none; /* Sidebar ko chhote screens par hide karein */
-    }
-  }

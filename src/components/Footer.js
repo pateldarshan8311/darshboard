@@ -1,9 +1,13 @@
 import React from 'react';
+import '../css/Common.css';
+import '../css/Footer.css';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear(); // ✅ Dynamic Year
+
   return (
     <footer>
-      <p>&copy; 2023 My Dashboard. All rights reserved.</p>
+      <p>&copy; {currentYear} My Dashboard. All rights reserved.</p>
     </footer>
   );
 };

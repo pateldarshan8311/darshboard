@@ -1,21 +1,85 @@
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-  }
-  
-  header nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  header nav ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  
-  header nav ul li a {
-    color: white;
+.d_main_menu li a,
+.d_mail_box{
+    border-radius: 0.781vw;
+    display: inline-flex;
+    gap: 0.391vw;
+    height: min-content;
+    padding: 0.911vw 1.563vw;
+    overflow: hidden;
+    position: relative;
     text-decoration: none;
-  }
+    background: var(--global-palette8);
+    box-shadow: inset 0.065vw 0.13vw 0.195vw 0px rgba(31, 31, 31, 1), inset -0.065vw -0.13vw 0.195vw 0px rgba(20, 20, 20, 1), 0px 0px 0px 0.13vw rgb(15, 15, 15);
+  
+}
+.d_mail_box span,
+.d_main_menu li a span{
+    line-height: 150%;
+    font-size: var(--f16);
+    font-weight: 500;
+    color: var(--global-palette7);
+}
+.site_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--global-palette5);
+    width: 100%;
+    z-index: 9999;
+}
+.d_mail_box img,
+.d_main_menu li img {
+    width: 1.302vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.d_main_menu li a:focus,
+.d_main_menu li a:active,
+.d_main_menu li a:hover {
+    background: var(--global-palette1);
+    box-shadow: inset 0px 0.13vw 0.13vw 0px rgb(233, 75, 47), inset 0px -0.065vw 0.13vw 0.065vw rgb(185, 44, 19), 0px 0px 0px 0.13vw rgb(15, 15, 15);
+}
+
+.d_main_menu li:hover a span{
+    color: var(--global-palette6);
+}
+
+.d_main_menu {
+    border: 0.065vw solid rgb(10, 10, 10);
+    background-color: rgb(20, 20, 20);
+    border-radius: 1.172vw;
+    display: inline-flex;
+    gap: 0.651vw;
+    padding: 0.651vw;
+}
+.d_site_header_inner{
+    min-height: 6.51vw;
+    display: flex;
+    gap: 1.953vw;
+    padding-top: 2.279vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d_logo,
+.d_logo a{
+    line-height: 0;
+    width: 100%;
+    max-width: 11.719vw;
+}
+
+.d_logo a img{
+    width: 100%;
+}
+.d_mail_box{
+    background: var(--global-palette4);
+    box-shadow: 0px 0px 0px 0.13vw rgb(10, 10, 10), 0px 0.13vw 0.326vw 0.065vw rgba(10, 10, 10, 0.5), inset 0.195vw 0.195vw 4px 0px  rgb(30, 30, 30), inset -0.13vw -0.13vw 0.195vw 0px  rgb(20, 20, 20);
+}
+
+.d_mail_box:focus,
+.d_mail_box:active,
+.d_mail_box:hover{
+    background: var(--global-palette8);
+    box-shadow: 0px 0px 0px 0.13vw rgb(10, 10, 10), 0px 0.13vw 0.326vw 0.065vw rgba(10, 10, 10, 0.5), inset 0.065vw 0.195vw 0.195vw 0px rgb(33, 33, 33), inset -0.13vw -0.195vw 0.195vw 0px  rgb(20, 20, 20);
+}
