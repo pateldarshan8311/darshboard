@@ -34,13 +34,14 @@
     aspect-ratio: 1 / 1;
 }
 
+.d_main_menu li.active a,
 .d_main_menu li a:focus,
 .d_main_menu li a:active,
 .d_main_menu li a:hover {
     background: var(--global-palette1);
     box-shadow: inset 0px 0.13vw 0.13vw 0px rgb(233, 75, 47), inset 0px -0.065vw 0.13vw 0.065vw rgb(185, 44, 19), 0px 0px 0px 0.13vw rgb(15, 15, 15);
 }
-
+.d_main_menu li.active a span,
 .d_main_menu li:hover a span{
     color: var(--global-palette6);
 }
