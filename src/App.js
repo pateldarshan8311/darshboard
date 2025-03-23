@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import Header from './components/Header';
-import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Page from './components/Page';
-import "./js/custom"; 
 import './App.css';
 
 const App = () => {
@@ -20,7 +18,7 @@ const App = () => {
       try {
         const response = await axios.get('https://darshboard.com/wp-json/wp/v2/menu-items?menus=2', {
           headers: {
-            Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RhcnNoYm9hcmQuY29tIiwiaWF0IjoxNzQxOTM5NjUxLCJuYmYiOjE3NDE5Mzk2NTEsImV4cCI6MTc0MjU0NDQ1MSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.CJbGRISPyraQOBVEQlhXUFFAFDOlFUAlieTEH81VgUw`,
+            Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RhcnNoYm9hcmQuY29tIiwiaWF0IjoxNzQyNjU1MjU0LCJuYmYiOjE3NDI2NTUyNTQsImV4cCI6MTc0NTI0NzI1NCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImRhcnNhbnBhdGVsODMxMUBnbWFpbC5jb20iLCJyb2xlIjpbImFkbWluaXN0cmF0b3IiXSwiaXAiOiIxMTMuMTkzLjIwNy45MyJ9fX0.mQhf6yeYwmJsIDKfeh5B66a3oKSaEXdXu-1Eqv4wDKI`,
           },
         });
 
@@ -32,7 +30,7 @@ const App = () => {
           console.error('⚠ API returned an empty array or invalid data');
         }
       } catch (error) {
-        console.error('❌ Error fetching menu items:', error);
+        console.error('❌ Error fetching menu items:', error.response?.data || error);
       } finally {
         setLoading(false);
       }
@@ -59,12 +57,14 @@ const App = () => {
         <Header menuItems={menuItems} loading={loading} logo={logo} favicon={favicon} />
         
         <Routes>
-          <Route path="/" element={<MainContent />} />
-          {/* ✅ Dynamic Page Routes */}
+          {/* Homepage route */}
+          <Route path="/" element={<Page slug="about-me" />} />
+
+          {/* Dynamic routes for menu items */}
           {menuItems.map((item) => {
-            let pageSlug = new URL(item.url).pathname.replace(/^\/page\//, '').replace(/^\/+|\/+$/g, ''); 
-            console.log("✅ Generated Route:", `/${pageSlug}`); // ✅ Debugging
-            return <Route key={item.id} path={`/${pageSlug}`} element={<Page />} />;
+            let pageSlug = new URL(item.url).pathname.replace(/^\//, '').replace(/\/$/, '');
+            console.log("Generated Route:", `/${pageSlug}`);
+            return <Route key={item.id} path={`/${pageSlug}`} element={<Page slug={pageSlug} />} />;
           })}
         </Routes>
 
