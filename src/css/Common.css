@@ -88,11 +88,11 @@ div a:active,
 div a:focus,
 button {
   text-decoration: none;
-  -webkit-transition: all 0.5s ease 0s;
-  -moz-transition: all 0.5s ease 0s;
-  -ms-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  transition: .5s cubic-bezier(.44, 0, .56, 1) 0s;
+}
+
+.line_none {
+  line-height: 0;
 }
 
 a,
@@ -100,6 +100,7 @@ span,
 div a:hover,
 div a:active,
 button {
+  transition: .5s cubic-bezier(.44, 0, .56, 1) 0s;
   text-decoration: none;
 }
 
@@ -150,7 +151,7 @@ body a {
   color: var(--global-palette1);
   font-size: var(--f16);
   text-decoration: none !important;
-  line-height: 138%;
+  line-height: 1.5;
   display: inline-block;
 }
 
@@ -170,6 +171,7 @@ body .clearfix {
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: var(--manrope-font);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -184,10 +186,10 @@ body h3,
 body h4,
 body h5,
 body h6 {
-  line-height: 120%;
+  line-height: 1.5;
   color: var(--global-palette6);
   font-weight: bold;
-  margin: 0 0 0.977vw;
+  margin: 0 0 0.6510416666666667vw;
 }
 
 body h1:last-child,
@@ -219,14 +221,16 @@ img {
 }
 
 body p {
-  margin: 0 0 0.977vw;
+  margin: 0 0 0.6510416666666667vw;
 }
 
 body p {
   padding: 0;
-  color: var(--global-palette6);
-  font-size: var(--f18);
-  line-height: 140%;
+  color: var(--global-palette7);
+  font-size: 0.9114583333333334vw;
+  font-weight: 500;
+  font-family: var(--manrope-font);
+  line-height: 1.5;
 }
 
 body p:empty {
@@ -260,7 +264,7 @@ iframe {
 }
 
 .container {
-  width: 97%;
+  width: 100%;
   max-width: 100%;
   padding: 0 1.953vw;
   margin: 0 auto;
@@ -282,17 +286,22 @@ html.no-scroll body {
   overflow: hidden;
   height: 100%;
 }
+
 .page {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
 footer {
-	margin-top: auto;
+  margin-top: auto;
 }
-body{
+
+body {
+  font-family: var(--manrope-font);
   padding-top: 6.51vw;
 }
+
 /*button*/
 button,
 html input[type="button"],
@@ -307,6 +316,12 @@ button {
   border: none;
 }
 
+.page-content {
+  padding: 1.953125vw 1.953vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* Button styles end */
 
 svg {
@@ -315,17 +330,19 @@ svg {
   width: auto;
   height: auto;
   color: var(--global-palette3);
-  transition: 0.5s ease;
+  transition: .5s cubic-bezier(.44, 0, .56, 1) 0s;
+
 }
 
 /* START COMMON CSS */
 
 body h1 {
   font-size: var(--f45);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--global-palette3);
 }
 
-
-body.woocommerce #reviews #comments h2,
 body h2 {
   font-size: var(--f35);
   line-height: 131.45%;
@@ -369,28 +386,156 @@ body h6 {
   --global-palette4: rgb(25, 25, 25);
   --global-palette5: rgb(15, 15, 15);
   --global-palette6: rgb(255, 255, 255);
-  --global-palette7: rgb(230, 230, 230);
+  --global-palette7: rgb(204, 204, 204);
   --global-palette8: rgb(30, 30, 30);
+  --global-palette9: rgb(20, 20, 20);
+  --global-palette10: rgb(38, 38, 38);
+  --global-palette11: rgb(242, 242, 242);
+
+
 
   --manrope-font: "Manrope";
 }
 
 /* START WEB FONT */
 
+.comm_box_design {
+  padding: 1.0416666666666665vw;
+  border-radius: 1.953125vw;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  gap: 1.0416666666666665vw;
+  max-width: calc(33.33% - 0.7161458333333333vw);
+  overflow: hidden;
+  box-shadow: 0 0 0 0.26041666666666663vw var(--global-palette9), 0 0 0.32552083333333337vw 0.6510416666666667vw #0d0d0db3;
+  background: var(--global-palette9);
+}
+
+.d_flex {
+  display: flex;
+}
+
+.d_inline_flex {
+  display: inline-flex;
+}
+
+.mb_0 p,
+.mb_0 {
+  margin-bottom: 0;
+}
+
+.pulse_circle {
+  width: 0.5208333333333333vw;
+  height: 0.5208333333333333vw;
+  border-radius: 100%;
+  position: relative;
+  background: rgb(109, 211, 61);
+  display: inline-block;
+  animation: animate-pulse 3s linear infinite;
+}
+
+@keyframes animate-pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(109, 211, 61 ,0.7),  0 0 0 0 rgba(109, 211, 61 ,0.7);
+    }
+    40%{
+        box-shadow: 0 0 0 0.5208333333333333vw rgba(109, 211, 61 ,0.0),  0 0 0 0 rgba(109, 211, 61 ,0.7);
+    }
+    80%{
+        box-shadow: 0 0 0 0.5208333333333333vw rgba(109, 211, 61 ,0.0),  0 0 0 0.32552083333333337vw rgba(109, 211, 61 ,0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(109, 211, 61 ,0.0),  0 0 0 0.32552083333333337vw rgba(109, 211, 61 ,0);
+    }
+    
+}
+
+
+.flex_wrap {
+  flex-wrap: wrap;
+}
+
+.align_center {
+  align-items: center;
+}
+
+.align_start {
+  align-items: flex-start;
+}
+
+.align_end {
+  align-items: flex-end;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.justify_center {
+  justify-content: center;
+}
+
+.flex_column {
+  flex-direction: column;
+}
+
+.comm_box_grid {
+  gap: 1.0416666666666665vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.comm_border_after {
+  position: relative;
+}
+
+.comm_border_after::after {
+  content: "";
+  border-width: 0.06510416666666666vw;
+  border-color: var(--global-palette8);
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.comm_work {
+  background-color: var(--global-palette10);
+  border-radius: 6.510416666666667vw;
+  box-shadow: inset 0.13020833333333331vw 0.26041666666666663vw 0.13020833333333331vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e;
+  gap: 0.6vw;
+  padding: 0.390625vw 1.3020833333333335vw;
+}
 
 /* END WEB FONT */
+:root {
+  --f45: 1.953125vw;
+  --f35: 1.6927083333333333vw;
+  --f28: 1.5625vw;
+  --f24: 1.4322916666666665vw;
+  --f20: 1.3020833333333335vw;
+  --f18: 1.171875vw;
+  --f16: 1.0416666666666665vw;
+  --space_60: 3.90625vw;
+}
 
 @media screen and (max-width: 1200px) {
   :root {
-    --f45: 36px;
+    --f45: 30px;
     --f35: 28px;
     --f28: 24px;
     --f24: 22px;
     --f20: 18px;
     --f18: 16px;
     --f16: 15px;
-    --space_65: 60px;
-    --space_95: 70px;
+    --space_60: 60px;
   }
 
   body h1,
@@ -399,11 +544,11 @@ body h6 {
   body h4,
   body h5,
   body h6 {
-    margin: 0 0 15px;
+    margin: 0 0 0.9765625vw;
   }
 
   body p {
-    margin-bottom: 15px;
+    margin-bottom: 0.9765625vw;
   }
 
   div select option {
@@ -434,8 +579,7 @@ body h6 {
     --f20: 16px;
     --f18: 15px;
     --f16: 14px;
-    --space_65: 50px;
-    --space_95: 60px;
+    --space_60: 50px;
   }
 
 
@@ -449,8 +593,7 @@ body h6 {
     --f24: 18px;
     --f20: 16px;
     --f18: 15px;
-    --space_65: 40px;
-    --space_95: 45px;
+    --space_60: 40px;
   }
 
   .container {
