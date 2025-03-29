@@ -21,17 +21,21 @@ a:hover .btn_txt {
     padding: 1.5625vw;
     width: 100%;
 }
+
 .profile_img {
-	border-radius: 1.3020833333333335vw;
-	box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8),0 0 0 0.26041666666666663vw #242424;
-	max-width: 11.067708333333332vw;
-	overflow: hidden;
-	position: relative;
+    border-radius: 1.3020833333333335vw;
+    box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8), 0 0 0 0.26041666666666663vw #242424;
+    max-width: 11.067708333333332vw;
+    overflow: hidden;
+    position: relative;
 }
-.profile_box{
-gap: 1.3020833333333335vw;
+
+.profile_box {
+    gap: 1.3020833333333335vw;
 }
-.profile_content{
+
+.profile_content {
     width: 100%;
+    gap: 0.5208333333333333vw;
     max-width: calc(100% - 1.3020833333333335vw - 11.067708333333332vw);
 }
