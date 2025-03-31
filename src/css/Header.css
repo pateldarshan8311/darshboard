@@ -5,6 +5,7 @@
     gap: 0.391vw;
     height: min-content;
     padding: 0.911vw 1.563vw;
+    align-items: center;
     overflow: hidden;
     position: relative;
     text-decoration: none;
@@ -30,13 +31,11 @@
 .d_mail_box img,
 .d_main_menu li img {
     width: 1.302vw;
-    height: auto;
+    height: 1.302vw;
     aspect-ratio: 1 / 1;
 }
 
 .d_main_menu li.active a,
-.d_main_menu li a:focus,
-.d_main_menu li a:active,
 .d_main_menu li a:hover {
     background: var(--global-palette1);
     box-shadow: inset 0px 0.13vw 0.13vw 0px rgb(233, 75, 47), inset 0px -0.065vw 0.13vw 0.065vw rgb(185, 44, 19), 0px 0px 0px 0.13vw rgb(15, 15, 15);
@@ -78,8 +77,6 @@
     box-shadow: 0px 0px 0px 0.13vw rgb(10, 10, 10), 0px 0.13vw 0.326vw 0.065vw rgba(10, 10, 10, 0.5), inset 0.195vw 0.195vw 4px 0px  rgb(30, 30, 30), inset -0.13vw -0.13vw 0.195vw 0px  rgb(20, 20, 20);
 }
 
-.d_mail_box:focus,
-.d_mail_box:active,
 .d_mail_box:hover{
     background: var(--global-palette8);
     box-shadow: 0px 0px 0px 0.13vw rgb(10, 10, 10), 0px 0.13vw 0.326vw 0.065vw rgba(10, 10, 10, 0.5), inset 0.065vw 0.195vw 0.195vw 0px rgb(33, 33, 33), inset -0.13vw -0.195vw 0.195vw 0px  rgb(20, 20, 20);

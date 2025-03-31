@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProfileBox from './ProfileBox';
-import StatsComponent from './StatsComponent';
-import CountersComponent from './CountersComponent';  
-import '../css/MainContent.css';
+import { StatsComponent, CountersComponent } from './StatsComponent';
+import StacksComponent from './StacksComponent';
 
+import '../css/MainContent.css';
 
 const Page = ({ slug }) => {
   const [pageContent, setPageContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // console.log('Fetching data for slug:', slug);
-
     setPageContent(null);
     setLoading(true);
 
@@ -21,6 +19,7 @@ const Page = ({ slug }) => {
         const apiUrl = slug
           ? `https://darshboard.com/wp-json/wp/v2/pages?slug=${slug}`
           : `https://darshboard.com/wp-json/wp/v2/pages?slug=about-me`;
+
         const response = await axios.get(apiUrl);
         console.log('API Response:', response.data);
 
@@ -43,6 +42,9 @@ const Page = ({ slug }) => {
   if (loading) return <p>⏳ Loading Page...</p>;
   if (!pageContent) return <p>⚠ Page not found!</p>;
 
+  // Debugging: Check if ACF data is received properly
+  console.log('Full Page Data:', pageContent);
+
   return (
     <div className="page-content">
       <div dangerouslySetInnerHTML={{ __html: pageContent.content.rendered }} />
@@ -51,8 +53,18 @@ const Page = ({ slug }) => {
       {slug === 'about-me' && pageContent.acf && (
         <div className='comm_box_grid'>
           <ProfileBox acfData={pageContent.acf} />
-          <StatsComponent statsData={pageContent.acf.statistics_items} />
-          <CountersComponent countersData={pageContent.acf.my_counters} />  {/* NEW COMPONENT */}
+
+          <div className="comm_box_design comm_border_after d_flex">
+            <StatsComponent statsData={pageContent.acf.statistics_items} />
+            <CountersComponent countersData={pageContent.acf.my_counters} />
+          </div>
+
+          {/* ✅ StacksComponent added safely */}
+          {pageContent.acf.Stacks_Items ? (
+            <StacksComponent stacksData={pageContent.acf.Stacks_Items} />
+          ) : (
+            <p>⚠ Stacks data not found.</p>
+          )}
         </div>
       )}
     </div>
