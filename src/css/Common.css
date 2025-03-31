@@ -37,7 +37,11 @@ div textarea:focus {
 html body {
   margin: 0;
   background: var(--global-palette5);
-  color: var(--global-palette6);
+  color: var(--global-palette7);
+  font-size: 0.9114583333333334vw;
+  font-weight: 500;
+  font-family: var(--manrope-font);
+  line-height: 1.5;
 }
 
 * {
@@ -369,34 +373,6 @@ body h6 {
   font-size: var(--f18);
 }
 
-:root {
-  --f45: 2.93vw;
-  --f35: 2.279vw;
-  --f28: 1.823vw;
-  --f24: 1.563vw;
-  --f20: 1.302vw;
-  --f18: 1.172vw;
-  --f16: 1.042vw;
-  --f14: 0.911vw;
-  --space_60: 3.906vw;
-  --space_100: 6.51vw;
-  --global-palette1: rgb(208, 50, 22);
-  --global-palette2: rgb(232, 75, 47);
-  --global-palette3: rgb(230, 230, 230);
-  --global-palette4: rgb(25, 25, 25);
-  --global-palette5: rgb(15, 15, 15);
-  --global-palette6: rgb(255, 255, 255);
-  --global-palette7: rgb(204, 204, 204);
-  --global-palette8: rgb(30, 30, 30);
-  --global-palette9: rgb(20, 20, 20);
-  --global-palette10: rgb(38, 38, 38);
-  --global-palette11: rgb(242, 242, 242);
-
-
-
-  --manrope-font: "Manrope";
-}
-
 /* START WEB FONT */
 
 .comm_box_design {
@@ -435,20 +411,23 @@ body h6 {
   animation: animate-pulse 3s linear infinite;
 }
 
-@keyframes animate-pulse{
-    0%{
-        box-shadow: 0 0 0 0 rgba(109, 211, 61 ,0.7),  0 0 0 0 rgba(109, 211, 61 ,0.7);
-    }
-    40%{
-        box-shadow: 0 0 0 0.5208333333333333vw rgba(109, 211, 61 ,0.0),  0 0 0 0 rgba(109, 211, 61 ,0.7);
-    }
-    80%{
-        box-shadow: 0 0 0 0.5208333333333333vw rgba(109, 211, 61 ,0.0),  0 0 0 0.32552083333333337vw rgba(109, 211, 61 ,0);
-    }
-    100%{
-        box-shadow: 0 0 0 0 rgba(109, 211, 61 ,0.0),  0 0 0 0.32552083333333337vw rgba(109, 211, 61 ,0);
-    }
-    
+@keyframes animate-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(109, 211, 61, 0.7), 0 0 0 0 rgba(109, 211, 61, 0.7);
+  }
+
+  40% {
+    box-shadow: 0 0 0 0.5208333333333333vw rgba(109, 211, 61, 0.0), 0 0 0 0 rgba(109, 211, 61, 0.7);
+  }
+
+  80% {
+    box-shadow: 0 0 0 0.5208333333333333vw rgba(109, 211, 61, 0.0), 0 0 0 0.32552083333333337vw rgba(109, 211, 61, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(109, 211, 61, 0.0), 0 0 0 0.32552083333333337vw rgba(109, 211, 61, 0);
+  }
+
 }
 
 
@@ -505,6 +484,13 @@ body h6 {
   border-radius: inherit;
   pointer-events: none;
 }
+.arrow_icon svg,
+.btn_icon svg{
+  width: 1.5625vw;
+  height: 1.5625vw;
+  min-width: 1.5625vw;
+  min-height: 1.5625vw;
+}
 
 .comm_work {
   background-color: var(--global-palette10);
@@ -523,7 +509,28 @@ body h6 {
   --f20: 1.3020833333333335vw;
   --f18: 1.171875vw;
   --f16: 1.0416666666666665vw;
+  --f14: 0.911vw;
+
   --space_60: 3.90625vw;
+  --global-palette1: rgb(208, 50, 22);
+  --global-palette2: rgb(232, 75, 47);
+  --global-palette3: rgb(230, 230, 230);
+  --global-palette4: rgb(25, 25, 25);
+  --global-palette5: rgb(15, 15, 15);
+  --global-palette6: rgb(255, 255, 255);
+  --global-palette7: rgb(204, 204, 204);
+  --global-palette8: rgb(30, 30, 30);
+  --global-palette9: rgb(20, 20, 20);
+  --global-palette10: rgb(38, 38, 38);
+  --global-palette11: rgb(242, 242, 242);
+  --global-palette12: rgb(153, 153, 153);
+  --global-palette13: rgb(45, 45,45);
+
+
+
+
+
+  --manrope-font: "Manrope";
 }
 
 @media screen and (max-width: 1200px) {

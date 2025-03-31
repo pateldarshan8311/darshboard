@@ -13,7 +13,7 @@ const ProfileBox = ({ acfData }) => {
           )}
         </div>
 
-        <div className='profile_content d_flex flex_column'>
+        <div className='profile_content d_flex flex_column align_start'>
           {/* Available For Work */}
           {acfData.available_for_work && (
             <div className='comm_work d_inline_flex align_center comm_border_after'>
