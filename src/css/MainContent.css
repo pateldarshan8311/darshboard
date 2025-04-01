@@ -1,3 +1,5 @@
+.stack_titlebar,
+.stack_top_head,
 .btn_link {
     gap: 0.26041666666666663vw;
 }
@@ -17,6 +19,7 @@ a:hover .btn_txt {
     font-size: 0.9114583333333334vw;
 }
 
+.stack_label,
 .social_label {
     color: var(--global-palette12);
 }
@@ -69,6 +72,7 @@ a:hover .btn_txt {
     gap: 0.32552083333333337vw;
 }
 
+.stack_title,
 .followers_count {
     color: var(--global-palette6);
     font-weight: 600;
@@ -82,6 +86,7 @@ a:hover .btn_txt {
     background: var(--global-palette13);
 }
 
+.stack_content,
 .social_content {
     gap: 0.6510416666666667vw;
 }
@@ -94,13 +99,8 @@ a:hover .btn_txt {
     box-shadow: 0 0 0 0.13020833333333331vw var(--global-palette5), inset 0.06510416666666666vw 0.13020833333333331vw 0.13020833333333331vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e, 0.06510416666666666vw 0.06510416666666666vw 0.390625vw 0.13020833333333331vw #0f0f0f80;
 }
 
-.counters_container_inner,
-.stats_container_inner {
+.comm_inner {
     gap: 1.0416666666666665vw;
-    flex: 1 0 0;
-}
-
-.counters_container_inner {
     flex: 1 0 0;
 }
 
@@ -126,11 +126,20 @@ a:hover .btn_txt {
     width: 100%;
 }
 
+.stack_top_para,
 .counter_title {
     color: var(--global-palette2);
     font-size: 0.9114583333333334vw;
     line-height: 1.5;
     font-weight: 500;
+}
+
+.stack_titlebar {
+    padding:1.5625vw 1.3020833333333335vw 1.953125vw 1.3020833333333335vw;
+    box-shadow: inset 0 -0.13020833333333331vw 0.06510416666666666vw #0f0f0f;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .counter_item_btm {
@@ -146,4 +155,21 @@ a:hover .btn_txt {
     overflow: hidden;
     position: relative;
     width: 100%;
+}
+
+.stack_icon_list {
+    box-shadow: inset 0 0.06510416666666666vw #1e1e1e;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding:2.34375vw 1.0416666666666665vw 1.3020833333333335vw;
+}
+
+.stack_item {
+    flex: 1 0;
+    padding: 1.0416666666666665vw;
+}
+
+.stack_icon {
+    border-radius: 0.6510416666666667vw;
 }

@@ -11,9 +11,6 @@ const Page = ({ slug }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setPageContent(null);
-    setLoading(true);
-
     const fetchPageData = async () => {
       try {
         const apiUrl = slug
@@ -58,13 +55,9 @@ const Page = ({ slug }) => {
             <StatsComponent statsData={pageContent.acf.statistics_items} />
             <CountersComponent countersData={pageContent.acf.my_counters} />
           </div>
-
-          {/* ✅ StacksComponent added safely */}
-          {pageContent.acf.Stacks_Items ? (
-            <StacksComponent stacksData={pageContent.acf.Stacks_Items} />
-          ) : (
-            <p>⚠ Stacks data not found.</p>
-          )}
+          <div className='comm_box_design comm_border_after d_flex flex_column p_0'>
+          <StacksComponent stackData={pageContent.acf} />{/* Pass your stack data here */}
+          </div>
         </div>
       )}
     </div>
