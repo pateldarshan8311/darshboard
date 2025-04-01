@@ -1,56 +1,51 @@
-import React from 'react';
+import React from "react";
 
-const StacksComponent = ({ stacksData }) => {
-    if (!stacksData) return null;
+const StacksComponent = ({ stackData }) => {
+    if (!stackData) return null;
+
+    const {
+        stack_top_icon,
+        stack_top_title,
+        stack_top_text,
+        stack_icon_box_list,
+    } = stackData;
 
     return (
-        <div className="stacks_container comm_box_design comm_border_after d_flex flex_column">
-            {/* Top Section */}
-            <div className="stack_top d_flex align_center">
-                {/* Stack Top Icon */}
-                {stacksData.stack_top_icon && (
-                    <span
-                        className="stack_top_icon"
-                        dangerouslySetInnerHTML={{ __html: stacksData.stack_top_icon }}
-                    />
-                )}
-                <div className="stack_top_content">
-                    {/* Stack Top Text */}
-                    {stacksData.stack_top_text && (
-                        <h5 className="stack_top_text">{stacksData.stack_top_text}</h5>
+        <div className="comm_inner d_flex flex_column no_gap">
+            {/* Render Top Section */}
+            <div className="stack_titlebar d_flex flex_column align_center">
+                <div className="stack_top_head d_flex justify_center">
+                    {stack_top_icon && (
+                        <span className="top_icon line_none" dangerouslySetInnerHTML={{ __html: stack_top_icon }} />
                     )}
-                    {/* Stack Top Title */}
-                    {stacksData.stack_top_title && (
-                        <h3 className="stack_top_title">{stacksData.stack_top_title}</h3>
-                    )}
+                    {stack_top_text && <p className="stack_top_para mb_0">{stack_top_text}</p>}
+                </div>
+                <div className="stack_top_body">
+                    {stack_top_title && <h4>{stack_top_title}</h4>}
                 </div>
             </div>
-
-            {/* Repeater Section */}
-            <div className="stack_items_list d_flex flex_column">
-                {stacksData.stack_icon_box_list && Array.isArray(stacksData.stack_icon_box_list) && (
-                    stacksData.stack_icon_box_list.map((item, index) => (
-                        <div key={index} className="stack_item d_flex align_center">
-                            {/* Stack Icon */}
-                            {item.stack_icon && (
-                                <span
-                                    className="stack_icon"
-                                    dangerouslySetInnerHTML={{ __html: item.stack_icon }}
-                                />
+            <div className="stack_icon_list comm_inner d_flex flex_wrap">
+            {/* Render Stack Items */}
+            {stack_icon_box_list?.map((item, index) => (
+                <div key={index} className="stack_item  stat_item d_flex align_center">
+                    <div className='stack_content d_flex align_center'>
+                        {item.stack_icon && (
+                            <span
+                                className="stack_icon btn_icon comm_btn"
+                                dangerouslySetInnerHTML={{ __html: item.stack_icon }}
+                            />
+                        )}
+                        <div className='stack_icon_list_inner d_flex flex_column'>
+                            {item.stack_title && (
+                                <h5 className="mb_0 stack_title btn_txt">{item.stack_title}</h5>
                             )}
-                            <div className="stack_item_content d_flex flex_column">
-                                {/* Stack Title */}
-                                {item.stack_title && (
-                                    <h4 className="stack_title">{item.stack_title}</h4>
-                                )}
-                                {/* Stack Description */}
-                                {item.stack_desc && (
-                                    <p className="stack_desc">{item.stack_desc}</p>
-                                )}
-                            </div>
+                            {item.stack_desc && (
+                                <div className="stack_label comm_work_txt mb_0">{item.stack_desc}</div>
+                            )}
                         </div>
-                    ))
-                )}
+                    </div>
+                </div>
+            ))}
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ const StatsComponent = ({ statsData }) => {
 
     return (
 
-        <div className='stats_container_inner d_flex flex_column'>
+        <div className='comm_inner d_flex flex_column'>
             {statsData.map((item, index) => (
                 <div key={index} className="stat_item d_flex align_center justify_between">
                     <div className='social_content d_flex align_center'>
@@ -53,7 +53,7 @@ const CountersComponent = ({ countersData }) => {
     if (!countersData || !Array.isArray(countersData)) return null;
 
     return (
-        <div className="counters_container_inner flex_column d_flex">
+        <div className="comm_inner flex_column d_flex">
             {countersData.map((item, index) => (
                 <div key={index} className="counter_item d_flex flex_column">
                     <div className='counter_item_top d_flex justify_center align_center'>

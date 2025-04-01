@@ -192,7 +192,7 @@ body h5,
 body h6 {
   line-height: 1.5;
   color: var(--global-palette6);
-  font-weight: bold;
+  font-weight: 600;
   margin: 0 0 0.6510416666666667vw;
 }
 
@@ -342,7 +342,6 @@ svg {
 
 body h1 {
   font-size: var(--f45);
-  font-weight: 600;
   line-height: 1.5;
   color: var(--global-palette3);
 }
@@ -356,7 +355,12 @@ body h3 {
   font-size: var(--f28);
   line-height: 132.12%;
 }
-
+.p_0{
+  padding: 0 !important;
+}
+.no_gap{
+  gap: 0 !important;
+}
 body hr {
   border-bottom: 0.065vw solid var(--global-palette3);
 }
@@ -380,7 +384,7 @@ body h6 {
   border-radius: 1.953125vw;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   gap: 1.0416666666666665vw;
   max-width: calc(33.33% - 0.7161458333333333vw);
   overflow: hidden;
