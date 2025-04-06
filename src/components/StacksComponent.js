@@ -14,7 +14,7 @@ const StacksComponent = ({ stackData }) => {
         <div className="comm_inner d_flex flex_column no_gap">
             {/* Render Top Section */}
             <div className="stack_titlebar d_flex flex_column align_center">
-                <div className="stack_top_head d_flex justify_center">
+                <div className="stack_top_head d_flex justify_center align_center">
                     {stack_top_icon && (
                         <span className="top_icon line_none" dangerouslySetInnerHTML={{ __html: stack_top_icon }} />
                     )}

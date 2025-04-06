@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProfileBox = ({ acfData }) => {
   return (
-    <div className="comm_box_design comm_border_after d_flex flex_column">
+    <div className=" w_100">
       <div className="profile_box flex_wrap d_flex align_start">
         <div className='profile_img line_none'>
           {acfData.profile_image?.url && (
@@ -67,8 +67,6 @@ const ProfileBox = ({ acfData }) => {
 
         </div>
       </div>
-
-      {/* About Me Section */}
       <div className='about_data comm_border_after d_flex flex_column align_start'>
         {acfData.about_me_title && (
           <h6 className='mb_0'>{acfData.about_me_title}</h6>

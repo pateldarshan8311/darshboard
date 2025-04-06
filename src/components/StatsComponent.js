@@ -72,7 +72,7 @@ const CountersComponent = ({ countersData }) => {
                     <div className='counter_item_btm  d_flex justify_center align_center'>
                           {/* Counter Title Icon */}
                           {item.counter_title_icon && (
-                            <span                                 className="counter_title_icon line_none"
+                            <span className="counter_title_icon line_none"
                                 dangerouslySetInnerHTML={{ __html: item.counter_title_icon }}
                             />
                         )}
