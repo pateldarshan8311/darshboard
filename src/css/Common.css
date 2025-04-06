@@ -434,11 +434,15 @@ body h6 {
 
 }
 
-
+.text_center{
+  text-align: center;
+}
 .flex_wrap {
   flex-wrap: wrap;
 }
-
+.w_100{
+  width: 100%;
+}
 .align_center {
   align-items: center;
 }

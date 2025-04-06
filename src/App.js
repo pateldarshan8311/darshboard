@@ -1,77 +1,81 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Page from './components/Page';
-import './App.css';
 
-const App = () => {
-  const [menuItems, setMenuItems] = useState([]);
+import Header from './components/Header';
+import Page from './components/Page';
+
+function App() {
+  const [siteData, setSiteData] = useState({
+    logo: '',
+    favicon: '',
+    main_menu: [],
+    pages: []
+  });
   const [loading, setLoading] = useState(true);
-  const [logo, setLogo] = useState('');
-  const [favicon, setFavicon] = useState('');
 
   useEffect(() => {
-    const fetchMenuItems = async () => {
-      setLoading(true);
+    const fetchAll = async () => {
       try {
-        const response = await axios.get('https://darshboard.com/wp-json/wp/v2/menu-items?menus=2', {
-          headers: {
-            Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RhcnNoYm9hcmQuY29tIiwiaWF0IjoxNzQyNjU1MjU0LCJuYmYiOjE3NDI2NTUyNTQsImV4cCI6MTc0NTI0NzI1NCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoxLCJlbWFpbCI6ImRhcnNhbnBhdGVsODMxMUBnbWFpbC5jb20iLCJyb2xlIjpbImFkbWluaXN0cmF0b3IiXSwiaXAiOiIxMTMuMTkzLjIwNy45MyJ9fX0.mQhf6yeYwmJsIDKfeh5B66a3oKSaEXdXu-1Eqv4wDKI`,
-          },
+        const [siteRes, pagesRes] = await Promise.all([
+          axios.get('https://darshboard.com/wp-json/custom/v1/site-data'),
+          axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100')
+        ]);
+
+        setSiteData({
+          logo: siteRes.data.logo || '',
+          favicon: siteRes.data.favicon || '',
+          main_menu: Array.isArray(siteRes.data.main_menu) ? siteRes.data.main_menu : [],
+          pages: Array.isArray(pagesRes.data) ? pagesRes.data : []
         });
-
-        console.log('✅ Menu API Response:', response.data);
-
-        if (Array.isArray(response.data) && response.data.length > 0) {
-          setMenuItems(response.data);
-        } else {
-          console.error('⚠ API returned an empty array or invalid data');
-        }
-      } catch (error) {
-        console.error('❌ Error fetching menu items:', error.response?.data || error);
+      } catch (err) {
+        console.error('❌ App init error:', err);
       } finally {
         setLoading(false);
       }
     };
 
-    const fetchSiteInfo = async () => {
-      try {
-        const response = await axios.get('https://darshboard.com/wp-json/custom/v1/site-info/');
-        console.log('✅ Site Info API Response:', response.data);
-        setLogo(response.data.logo);
-        setFavicon(response.data.favicon);
-      } catch (error) {
-        console.error('❌ Error fetching site info:', error);
-      }
-    };
-
-    fetchMenuItems();
-    fetchSiteInfo();
+    fetchAll();
   }, []);
+
+  if (loading) {
+    return <div className="text-center p-10 text-xl">Loading site…</div>;
+  }
+
+  // Find the About Me page data
+  const aboutPage = siteData.pages.find(p => p.slug === 'about-me');
 
   return (
     <Router>
-      <div className='page'>
-        <Header menuItems={menuItems} loading={loading} logo={logo} favicon={favicon} />
-        
-        <Routes>
-          {/* Homepage route */}
-          <Route path="/" element={<Page slug="about-me" />} />
+      <Header
+        menuItems={siteData.main_menu}
+        loading={loading}
+        logo={siteData.logo}
+        favicon={siteData.favicon}
+      />
 
-          {/* Dynamic routes for menu items */}
-          {menuItems.map((item) => {
-            let pageSlug = new URL(item.url).pathname.replace(/^\//, '').replace(/\/$/, '');
-            console.log("Generated Route:", `/${pageSlug}`);
-            return <Route key={item.id} path={`/${pageSlug}`} element={<Page slug={pageSlug} />} />;
-          })}
-        </Routes>
+      <Routes>
+        {/* Map both '/' and '/about-me' to the same About Me page */}
+        {aboutPage && (
+          <>
+            <Route path="/" element={<Page pageData={aboutPage} />} />
+            <Route path="/about-me" element={<Page pageData={aboutPage} />} />
+          </>
+        )}
 
-        <Footer />
-      </div>
+        {/* Other dynamic pages */}
+        {siteData.pages
+          .filter(p => p.slug !== 'about-me')
+          .map(page => (
+            <Route
+              key={page.id}
+              path={`/${page.slug}`}
+              element={<Page pageData={page} />}
+            />
+          ))}
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;
