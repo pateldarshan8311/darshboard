@@ -2,22 +2,36 @@ import React, { useEffect } from 'react';
 
 const BasicDetailsComponent = ({ basicDetails }) => {
     useEffect(() => {
-        const handleAwardsToggle = () => {
-            const $ = window.jQuery;
-            $(".award_item").hide();
-            $(".award_item").first().slideDown();
-            $(".award_button").first().addClass("active");
+       const handleAwardsToggle = () => {
+    const $ = window.jQuery;
 
-            $(".award_button").off("click").on("click", function () {
-                const targetId = $(this).data("value");
+    // 🟢 Show the first award_item based on the first button's data-value
+    const $firstBtn = $(".award_button").first();
+    const firstId = $firstBtn.data("value");
 
-                $(".award_button").removeClass("active");
-                $(this).addClass("active");
+    $(".award_item").hide();
+    if (firstId) {
+        $(".award_button").removeClass("active");
+        $firstBtn.addClass("active");
+        $("#" + firstId).slideDown();
+    }
 
-                $(".award_item").slideUp();
-                $("#" + targetId).stop(true, true).slideDown();
-            });
-        };
+    // 🟢 Handle click for each button
+    $(".award_button").off("click").on("click", function () {
+        const targetId = $(this).data("value");
+
+        // Remove active from all and set active on this
+        $(".award_button").removeClass("active");
+        $(this).addClass("active");
+
+        // Slide all up, show selected
+        $(".award_item").stop(true, true).slideUp();
+        $("#" + targetId).stop(true, true).slideDown();
+    });
+};
+
+
+
 
         if (basicDetails?.awards_details?.award_types?.length > 0 && window.jQuery) {
             handleAwardsToggle();
@@ -32,6 +46,9 @@ const BasicDetailsComponent = ({ basicDetails }) => {
         availability_details,
         awards_details
     } = basicDetails;
+    const slugify = (text) => {
+        return text.toString().toLowerCase().replace(/\s+/g, '-'); // replace spaces with hyphens
+    };
 
     return (
         <div className='comm_inner d_flex flex_wrap'>
@@ -77,31 +94,46 @@ const BasicDetailsComponent = ({ basicDetails }) => {
                     </div>
                     {Array.isArray(awards_details.award_types) && awards_details.award_types.length > 0 && (
                         <div className="awards_list comm_info">
-                            <div className="award_btn_wrapper  d_flex align_center justify_center">
+                            <div className="award_btn_wrapper d_flex align_center justify_center">
                                 {awards_details.award_types.map((award, index) =>
                                     award.award_button && (
-                                        <span key={index} data-value={award.award_button} className="award_button d_inline_flex align_center ">
+                                        <span
+                                            key={index}
+                                            data-value={slugify(award.award_button)}
+                                            className="award_button d_inline_flex align_center"
+                                        >
                                             {award.award_button}
                                         </span>
                                     )
                                 )}
                             </div>
                             <div className="awards_list_row">
-                            {awards_details.award_types.map((award, index) => (
-                                <div key={index} className="award_item" id={award.award_button}>
-                                    {award.award_text && (
-                                        <div className="award_text">{award.award_text}</div>
-                                    )}
-                                    {award.award_link && (
-                                        <a href={award.award_link} target="_blank" rel="noopener noreferrer" className="award_link">
-                                            {award.award_link}
-                                        </a>
-                                    )}
-                                </div>
-                            ))}
+                                {awards_details.award_types.map((award, index) => (
+                                    <div
+                                        key={index}
+                                        className="award_item"
+                                        id={slugify(award.award_button)}
+                                        style={{ display: "none" }}
+                                    >
+                                        {award.award_text && (
+                                            <div className="award_text">{award.award_text}</div>
+                                        )}
+                                        {award.award_link && (
+                                            <a
+                                                href={award.award_link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="award_link"
+                                            >
+                                                {award.award_link}
+                                            </a>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     )}
+
                 </div>
             )}
 
