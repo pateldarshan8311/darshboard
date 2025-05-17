@@ -38,12 +38,10 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
           ) : menuItems.length > 0 ? (
             <ul className="d_main_menu">
               {menuItems.map((item, idx) => {
-                // If this is the About Me menu item, link to '/'
-                const linkPath = item.url === '/about-me' ? '/' : item.url;
-                // Active when at linkPath or at '/about-me'
+                const linkPath = item.url === '/about-me/' ? '/' : item.url;
                 const isActive =
                   location.pathname === linkPath ||
-                  (item.url === '/about-me' && location.pathname === '/about-me');
+                  (item.url === '/about-me/' && location.pathname === '/about-me/');
 
                 return (
                   <li key={idx} className={isActive ? 'active' : ''}>
@@ -51,7 +49,9 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
                       {item.icon && (
                         <span
                           className="menu_icon"
-                          dangerouslySetInnerHTML={{ __html: item.icon }}
+                          dangerouslySetInnerHTML={{
+                            __html: `<img src="${item.icon}" alt="icon" />`,
+                          }}
                         />
                       )}
                       <span>{item.title}</span>

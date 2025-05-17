@@ -30,13 +30,14 @@ function App() {
           axios.get('https://darshboard.com/wp-json/custom/v1/site-info', config),
           axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
         ]);
+console.log("✅ siteRes.data:", siteRes.data); // <-- Add this line
 
-        setSiteData({
-          logo: siteRes.data.logo || '',
-          favicon: siteRes.data.favicon || '',
-          main_menu: Array.isArray(siteRes.data.main_menu) ? siteRes.data.main_menu : [],
-          pages: Array.isArray(pagesRes.data) ? pagesRes.data : []
-        });
+      setSiteData({
+  logo: siteRes.data.logo || '',
+  favicon: siteRes.data.favicon || '',
+  main_menu: Array.isArray(siteRes.data.main_menu) ? siteRes.data.main_menu : [],
+  pages: Array.isArray(pagesRes.data) ? pagesRes.data : []
+});
       } catch (err) {
         console.error('❌ App init error:', err);
       } finally {
@@ -85,4 +86,3 @@ function App() {
 }
 
 export default App;
-// Note: Make sure to replace 'YOUR
