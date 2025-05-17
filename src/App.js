@@ -14,12 +14,21 @@ function App() {
   });
   const [loading, setLoading] = useState(true);
 
+  // Yahan apna naya token daalo:
+  const JWT_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RhcnNoYm9hcmQuY29tIiwiaWF0IjoxNzQ3NDIyMjc2LCJuYmYiOjE3NDc0MjIyNzYsImV4cCI6NDkwMTAyMjI3NiwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.qAcZwVdMHPdw0byip-Kh8Ss6d8mzkncG_P82cnfI8JQ';
+
   useEffect(() => {
     const fetchAll = async () => {
       try {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${JWT_TOKEN}`
+          }
+        };
+
         const [siteRes, pagesRes] = await Promise.all([
-          axios.get('https://darshboard.com/wp-json/custom/v1/site-data'),
-          axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100')
+          axios.get('https://darshboard.com/wp-json/custom/v1/site-info', config),
+          axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
         ]);
 
         setSiteData({
@@ -42,7 +51,6 @@ function App() {
     return <div className="text-center p-10 text-xl">Loading site…</div>;
   }
 
-  // Find the About Me page data
   const aboutPage = siteData.pages.find(p => p.slug === 'about-me');
 
   return (
@@ -55,7 +63,6 @@ function App() {
       />
 
       <Routes>
-        {/* Map both '/' and '/about-me' to the same About Me page */}
         {aboutPage && (
           <>
             <Route path="/" element={<Page pageData={aboutPage} />} />
@@ -63,7 +70,6 @@ function App() {
           </>
         )}
 
-        {/* Other dynamic pages */}
         {siteData.pages
           .filter(p => p.slug !== 'about-me')
           .map(page => (
@@ -79,3 +85,4 @@ function App() {
 }
 
 export default App;
+// Note: Make sure to replace 'YOUR
