@@ -48,7 +48,7 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
                     <Link to={linkPath}>
                       {item.icon && (
                         <span
-                          className="menu_icon"
+                          className="menu_icon "
                           dangerouslySetInnerHTML={{
                             __html: `<img src="${item.icon}" alt="icon" />`,
                           }}

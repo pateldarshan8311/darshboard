@@ -48,6 +48,10 @@ a:hover .btn_txt {
     gap: 1.3020833333333335vw;
     margin-bottom:  1.3020833333333335vw;
 }
+.awards_list_row{
+    padding-top: 1.0416666666666665vw;
+    text-align: center;
+}
 
 .profile_content {
     width: 100%;
@@ -234,4 +238,38 @@ a:hover .btn_txt {
         background-color: var( --global-palette2);
         box-shadow: inset 0px 0.06510416666666666vw 0.1953125vw 0px rgba(245, 174, 163, 1), 0px 0px 0px 0.13020833333333331vw  rgb(15, 15, 15);
         pointer-events: none;
+}
+
+
+
+.work_experience_section {
+  padding: 20px;
+}
+
+.topbar_title {
+  font-size: 1.5rem;
+  color: #f05;
+  margin-left: 10px;
+}
+
+.experience_box {
+  padding: 20px;
+  background: #111;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.designation {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.terms {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.company_box a {
+  color: #0bf;
+  font-size: 0.85rem;
 }
