@@ -30,7 +30,6 @@ function App() {
           axios.get('https://darshboard.com/wp-json/custom/v1/site-info', config),
           axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
         ]);
-console.log("✅ siteRes.data:", siteRes.data); // <-- Add this line
 
       setSiteData({
   logo: siteRes.data.logo || '',

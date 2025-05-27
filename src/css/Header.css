@@ -34,6 +34,9 @@
     height: 1.302vw;
     aspect-ratio: 1 / 1;
 }
+.menu_icon{
+    line-height: 0 !important;
+}
 
 .d_main_menu li.active a,
 .d_main_menu li a:hover {

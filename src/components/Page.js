@@ -1,10 +1,10 @@
 import React from 'react';
+import WorkExperience from './WorkExperienceComponent';
 import ProfileBox from './ProfileBox';
 import { StatsComponent, CountersComponent } from './StatsComponent';
 import StacksComponent from './StacksComponent';
 import BasicDetailsComponent from './BasicDetailsComponent';
 import { motion } from 'framer-motion';
-
 import '../css/MainContent.css';
 
 const delayStep = 0.3;
@@ -26,6 +26,9 @@ const Page = ({ pageData }) => {
 
   const acf = pageData.acf || {};
   const basicDetails = acf.basic_details || acf;
+  
+  console.log('Page ACF:', acf);
+  console.log('Work Experience Data:', acf.work_experience);
 
   return (
     <div className="page-content">
@@ -54,6 +57,11 @@ const Page = ({ pageData }) => {
           {/* Basic Details Section */}
           <AnimatedBox index={3} className="flex_column">
             <BasicDetailsComponent basicDetails={basicDetails} />
+          </AnimatedBox>
+
+          {/* Work Experience Section */}
+          <AnimatedBox index={4} className="flex_column">
+            <WorkExperience data={acf} />
           </AnimatedBox>
         </div>
       )}

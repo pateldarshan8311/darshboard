@@ -4,9 +4,9 @@ const ProfileBox = ({ acfData }) => {
   return (
     <div className=" w_100">
       <div className="profile_box flex_wrap d_flex align_start">
-        <div className='profile_img line_none'>
+        <div className='profile_img w_100 line_none'>
           {acfData.profile_image?.url && (
-            <img
+            <img className='w_100'
               src={acfData.profile_image.url}
               alt={acfData.profile_image.alt || 'Profile'}
             />
