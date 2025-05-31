@@ -281,3 +281,11 @@ a:hover .btn_txt {
 .comapny_info .stack_label a:hover {
     color: var(--global-palette7);
 }   
+/* For WebKit browsers (Chrome, Safari) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}

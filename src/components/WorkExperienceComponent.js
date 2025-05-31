@@ -16,15 +16,16 @@ const WorkExperience = ({ data }) => {
     // Only initialize Splide if data exists and maxLength > 0
     if (data && maxLength > 0) {
       const splide = new Splide('.splide', {
-        type: 'slide', // Changed from 'loop' to 'slide' to disable looping
+        type: 'loop', // Changed from 'loop' to 'slide' to disable looping
         direction: 'ttb', // vertical direction
-        height: '32vh', // Double the height to show 2 slides
-        perPage: 2, // Show 2 slides at a time
+        height: '41vh', // Double the height to show 2 slides
+       perPage: 2,       // Show 2 slides
+  perMove: 1,  
         gap: '1rem', // Add some gap between slides
         autoHeight: true,
         autoplay: true,
         interval: 3000,
-        speed: 1000,
+        speed: 3000,
         pauseOnHover: false,
         arrows: false,
         pagination: false,

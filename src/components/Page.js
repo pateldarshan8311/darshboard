@@ -27,8 +27,8 @@ const Page = ({ pageData }) => {
   const acf = pageData.acf || {};
   const basicDetails = acf.basic_details || acf;
   
-  console.log('Page ACF:', acf);
-  console.log('Work Experience Data:', acf.work_experience);
+  // console.log('Page ACF:', acf);
+  // console.log('Work Experience Data:', acf.work_experience);
 
   return (
     <div className="page-content">
