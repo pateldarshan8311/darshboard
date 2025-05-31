@@ -273,3 +273,11 @@ a:hover .btn_txt {
   color: #0bf;
   font-size: 0.85rem;
 }
+.awards_list_row a,
+.comapny_info .stack_label a {
+    color: var(--global-palette12);
+}
+.awards_list_row a:hover,
+.comapny_info .stack_label a:hover {
+    color: var(--global-palette7);
+}   
