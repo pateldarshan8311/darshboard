@@ -473,7 +473,9 @@ body h6 {
   justify-content: center;
   flex-wrap: wrap;
 }
-
+.no_gap{
+  gap: 0 !important;
+}
 .comm_border_after {
   position: relative;
 }
@@ -533,6 +535,8 @@ body h6 {
   --global-palette11: rgb(242, 242, 242);
   --global-palette12: rgb(153, 153, 153);
   --global-palette13: rgb(45, 45,45);
+  --global-palette14: rgb(56, 56,56);
+
 
 
 

@@ -23,7 +23,7 @@ const WorkExperience = ({ data }) => {
   perMove: 1,  
         gap: '1rem', // Add some gap between slides
         autoHeight: true,
-        autoplay: true,
+        autoplay: false,
         interval: 3000,
         speed: 3000,
         pauseOnHover: false,
@@ -72,42 +72,47 @@ const WorkExperience = ({ data }) => {
       )}
 
       {/* Splide slider container */}
-      <div className="splide" style={{ overflow: 'hidden' }}>
+      <div className="splide  comm-space-16" style={{ overflow: 'hidden' }}>
         <div className="splide__track">
-          <div className="splide__list">
+          <div className="splide__list ">
             {/* Create slide items based on the maximum length */}
             {Array.from({ length: maxLength }).map((_, index) => (
               <div key={index} className="splide__slide" style={{ height: 'auto' }}>
-                <div className="slide_item d_flex " style={{ gap: '2rem' }}>
+                <div className="slide_item d_flex align_center">
                   {/* Experience Details item */}
                   {experience_details && experience_details[index] && (
                     <div className="expriance_info_item  flex_column comm_inner d_flex flex_wrap">
-                      <div className="stack_item stat_item d_flex align_center">
-                        <div className="stack_content d_flex align_center">
-                          <div className="stack_icon_list_inner d_flex flex_column">
+                      <div className="stack_item stat_item d_flex align_center p_0">
+                        <div className="stack_content d_flex flex_column align_center no_gap">
+                          <div className="stack_icon_list_inner d_flex flex_column expriance_info_item_topbar   justify_center align_center text_center w_100">
                             <h6 className="mb_0 stack_title btn_txt">{experience_details[index].designation}</h6>
                             {experience_details[index].terms && (
                               <div
                                 className="stack_label terms comm_work_txt mb_0"
                                 dangerouslySetInnerHTML={{ __html: experience_details[index].terms }}
                               />
-                            )}
-                            {experience_details[index].job_profile && (
+                            )}                            
+                          </div>
+                          {experience_details[index].job_profile && (
                               <div
                                 className="stack_label comm_work_txt job_profile mb_0"
                                 dangerouslySetInnerHTML={{ __html: experience_details[index].job_profile }}
                               />
                             )}
-                          </div>
                         </div>
                       </div>
                     </div>
                   )}
+                  <div className="dot-box">
+                    <div className="dot_container d_flex align_start justify_center">
+                      <div className="dot"></div>
+                    </div>
+                  </div>
 
                   {/* Company Info item */}
                   {company_info && company_info[index] && (
                     <div className="comapny_info_item  comm_inner flex_column d_flex flex_wrap">
-                      <div className="stack_item stat_item d_flex align_center">
+                      <div className="stack_item  stat_item d_flex align_center">
                         <div className="stack_icon_list_inner d_flex flex_column">
                           <h6 className="mb_0 stack_title btn_txt">{company_info[index].company_name}</h6>
                           <div className="stack_label comm_work_txt mb_0">
