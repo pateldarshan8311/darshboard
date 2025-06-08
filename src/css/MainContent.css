@@ -372,3 +372,9 @@ a:hover .btn_txt {
 	position: relative;
 	width: 0.6510416666666667vw;
 }
+.comapny_info_item {
+	width: 35%;
+	display: flex;
+	flex: 0 0 auto;
+	flex-flow: column;
+}
