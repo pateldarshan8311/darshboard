@@ -46,9 +46,10 @@ a:hover .btn_txt {
 
 .profile_box {
     gap: 1.3020833333333335vw;
-    margin-bottom:  1.3020833333333335vw;
+    margin-bottom: 1.3020833333333335vw;
 }
-.awards_list_row{
+
+.awards_list_row {
     padding-top: 1.0416666666666665vw;
     text-align: center;
 }
@@ -105,11 +106,13 @@ a:hover .btn_txt {
     gap: 1.0416666666666665vw;
     flex: 1 0 0;
 }
-.languages_list, 
+
+.languages_list,
 .stack_content,
 .social_content {
     gap: 0.6510416666666667vw;
 }
+
 .counter_number {
     font-family: var(--manrope-font);
     font-size: 3.2552083333333335vw;
@@ -190,6 +193,7 @@ a:hover .btn_txt {
     border-radius: 6.510416666666667vw;
     box-shadow: 0 0 0 0.13020833333333331vw var(--global-palette5), 0 0.13020833333333331vw 0.32552083333333337vw 0.06510416666666666vw #0f0f0f80, inset 0.06510416666666666vw 0.13020833333333331vw 0.26041666666666663vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e;
 }
+
 .availability_separator,
 .education_year,
 .education_university {
@@ -213,6 +217,7 @@ a:hover .btn_txt {
 .basic_section {
     width: calc(50% - 0.521vw);
 }
+
 .award_btn_wrapper,
 .availability_range {
     gap: 0.5208333333333333vw;
@@ -221,160 +226,199 @@ a:hover .btn_txt {
 .availability_range .comm_box_txt {
     padding-inline: 1.171875vw;
 }
+
 .languages_list .comm_box_txt {
-	flex: 1;
+    flex: 1;
 }
+
 .award_button {
-	background-color: var(  --global-palette8);
-	border-radius: 100%;
+    background-color: var(--global-palette8);
+    border-radius: 100%;
     width: 0.9114583333333334vw;
     height: 0.9114583333333334vw;
     aspect-ratio: 1;
     font-size: 0;
     cursor: pointer;
-	box-shadow: inset 0 0.06510416666666666vw 0.1953125vw 0 rgba(56, 56, 56, 1), 0 0 0 0.06510416666666666vw  rgb(15, 15, 15);
+    box-shadow: inset 0 0.06510416666666666vw 0.1953125vw 0 rgba(56, 56, 56, 1), 0 0 0 0.06510416666666666vw rgb(15, 15, 15);
 }
-.award_button.active{
-        background-color: var( --global-palette2);
-        box-shadow: inset 0 0.06510416666666666vw 0.1953125vw 0 rgba(245, 174, 163, 1), 0 0 0 0.13020833333333331vw  rgb(15, 15, 15);
-        pointer-events: none;
+
+.award_button.active {
+    background-color: var(--global-palette2);
+    box-shadow: inset 0 0.06510416666666666vw 0.1953125vw 0 rgba(245, 174, 163, 1), 0 0 0 0.13020833333333331vw rgb(15, 15, 15);
+    pointer-events: none;
 }
 
 
 
 .work_experience_section {
-  padding: 1.3020833333333335vw;
+    padding: 1.3020833333333335vw;
 }
 
 .topbar_title {
-  font-size: 1.5rem;
-  color: #f05;
-  margin-left: 0.6510416666666667vw;
+    font-size: 1.5rem;
+    color: #f05;
+    margin-left: 0.6510416666666667vw;
 }
 
 .experience_box {
-  padding: 1.3020833333333335vw;
-  background: #111;
-  border-radius: 0.78125vw;
-  color: #fff;
+    padding: 1.3020833333333335vw;
+    background: #111;
+    border-radius: 0.78125vw;
+    color: #fff;
 }
 
 .designation {
-  font-size: 1.2rem;
-  font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .terms {
-  font-size: 0.9rem;
-  color: #bbb;
+    font-size: 0.9rem;
+    color: #bbb;
 }
 
 .company_box a {
-  color: #0bf;
-  font-size: 0.85rem;
+    color: #0bf;
+    font-size: 0.85rem;
 }
+
 .awards_list_row a,
 .comapny_info .stack_label a {
     color: var(--global-palette12);
 }
+
 .awards_list_row a:hover,
 .comapny_info .stack_label a:hover {
     color: var(--global-palette7);
-}   
+}
+
 /* For WebKit browsers (Chrome, Safari) */
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
+
 /* For Firefox */
 .hide-scrollbar {
-  scrollbar-width: none;
+    scrollbar-width: none;
 }
 
 
 
-.comm-space-16{
-    padding:  1.3020833333333335vw ;
+.comm-space-16 {
+    padding: 1.3020833333333335vw;
 }
+
 .expriance_info_item .job_profile p {
-	color: var(--global-palette12);
+    color: var(--global-palette12);
     text-align: center;
 }
+
 .stack_label.comm_work_txt.job_profile {
-	place-content: center;
-	align-items: center;
-	background-color: rgba(20, 20, 20, 0.01);
-	box-shadow: rgb(30, 30, 30) 0 0.06510416666666666vw 0 0 inset, rgb(30, 30, 30) 0 0.06510416666666666vw 0 0 inset;
-	flex: 0 0 auto;
-	flex-flow: row;
-	gap: 0.6510416666666667vw;
-	height: min-content;
-	overflow: hidden;
-	padding: 1.0416666666666665vw;
+    place-content: center;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 0.01);
+    box-shadow: rgb(30, 30, 30) 0 0.06510416666666666vw 0 0 inset, rgb(30, 30, 30) 0 0.06510416666666666vw 0 0 inset;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 0.6510416666666667vw;
+    height: min-content;
+    overflow: hidden;
+    padding: 1.0416666666666665vw;
 }
+
 .expriance_info_item_topbar {
-	place-content: center;
-	align-items: center;
-	background-color: rgba(20, 20, 20, 0.01);
-	box-shadow: rgb(15, 15, 15) 0 -0.13020833333333331vw 0.06510416666666666vw 0 inset;
-	display: flex;
-	flex: 0 0 auto;
-	gap: 0.5208333333333333vw;
-	height: min-content;
-	overflow: hidden;
-	padding: 1.3020833333333335vw;
+    place-content: center;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 0.01);
+    box-shadow: rgb(15, 15, 15) 0 -0.13020833333333331vw 0.06510416666666666vw 0 inset;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.5208333333333333vw;
+    height: min-content;
+    overflow: hidden;
+    padding: 1.3020833333333335vw;
 }
 
 .expriance_info_item {
-	background-color: rgb(25, 25, 25);
-	border-radius: 1.3020833333333335vw;
-	box-shadow: rgba(15, 15, 15, 0.5) 0 0.13020833333333331vw 0.44921875000000006vw 0.06510416666666666vw, rgba(51, 51, 51, 0.6) 0.13020833333333331vw 0.26041666666666663vw 0.13020833333333331vw 0 inset, rgb(30, 30, 30) 0 -0.13020833333333331vw 0.06510416666666666vw 0 inset;
-	flex: 1 0 0;
-	height: min-content;
-	overflow: hidden;
-	position: relative;
-	width: 0.06510416666666666vw;
+    background-color: rgb(25, 25, 25);
+    border-radius: 1.3020833333333335vw;
+    box-shadow: rgba(15, 15, 15, 0.5) 0 0.13020833333333331vw 0.44921875000000006vw 0.06510416666666666vw, rgba(51, 51, 51, 0.6) 0.13020833333333331vw 0.26041666666666663vw 0.13020833333333331vw 0 inset, rgb(30, 30, 30) 0 -0.13020833333333331vw 0.06510416666666666vw 0 inset;
+    flex: 1 0 0;
+    height: min-content;
+    overflow: hidden;
+    position: relative;
+    width: 0.06510416666666666vw;
 }
 
 
 .dot-box {
-	place-content: center;
-	align-items: center;
-	display: flex;
-	flex: 0 0 auto;
-	flex-flow: row;
-	gap: 0.6510416666666667vw;
-	height: min-content;
-	overflow: hidden;
-	padding: 0px;
-	position: relative;
-	width: 3.90625vw;
+    place-content: center;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 0.6510416666666667vw;
+    height: min-content;
+    overflow: hidden;
+    position: relative;
+    width: 3.90625vw;
 }
+
 .dot_container {
-	place-content: flex-start;
-	align-items: flex-start;
-	background-color: var(--global-palette14);
-	border-radius: 6.510416666666667vw;
-	flex: 0 0 auto;
-	flex-flow: row;
-	gap: 0.6510416666666667vw;
-	height: min-content;
-	overflow: visible;
-	padding: 0.390625vw;
-	position: relative;
-	width: min-content;
+    place-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--global-palette14);
+    border-radius: 6.510416666666667vw;
+    flex: 0 0 auto;
+    flex-flow: row;
+    gap: 0.6510416666666667vw;
+    height: min-content;
+    overflow: visible;
+    padding: 0.390625vw;
+    position: relative;
+    width: min-content;
+}
+.terms strong {
+	font-weight: 600;
+    color: var(--global-palette7);
+}
+.terms em {
+	font-weight: 500;
+    font-style: normal;
+    color: var(--global-palette12);
+}
+.terms p{
+    display: flex;
+    gap: 0.5208333333333333vw;
 }
 .dot {
-	aspect-ratio: 1 / 1;
-	background-color: var(--global-palette6);
-	border-radius: 6.510416666666667vw;
-	flex: 0 0 auto;
-	height: auto;
-	position: relative;
-	width: 0.6510416666666667vw;
+    aspect-ratio: 1 / 1;
+    background-color: var(--global-palette6);
+    border-radius: 6.510416666666667vw;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    width: 0.6510416666666667vw;
 }
+
 .comapny_info_item {
-	width: 35%;
-	display: flex;
+	width: 38%;
 	flex: 0 0 auto;
 	flex-flow: column;
+}
+.splide {
+    overflow: hidden;
+}
+.verticle-slider::after {
+	content: "";
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(56, 56, 56, 0) 0%, rgb(56, 56, 56) 36.03603603603604%, rgba(56, 56, 56, 0) 100%);
+	flex: 0 0 auto;
+	left: calc(54.8% - 0.06510416666666666vw);
+	position: absolute;
+	top: 0;
+	width: 0.13020833333333331vw;
+	z-index: 0;
+}
+
+.verticle-slider .splide__track {
+    z-index: 1;
 }

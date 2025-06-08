@@ -23,7 +23,7 @@ const WorkExperience = ({ data }) => {
   perMove: 1,  
         gap: '1rem', // Add some gap between slides
         autoHeight: true,
-        autoplay: false,
+        autoplay: true,
         interval: 3000,
         speed: 3000,
         pauseOnHover: false,
@@ -72,7 +72,7 @@ const WorkExperience = ({ data }) => {
       )}
 
       {/* Splide slider container */}
-      <div className="splide  comm-space-16" style={{ overflow: 'hidden' }}>
+      <div className="splide verticle-slider comm-space-16">
         <div className="splide__track">
           <div className="splide__list ">
             {/* Create slide items based on the maximum length */}
@@ -103,7 +103,7 @@ const WorkExperience = ({ data }) => {
                       </div>
                     </div>
                   )}
-                  <div className="dot-box">
+                  <div className="dot-box d_flex align_center p_0">
                     <div className="dot_container d_flex align_start justify_center">
                       <div className="dot"></div>
                     </div>
