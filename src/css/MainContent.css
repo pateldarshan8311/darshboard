@@ -144,7 +144,7 @@ a:hover .btn_txt {
 }
 
 .stack_titlebar {
-    padding: 1.5625vw 1.3020833333333335vw 1.953125vw 1.3020833333333335vw;
+    padding:1.3020833333333335vw;
     box-shadow: inset 0 -0.13020833333333331vw 0.06510416666666666vw #0f0f0f;
     overflow: hidden;
     position: relative;
