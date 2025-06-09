@@ -4,7 +4,8 @@ import ProfileBox from './ProfileBox';
 import { StatsComponent, CountersComponent } from './StatsComponent';
 import StacksComponent from './StacksComponent';
 import BasicDetailsComponent from './BasicDetailsComponent';
-import ContactForm from './ContactForm';  // <-- naya import
+import ContactForm  from './ContactForm';
+
 import { motion } from 'framer-motion';
 import '../css/MainContent.css';
 
@@ -27,6 +28,9 @@ const Page = ({ pageData }) => {
 
   const acf = pageData.acf || {};
   const basicDetails = acf.basic_details || acf;
+  
+  // console.log('Page ACF:', acf);
+  // console.log('Work Experience Data:', acf.work_experience);
 
   return (
     <div className="page-content">
@@ -61,10 +65,8 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={4} className="flex_column p_0">
             <WorkExperience data={acf} />
           </AnimatedBox>
-
-          {/* Naya Contact Form Section */}
-          <AnimatedBox index={5} className="flex_column p_0">
-            <ContactForm />
+           <AnimatedBox index={5} className="flex_column p_0">
+             <ContactForm  formId={176} />
           </AnimatedBox>
         </div>
       )}
