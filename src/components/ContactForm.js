@@ -1,109 +1,111 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
-import HCaptcha from '@hcaptcha/react-hcaptcha';
-
-const ContactForm = () => {
+function ContactForm() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: ''
+    'your-name': '',
+    'your-email': '',
+    'your-message': '',
   });
 
-  const [token, setToken] = useState(null);  // hCaptcha token
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState(null);
 
+  // Form fields change handler
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onHCaptchaVerify = (token) => {
-    setToken(token); // hCaptcha solved token mil gaya
-  };
-
+  // Form submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!token) {
-      setStatus('Please complete the captcha.');
-      return;
-    }
-
-    setStatus('Submitting...');
+    setStatus('Sending...');
 
     try {
-      // Yahan apni WordPress API endpoint daalo jo form data accept kare
-      await axios.post('https://darshboard.com/wp-json/custom/v1/submit-form', {
-        ...formData,
-        'h-captcha-response': token
-      });
+      // Use FormData to match what Contact Form 7 expects
+      const formBody = new FormData();
+      formBody.append('your-name', formData['your-name']);
+      formBody.append('your-email', formData['your-email']);
+      formBody.append('your-message', formData['your-message']);
 
-      setStatus('Form submitted successfully!');
-      setFormData({ firstName: '', lastName: '', email: '', message: '' });
-      setToken(null);
+      const response = await fetch(
+        'https://darshboard.com/wp-json/contact-form-7/v1/contact-forms/176/feedback',
+        {
+          method: 'POST',
+          body: formBody,
+          // Important: Do NOT set Content-Type header manually
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.status === 'mail_sent') {
+        setStatus('✅ Message sent successfully!');
+        setFormData({
+          'your-name': '',
+          'your-email': '',
+          'your-message': '',
+        });
+      } else {
+        setStatus('❌ Error: ' + (data.message || 'Something went wrong'));
+      }
     } catch (error) {
-      setStatus('Submission failed.');
+      console.error('Submit error:', error);
+      setStatus('❌ Failed to submit form.');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-
+    <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: 'auto' }}>
       <label>
-        First Name*:
+        Your Name*<br />
         <input
           type="text"
-          name="firstName"
-          value={formData.firstName}
+          name="your-name"
+          value={formData['your-name']}
           onChange={handleChange}
           required
+          placeholder="Your full name"
         />
       </label>
 
-      <label>
-        Last Name*:
-        <input
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-          required
-        />
-      </label>
+      <br /><br />
 
       <label>
-        Email*:
+        Your Email*<br />
         <input
           type="email"
-          name="email"
-          value={formData.email}
+          name="your-email"
+          value={formData['your-email']}
           onChange={handleChange}
           required
+          placeholder="your.email@example.com"
         />
       </label>
+
+      <br /><br />
 
       <label>
-        Message:
+        Your Message<br />
         <textarea
-          name="message"
-          value={formData.message}
+          name="your-message"
+          value={formData['your-message']}
           onChange={handleChange}
+          required
+          placeholder="Write your message here"
+          rows={5}
         />
       </label>
 
-      {/* hCaptcha widget */}
-      <HCaptcha
-        sitekey="114c4610-d62c-4994-ab0a-a39a2256b3c2"
-        onVerify={onHCaptchaVerify}
-      />
+      <br /><br />
 
-      <button type="submit">Submit</button>
+      <button type="submit">Send</button>
 
-      <p>{status}</p>
+      {status && (
+        <p style={{ marginTop: '10px' }}>
+          {status}
+        </p>
+      )}
     </form>
   );
-};
+}
 
 export default ContactForm;
