@@ -4,7 +4,7 @@ import ProfileBox from './ProfileBox';
 import { StatsComponent, CountersComponent } from './StatsComponent';
 import StacksComponent from './StacksComponent';
 import BasicDetailsComponent from './BasicDetailsComponent';
-import ContactForm  from './ContactForm';
+import ContactForm from './ContactForm'; // 🔼 Add this at the top
 
 import { motion } from 'framer-motion';
 import '../css/MainContent.css';
@@ -65,9 +65,9 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={4} className="flex_column p_0">
             <WorkExperience data={acf} />
           </AnimatedBox>
-           <AnimatedBox index={5} className="flex_column p_0">
-             <ContactForm  formId={176} />
-          </AnimatedBox>
+     <AnimatedBox index={5} className="flex_column">
+    <ContactForm />
+  </AnimatedBox>
         </div>
       )}
     </div>
