@@ -1,111 +1,75 @@
 import React, { useState } from 'react';
 
-function ContactForm() {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
-    'your-name': '',
-    'your-email': '',
-    'your-message': '',
+    name: '',
+    email: '',
+    message: ''
   });
+  const [status, setStatus] = useState({ submitting: false, message: '' });
 
-  const [status, setStatus] = useState(null);
-
-  // Form fields change handler
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // Form submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setStatus({ submitting: true, message: '' });
 
     try {
-      // Use FormData to match what Contact Form 7 expects
-      const formBody = new FormData();
-      formBody.append('your-name', formData['your-name']);
-      formBody.append('your-email', formData['your-email']);
-      formBody.append('your-message', formData['your-message']);
+      const response = await fetch('https://darshboard.com/wp-json/custom-form/v1/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      const response = await fetch(
-        'https://darshboard.com/wp-json/contact-form-7/v1/contact-forms/176/feedback',
-        {
-          method: 'POST',
-          body: formBody,
-          // Important: Do NOT set Content-Type header manually
-        }
-      );
+      const result = await response.json();
 
-      const data = await response.json();
-
-      if (data.status === 'mail_sent') {
-        setStatus('✅ Message sent successfully!');
-        setFormData({
-          'your-name': '',
-          'your-email': '',
-          'your-message': '',
-        });
+      if (result.success) {
+        setStatus({ submitting: false, message: '✅ Message sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('❌ Error: ' + (data.message || 'Something went wrong'));
+        setStatus({ submitting: false, message: `❌ ${result.message}` });
       }
     } catch (error) {
-      console.error('Submit error:', error);
-      setStatus('❌ Failed to submit form.');
+      console.error('❌ Form submit error:', error);
+      setStatus({ submitting: false, message: '❌ Something went wrong. Try again.' });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: 'auto' }}>
-      <label>
-        Your Name*<br />
-        <input
-          type="text"
-          name="your-name"
-          value={formData['your-name']}
-          onChange={handleChange}
-          required
-          placeholder="Your full name"
-        />
-      </label>
-
-      <br /><br />
-
-      <label>
-        Your Email*<br />
-        <input
-          type="email"
-          name="your-email"
-          value={formData['your-email']}
-          onChange={handleChange}
-          required
-          placeholder="your.email@example.com"
-        />
-      </label>
-
-      <br /><br />
-
-      <label>
-        Your Message<br />
-        <textarea
-          name="your-message"
-          value={formData['your-message']}
-          onChange={handleChange}
-          required
-          placeholder="Write your message here"
-          rows={5}
-        />
-      </label>
-
-      <br /><br />
-
-      <button type="submit">Send</button>
-
-      {status && (
-        <p style={{ marginTop: '10px' }}>
-          {status}
-        </p>
-      )}
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <h3>Contact Us</h3>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        value={formData.message}
+        onChange={handleChange}
+        required
+      />
+      <button type="submit" disabled={status.submitting}>
+        {status.submitting ? 'Sending...' : 'Send Message'}
+      </button>
+      {status.message && <p>{status.message}</p>}
     </form>
   );
-}
+};
 
 export default ContactForm;
