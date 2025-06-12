@@ -65,9 +65,11 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={4} className="flex_column p_0">
             <WorkExperience data={acf} />
           </AnimatedBox>
-     <AnimatedBox index={5} className="flex_column">
-    <ContactForm />
-  </AnimatedBox>
+
+          {/* Form Section */}
+          <AnimatedBox index={5} className="flex_column p_0">
+            <ContactForm />
+          </AnimatedBox>
         </div>
       )}
     </div>
