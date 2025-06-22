@@ -25,11 +25,11 @@ function App() {
             Authorization: `Bearer ${JWT_TOKEN}`
           }
         };
+const [siteRes, pagesRes] = await Promise.all([
+  axios.get('https://api.darshboard.com/wp-json/custom/v1/site-info', config),
+  axios.get('https://api.darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
+]);
 
-        const [siteRes, pagesRes] = await Promise.all([
-          axios.get('https://darshboard.com/wp-json/custom/v1/site-info', config),
-          axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
-        ]);
 
       setSiteData({
   logo: siteRes.data.logo || '',
