@@ -30,7 +30,6 @@ const [siteRes, pagesRes] = await Promise.all([
   axios.get('https://api.darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
 ]);
 
-
       setSiteData({
   logo: siteRes.data.logo || '',
   favicon: siteRes.data.favicon || '',
