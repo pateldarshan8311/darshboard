@@ -67,7 +67,7 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
           {/* Email Section */}
           <div className="d_mail">
             <a href="mailto:hello@darshboard.com" className="d_mail_box">
-              <ImageComponent imageId={30} />
+              <ImageComponent imageId={54} />
               <span>hello@darshboard.com</span>
             </a>
           </div>

@@ -2,6 +2,7 @@
   "name": "darshboard-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/wp-content/plugins/darshboard-react-plugin/build",
   "dependencies": {
     "@hcaptcha/react-hcaptcha": "^1.12.0",
     "@splidejs/react-splide": "^0.7.12",
