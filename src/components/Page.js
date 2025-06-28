@@ -5,6 +5,7 @@ import { StatsComponent, CountersComponent } from './StatsComponent';
 import StacksComponent from './StacksComponent';
 import BasicDetailsComponent from './BasicDetailsComponent';
 import ContactForm from './ContactForm'; // 🔼 Add this at the top
+import ServiceCardsComponent from "./ServiceCardsComponent";
 
 import { motion } from 'framer-motion';
 import '../css/MainContent.css';
@@ -28,7 +29,7 @@ const Page = ({ pageData }) => {
 
   const acf = pageData.acf || {};
   const basicDetails = acf.basic_details || acf;
-  
+
   // console.log('Page ACF:', acf);
   // console.log('Work Experience Data:', acf.work_experience);
 
@@ -70,8 +71,19 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={5} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
+
         </div>
       )}
+
+      {/* Render only on Services page */}
+    {pageData.slug === 'services' && (
+  <div className="comm_box_grid">
+    <AnimatedBox index={0} className="flex_column p_0">
+      <ServiceCardsComponent serviceCards={acf.service_cards} />
+    </AnimatedBox>
+  </div>
+)}
+
     </div>
   );
 };
