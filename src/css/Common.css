@@ -501,7 +501,9 @@ body h6 {
   min-width: 1.5625vw;
   min-height: 1.5625vw;
 }
-
+.gap_10{
+  gap: 0.6510416666666667vw;
+}
 .comm_work {
   background-color: var(--global-palette10);
   border-radius: 6.510416666666667vw;

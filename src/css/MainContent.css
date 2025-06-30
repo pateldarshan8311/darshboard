@@ -167,11 +167,11 @@ a:hover .btn_txt {
 }
 
 .stack_icon_list {
-	box-shadow: inset 0 0.06510416666666666vw #1e1e1e;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-	padding: 1.3020833333333335vw 1.0416666666666665vw;
+    box-shadow: inset 0 0.06510416666666666vw #1e1e1e;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 1.3020833333333335vw 1.0416666666666665vw;
 }
 
 .stack_item {
@@ -485,4 +485,70 @@ a:hover .btn_txt {
 
 .contact-form textarea {
     min-height: 6.510416666666667vw;
+}
+
+.single_box_design .btn_icon {
+    padding: 1.0416666666666665vw;
+}
+
+.single_box_design p {
+    color: var(--global-palette12);
+    margin-bottom: 0;
+}
+
+.small_shadow_box {
+    background-color: var(--global-palette4);
+    border-radius: 1.3020833333333335vw;
+    box-shadow: 0px 0px 0px 0.13020833333333331vw rgb(15, 15, 15), 0px 0.13020833333333331vw 0.32552083333333337vw 0.06510416666666666vw rgba(15, 15, 15, 0.5), inset 0.06510416666666666vw 0.13020833333333331vw 0.32552083333333337vw 0.06510416666666666vw rgb(30, 30, 30), inset -0.06510416666666666vw -0.13020833333333331vw 0.26041666666666663vw 0.06510416666666666vw rgb(20, 20, 20);
+}
+
+.small_shadow_box_head {
+    padding: 0.9114583333333334vw 1.3020833333333335vw;
+    box-shadow: rgb(15, 15, 15) 0px -0.13020833333333331vw 0.06510416666666666vw 0px inset, rgb(15, 15, 15) 0px -0.13020833333333331vw 0.06510416666666666vw 0px inset;
+}
+
+.small_shadow_box_head strong {
+    font-weight: 600;
+    color: var(--global-palette2);
+    font-size: var(--f16);
+}
+
+.small_shadow_box_body {
+    box-shadow: rgb(15, 15, 15) 0px -0.13020833333333331vw 0.06510416666666666vw 0px inset, rgb(30, 30, 30) 0px 0.06510416666666666vw 0px 0px inset;
+    padding: 1.4322916666666665vw 1.3020833333333335vw;
+}
+
+.small_shadow_box_price {
+    padding: 0.9114583333333334vw 1.3020833333333335vw;
+    box-shadow: rgb(30, 30, 30) 0px 0.06510416666666666vw 0px 0px inset, rgb(15, 15, 15) 0px -0.13020833333333331vw 0.06510416666666666vw 0px inset;
+}
+
+.small_shadow_box_price strong {
+    font-size: 1.171875vw;
+    color: var(--global-palette2);
+}
+
+.small_shadow_box_footer {
+    box-shadow: rgb(30, 30, 30) 0px 0.06510416666666666vw 0px 0px inset;
+    padding: 1.171875vw 1.3020833333333335vw;
+}
+
+.small_shadow_box_footer .line_none {
+    line-height: 0;
+}
+
+.small_shadow_box_footer span {
+    font-size: var(--f14);
+}
+
+.small_shadow_box_footer .d_mail_box {
+    gap: 0.390625vw;
+    padding: 0.9114583333333334vw;
+    background-color: var(--global-palette10);
+  border-radius: 0.6510416666666667vw;
+  box-shadow: rgb(10, 10, 10) 0px 0px 0px 0.06510416666666666vw, rgba(10, 10, 10, 0.5) 0px 0.13020833333333331vw 0.32552083333333337vw 0.06510416666666666vw, rgb(43, 43, 43) 0.13020833333333331vw 0.26041666666666663vw 0.1953125vw 0px inset, rgb(36, 36, 36) -0.13020833333333331vw -0.1953125vw 0.1953125vw 0px inset;
+}
+.small_shadow_box_footer .d_mail_box:hover{
+    background-color: var(--global-palette13);
+    box-shadow: rgb(10, 10, 10) 0px 0px 0px 0.06510416666666666vw, rgba(10, 10, 10, 0.5) 0px 0.13020833333333331vw 0.32552083333333337vw 0.06510416666666666vw, rgb(46, 46, 46) 0.13020833333333331vw 0.26041666666666663vw 0.1953125vw 0px inset, rgb(41, 41, 41) -0.13020833333333331vw -0.1953125vw 0.1953125vw 0px inset;
 }

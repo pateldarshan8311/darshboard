@@ -13,9 +13,9 @@ import '../css/MainContent.css';
 const delayStep = 0.3;
 
 // AnimatedBox wraps content with animation and required classes
-const AnimatedBox = ({ children, index, className = '' }) => (
+const AnimatedBox = ({ children, index, className = '', disableDefaultClass = false }) => (
   <motion.div
-    className={`comm_box_design comm_border_after d_flex ${className}`}
+    className={disableDefaultClass ? className : `comm_box_design comm_border_after d_flex ${className}`}
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay: index * delayStep }}
@@ -23,6 +23,7 @@ const AnimatedBox = ({ children, index, className = '' }) => (
     {children}
   </motion.div>
 );
+
 
 const Page = ({ pageData }) => {
   if (!pageData) return <p>⚠ Page not found!</p>;
@@ -77,12 +78,17 @@ const Page = ({ pageData }) => {
 
       {/* Render only on Services page */}
     {pageData.slug === 'services' && (
-  <div className="comm_box_grid">
-    <AnimatedBox index={0} className="flex_column p_0">
+  <>
+    <AnimatedBox index={0} className="flex_column p_0" disableDefaultClass={true}>
       <ServiceCardsComponent serviceCards={acf.service_cards} />
     </AnimatedBox>
-  </div>
+
+    <AnimatedBox index={1} className="flex_column p_0">
+      <ContactForm />
+    </AnimatedBox>
+  </>
 )}
+
 
     </div>
   );
