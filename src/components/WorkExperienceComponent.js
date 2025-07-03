@@ -19,8 +19,8 @@ const WorkExperience = ({ data }) => {
         type: 'loop', // Changed from 'loop' to 'slide' to disable looping
         direction: 'ttb', // vertical direction
         height: '41vh', // Double the height to show 2 slides
-       perPage: 2,       // Show 2 slides
-  perMove: 1,  
+        perPage: 2,       // Show 2 slides
+        perMove: 1,
         gap: '1rem', // Add some gap between slides
         autoHeight: true,
         autoplay: true,
@@ -91,14 +91,14 @@ const WorkExperience = ({ data }) => {
                                 className="stack_label terms comm_work_txt mb_0"
                                 dangerouslySetInnerHTML={{ __html: experience_details[index].terms }}
                               />
-                            )}                            
+                            )}
                           </div>
                           {experience_details[index].job_profile && (
-                              <div
-                                className="stack_label comm_work_txt job_profile mb_0"
-                                dangerouslySetInnerHTML={{ __html: experience_details[index].job_profile }}
-                              />
-                            )}
+                            <div
+                              className="stack_label comm_work_txt job_profile mb_0"
+                              dangerouslySetInnerHTML={{ __html: experience_details[index].job_profile }}
+                            />
+                          )}
                         </div>
                       </div>
                     </div>
@@ -116,9 +116,9 @@ const WorkExperience = ({ data }) => {
                         <div className="stack_icon_list_inner d_flex flex_column">
                           <h6 className="mb_0 stack_title btn_txt">{company_info[index].company_name}</h6>
                           <div className="stack_label comm_work_txt mb_0">
-                            <a 
-                              href={company_info[index].company_url?.url} 
-                              target={company_info[index].company_url?.target || "_self"} 
+                            <a
+                              href={company_info[index].company_url?.url}
+                              target={company_info[index].company_url?.target || "_self"}
                               rel="noopener noreferrer"
                             >
                               {company_info[index].company_url?.title || company_info[index].company_url?.url}
