@@ -6,11 +6,12 @@ import StacksComponent from './StacksComponent';
 import BasicDetailsComponent from './BasicDetailsComponent';
 import ContactForm from './ContactForm'; // 🔼 Add this at the top
 import ServiceCardsComponent from "./ServiceCardsComponent";
+import FaqsComponent from './FaqsComponent';
 
 import { motion } from 'framer-motion';
 import '../css/MainContent.css';
 
-const delayStep = 0.3;
+const delayStep = 0.2;
 
 // AnimatedBox wraps content with animation and required classes
 const AnimatedBox = ({ children, index, className = '', disableDefaultClass = false }) => (
@@ -18,7 +19,7 @@ const AnimatedBox = ({ children, index, className = '', disableDefaultClass = fa
     className={disableDefaultClass ? className : `comm_box_design comm_border_after d_flex ${className}`}
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: index * delayStep }}
+    transition={{ duration: 0.4, delay: index * delayStep }}
   >
     {children}
   </motion.div>
@@ -82,9 +83,13 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={0} className="flex_column services_card_main p_0" disableDefaultClass={true}>
             <ServiceCardsComponent serviceCards={acf.service_cards} />
           </AnimatedBox>
-
+{/* 
           <AnimatedBox index={1} className="flex_column p_0">
             <ContactForm />
+          </AnimatedBox> */}
+
+          <AnimatedBox index={2} className="flex_column p_0">
+            <FaqsComponent stackData={acf} />
           </AnimatedBox>
         </div>
       )}
