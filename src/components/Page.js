@@ -7,6 +7,8 @@ import BasicDetailsComponent from './BasicDetailsComponent';
 import ContactForm from './ContactForm'; // 🔼 Add this at the top
 import ServiceCardsComponent from "./ServiceCardsComponent";
 import FaqsComponent from './FaqsComponent';
+import ClientSuccessComponent from "./ClientSuccessComponent";
+
 
 import { motion } from 'framer-motion';
 import '../css/MainContent.css';
@@ -83,7 +85,7 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={0} className="flex_column services_card_main p_0" disableDefaultClass={true}>
             <ServiceCardsComponent serviceCards={acf.service_cards} />
           </AnimatedBox>
-{/* 
+          {/* 
           <AnimatedBox index={1} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox> */}
@@ -91,6 +93,10 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={2} className="flex_column p_0">
             <FaqsComponent stackData={acf} />
           </AnimatedBox>
+          <AnimatedBox index={3} className="flex_column p_0">
+<ClientSuccessComponent clientData={pageData.acf} />
+          </AnimatedBox>
+
         </div>
       )}
 
