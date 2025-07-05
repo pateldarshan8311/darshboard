@@ -10,10 +10,10 @@ const StacksComponent = ({ stackData }) => {
     useEffect(() => {
         if (splideRef.current && stackData?.faqs_list?.length > 0) {
             const splide = new Splide(splideRef.current, {
-                 type: 'loop', // Changed from 'loop' to 'slide' to disable looping
+                type: 'loop', // Changed from 'loop' to 'slide' to disable looping
                 direction: "ttb",
                 height: "15.5vw",
-                perPage: 2, 
+                perPage: 2,
                 autoHeight: true,
                 perMove: 1,
                 pagination: false,
@@ -69,7 +69,7 @@ const StacksComponent = ({ stackData }) => {
     return (
         <div className="comm_inner d_flex flex_column no_gap">
             {/* Top Section */}
-            <div className="stack_titlebar d_flex flex_column align_center">
+            <div className="stack_titlebar arrows_topbar d_flex flex_column align_center">
                 <div className="stack_top_head d_flex justify_center align_center">
                     {faqs_top_icon && (
                         <span
@@ -88,16 +88,16 @@ const StacksComponent = ({ stackData }) => {
                             style={{ cursor: "pointer" }}
                         />
                     )}
-                         {/* Custom Dots */}
-            <div className="custom-pagination d_flex justify_center mt_20">
-                {faqs_list?.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`custom-dot ${currentSlide === index ? "active" : ""}`}
-                        onClick={() => handleDotClick(index)}
-                    ></button>
-                ))}
-            </div>
+                    {/* Custom Dots */}
+                    <div className="custom-pagination d_flex justify_center mt_20">
+                        {faqs_list?.map((_, index) => (
+                            <button
+                                key={index}
+                                className={`custom-dot ${currentSlide === index ? "active" : ""}`}
+                                onClick={() => handleDotClick(index)}
+                            ></button>
+                        ))}
+                    </div>
                     {faqs_right_icon && (
                         <span
                             className="top_icon line_none custom_arrow"
@@ -137,7 +137,7 @@ const StacksComponent = ({ stackData }) => {
                 </div>
             </div>
 
-       
+
         </div>
     );
 };
