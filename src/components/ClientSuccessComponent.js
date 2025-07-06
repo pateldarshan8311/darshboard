@@ -67,7 +67,7 @@ const ClientSuccessComponent = ({ clientData }) => {
   };
 
   return (
-    <section className="comm_inner d_flex flex_column no_gap">
+    <div className="comm_inner d_flex flex_column no_gap success_stories_section">
       {/* Top Section */}
       <div className="stack_titlebar arrows_topbar d_flex flex_column align_center">
         <div className="stack_top_head d_flex justify_center align_center">
@@ -147,8 +147,8 @@ const ClientSuccessComponent = ({ clientData }) => {
                             className="story-avatar"
                           />
                         )}
-                        {story?.client_name && <strong>{story.client_name}</strong>}
-                        <a href="https://darshboard.com" className="read-link ml_10">
+                        {story?.client_name && <strong className="story_client_name">{story.client_name}</strong>}
+                        <a href="https://darshboard.com" className="read-link ml_auto">
                           Read Full Story
                         </a>
                       </div>
@@ -160,7 +160,7 @@ const ClientSuccessComponent = ({ clientData }) => {
           </ul>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

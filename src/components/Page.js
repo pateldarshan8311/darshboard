@@ -8,6 +8,7 @@ import ContactForm from './ContactForm'; // 🔼 Add this at the top
 import ServiceCardsComponent from "./ServiceCardsComponent";
 import FaqsComponent from './FaqsComponent';
 import ClientSuccessComponent from "./ClientSuccessComponent";
+import BenefitsComponent from './BenefitsComponent';
 
 
 import { motion } from 'framer-motion';
@@ -91,7 +92,10 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={2} className="flex_column p_0">
             <ClientSuccessComponent clientData={pageData.acf} />
           </AnimatedBox>
-              <AnimatedBox index={3} className="flex_column p_0">
+          <AnimatedBox index={2} className="flex_column p_0">
+              <BenefitsComponent data={pageData} />
+          </AnimatedBox>
+          <AnimatedBox index={3} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
 

@@ -6,11 +6,11 @@ const ProfileBox = ({ acfData }) => {
       <div className="profile_box flex_wrap d_flex align_start">
         <div className='profile_img w_100 line_none'>
           {acfData.profile_image?.url && (
-          <img
-  className='w_100'
-  src={acfData.profile_image.url.startsWith('http') ? acfData.profile_image.url : `https://darshboard.com${acfData.profile_image.url}`}
-  alt={acfData.profile_image.alt || 'Profile'}
-/>
+            <img
+              className='w_100'
+              src={acfData.profile_image.url.startsWith('http') ? acfData.profile_image.url : `https://darshboard.com${acfData.profile_image.url}`}
+              alt={acfData.profile_image.alt || 'Profile'}
+            />
 
           )}
         </div>
