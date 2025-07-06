@@ -440,6 +440,9 @@ body h6 {
 .flex_wrap {
   flex-wrap: wrap;
 }
+.ml_auto{
+  margin-left: auto;
+}
 .w_100{
   width: 100%;
 }
@@ -514,7 +517,7 @@ body h6 {
 
 /* END WEB FONT */
 :root {
-  --f45: 1.953125vw;
+  --f45: 1.7578125vw;
   --f35: 1.6927083333333333vw;
   --f28: 1.5625vw;
   --f24: 1.4322916666666665vw;
