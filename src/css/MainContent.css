@@ -761,11 +761,37 @@ a:hover .btn_txt {
 	padding: 1.3020833333333335vw 1.0416666666666665vw;
 	position: relative;
 }
-.benefit_card {
-	gap: 1.0416666666666665vw;
-}
 .benifit_data_box {
 	background-color: var(--global-palette4);
 	border-radius: 1.0416666666666665vw;
 	box-shadow: 0px 0px 0px 0.13020833333333331vw  rgb(15, 15, 15), 0px 0.13020833333333331vw 0.32552083333333337vw 0.06510416666666666vw  rgba(15, 15, 15, 0.5), inset 0.06510416666666666vw  0.13020833333333331vw 0.13020833333333331vw 0px  rgb(38, 38, 38), inset -0.06510416666666666vw  -0.13020833333333331vw 0.13020833333333331vw 0px  rgb(20, 20, 20);
+}
+.benefits_slider_container {
+	padding: 1.5625vw;
+	box-shadow: inset 0 0.06510416666666666vw #1e1e1e;
+}
+.benefit_card::after {
+	content: "";
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(56, 56, 56, 0) 0%, rgb(56, 56, 56) 36.03603603603604%, rgba(56, 56, 56, 0) 100%);
+	flex: 0 0 auto;
+	left: 4.7vw;
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	width: 0.13020833333333331vw;
+	z-index: -1;
+}
+.benefits_column {
+	mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+	overflow: hidden;
+}
+.benefit_icon {
+    max-width: 2.864583333333333vw;
+    max-height: 2.864583333333333vw;
+    width: 2.864583333333333vw;
+    height: 2.864583333333333vw;
+    min-height: 2.864583333333333vw;
+    min-width: 2.864583333333333vw;
+    aspect-ratio: 1;
 }
