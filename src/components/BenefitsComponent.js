@@ -8,8 +8,8 @@ const BenefitsComponent = ({ data }) => {
     const items = data?.acf?.benefit_items || [];
 
     // Configuration (in vw units)
-    const ITEM_HEIGHT_VW = 7.5; // Equivalent to 120px on 1536px width screen
-    const VISIBLE_COUNT = 3;
+    const ITEM_HEIGHT_VW = 6.5; // Equivalent to 120px on 1536px width screen
+    const VISIBLE_COUNT = 3.2;
     const SCROLL_SPEED = 2; // vw per second (adjust as needed)
 
     const scrollDistance = items.length * ITEM_HEIGHT_VW;
