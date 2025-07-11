@@ -9,6 +9,7 @@ import ServiceCardsComponent from "./ServiceCardsComponent";
 import FaqsComponent from './FaqsComponent';
 import ClientSuccessComponent from "./ClientSuccessComponent";
 import BenefitsComponent from './BenefitsComponent';
+import ClientsComponent from './ClientsComponent';
 
 
 import { motion } from 'framer-motion';
@@ -86,7 +87,7 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={0} className="flex_column services_card_main p_0" disableDefaultClass={true}>
             <ServiceCardsComponent serviceCards={acf.service_cards} />
           </AnimatedBox>
-                 <AnimatedBox index={1} className="flex_column p_0">
+            <AnimatedBox index={1} className="flex_column p_0">
               <BenefitsComponent data={pageData} />
           </AnimatedBox>
           <AnimatedBox index={2} className="flex_column p_0">
@@ -97,6 +98,20 @@ const Page = ({ pageData }) => {
           </AnimatedBox>
    
           <AnimatedBox index={3} className="flex_column p_0">
+            <ContactForm />
+          </AnimatedBox>
+
+        </div>
+      )}
+
+
+      {/* Render only on Services page */}
+      {pageData.slug === 'my-works' && (
+        <div className="comm_box_grid ">
+          <AnimatedBox index={0} className="flex_column services_card_main p_0">
+            <ClientsComponent clientData={acf} />
+          </AnimatedBox>
+          <AnimatedBox index={1} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
 

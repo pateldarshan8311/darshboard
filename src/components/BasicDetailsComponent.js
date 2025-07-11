@@ -72,7 +72,7 @@ const BasicDetailsComponent = ({ basicDetails }) => {
                             <p className="education_university mb_0">{education_details.education_university}</p>
                         )}
                         {(education_details.education_passing_text || education_details.education_year) && (
-                            <p className="education_year mb_0">
+                            <p className="education_year mb_0 d_flex align_center justify_center gap_10">
                                 <span className='education_year_txt'>{education_details.education_passing_text}</span>
                                 <span className='education_year_number'>{education_details.education_year}</span>
                             </p>

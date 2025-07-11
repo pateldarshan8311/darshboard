@@ -32,10 +32,15 @@ a:hover .btn_txt {
     flex-wrap: nowrap;
     gap: 0.6510416666666667vw;
     overflow: hidden;
-    padding: 1.5625vw;
+    padding:1.171875vw;
     width: 100%;
 }
-
+.education_year_txt {
+	color: var(--global-palette7);
+}
+.about_description p strong {
+	color: var(--global-palette2);
+}
 .profile_img {
     border-radius: 1.3020833333333335vw;
     box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8), 0 0 0 0.26041666666666663vw #242424;
@@ -59,7 +64,9 @@ a:hover .btn_txt {
     gap: 0.5208333333333333vw;
     max-width: calc(100% - 1.3020833333333335vw - 11.067708333333332vw);
 }
-
+.profile_content h1{
+    margin-bottom: 0;
+}
 .comm_btn {
     align-items: center;
     background-color: var(--global-palette8);
@@ -199,11 +206,11 @@ a:hover .btn_txt {
 .education_university {
     color: var(--global-palette12);
 }
-
+.award_text,
 .education_year_number {
-    color: var(--global-palette7);
+	color: var(--global-palette7);
+	font-weight: 600;
 }
-
 .comm_info {
     gap: 0.5208333333333333vw;
     padding: 1.0416666666666665vw;
@@ -794,4 +801,8 @@ a:hover .btn_txt {
     min-height: 2.864583333333333vw;
     min-width: 2.864583333333333vw;
     aspect-ratio: 1;
+}
+.my_client_box .client_logo {
+	width: 7.486979166666667vw;
+	height: 2.994791666666667vw;
 }
