@@ -11,19 +11,10 @@ const ProfileBox = ({ acfData }) => {
               src={acfData.profile_image.url.startsWith('http') ? acfData.profile_image.url : `https://darshboard.com${acfData.profile_image.url}`}
               alt={acfData.profile_image.alt || 'Profile'}
             />
-
           )}
         </div>
 
         <div className='profile_content d_flex flex_column align_start'>
-          {/* Available For Work */}
-          {acfData.available_for_work && (
-            <div className='comm_work d_inline_flex align_center comm_border_after'>
-              <span className='pulse_circle'></span>
-              <span className='comm_work_txt'>{acfData.available_for_work}</span>
-            </div>
-          )}
-
           {/* Name */}
           {acfData.name && <h1>{acfData.name}</h1>}
 
@@ -70,12 +61,21 @@ const ProfileBox = ({ acfData }) => {
         </div>
       </div>
       <div className='about_data comm_border_after d_flex flex_column align_start'>
-        {acfData.about_me_title && (
-          <h6 className='mb_0'>{acfData.about_me_title}</h6>
-        )}
+        <div className='d_flex w_100 align_center justify_between gap_10'>
+          {acfData.about_me_title && (
+            <h6 className='mb_0'>{acfData.about_me_title}</h6>
+          )}
+          {/* Available For Work */}
+          {acfData.available_for_work && (
+            <div className='comm_work d_inline_flex align_center comm_border_after'>
+              <span className='pulse_circle'></span>
+              <span className='comm_work_txt'>{acfData.available_for_work}</span>
+            </div>
+          )}
+        </div>
         {acfData.about_me_description && (
           <div
-            className='mb_0'
+            className='mb_0 about_description'
             dangerouslySetInnerHTML={{ __html: acfData.about_me_description }}
           />
         )}

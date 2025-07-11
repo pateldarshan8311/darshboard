@@ -45,7 +45,7 @@
 }
 .d_main_menu li.active a span,
 .d_main_menu li:hover a span{
-    color: var(--global-palette7);
+    color: var(--global-palette6);
 }
 
 .d_main_menu {
