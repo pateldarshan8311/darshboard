@@ -87,8 +87,8 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={0} className="flex_column services_card_main p_0" disableDefaultClass={true}>
             <ServiceCardsComponent serviceCards={acf.service_cards} />
           </AnimatedBox>
-            <AnimatedBox index={1} className="flex_column p_0">
-              <BenefitsComponent data={pageData} />
+          <AnimatedBox index={1} className="flex_column p_0">
+            <BenefitsComponent data={pageData} />
           </AnimatedBox>
           <AnimatedBox index={2} className="flex_column p_0">
             <FaqsComponent stackData={acf} />
@@ -96,7 +96,7 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={3} className="flex_column p_0">
             <ClientSuccessComponent clientData={pageData.acf} />
           </AnimatedBox>
-   
+
           <AnimatedBox index={3} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
@@ -107,14 +107,21 @@ const Page = ({ pageData }) => {
 
       {/* Render only on Services page */}
       {pageData.slug === 'my-works' && (
-        <div className="comm_box_grid ">
-          <AnimatedBox index={0} className="flex_column services_card_main p_0">
-            <ClientsComponent clientData={acf} />
-          </AnimatedBox>
-          <AnimatedBox index={1} className="flex_column p_0">
+        <div className="comm_box_grid services_card_grid">
+          <div className='services_card_main d_flex flex_column work_2_cols'>
+            <AnimatedBox index={0} className=" clients_slider p_0" disableDefaultClass={true}>
+              <ClientsComponent clientData={acf} />
+            </AnimatedBox>
+            {/* Stats & Counters */}
+            <AnimatedBox index={1} className=" work_cards" >
+              <StatsComponent statsData={acf.statistics_items} />
+              <CountersComponent countersData={acf.my_counters} />
+            </AnimatedBox>
+          </div>
+
+          <AnimatedBox index={2} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
-
         </div>
       )}
 
