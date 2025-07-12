@@ -321,7 +321,7 @@ button {
 }
 
 .page-content {
-  padding:3.2552083333333335vw 1.953vw 2.279vw;
+  padding: 3.2552083333333335vw 1.953vw 2.279vw;
   width: 100%;
   margin: 0 auto;
 }
@@ -335,7 +335,10 @@ svg {
   height: auto;
   color: var(--global-palette3);
   transition: .5s cubic-bezier(.44, 0, .56, 1) 0s;
+}
 
+svg * {
+  transition: .5s cubic-bezier(.44, 0, .56, 1) 0s;
 }
 
 /* START COMMON CSS */
@@ -355,12 +358,15 @@ body h3 {
   font-size: var(--f28);
   line-height: 132.12%;
 }
-.p_0{
+
+.p_0 {
   padding: 0 !important;
 }
-.no_gap{
+
+.no_gap {
   gap: 0 !important;
 }
+
 body hr {
   border-bottom: 0.065vw solid var(--global-palette3);
 }
@@ -434,18 +440,22 @@ body h6 {
 
 }
 
-.text_center{
+.text_center {
   text-align: center;
 }
+
 .flex_wrap {
   flex-wrap: wrap;
 }
-.ml_auto{
+
+.ml_auto {
   margin-left: auto;
 }
-.w_100{
+
+.w_100 {
   width: 100%;
 }
+
 .align_center {
   align-items: center;
 }
@@ -476,9 +486,11 @@ body h6 {
   justify-content: center;
   flex-wrap: wrap;
 }
-.no_gap{
+
+.no_gap {
   gap: 0 !important;
 }
+
 .comm_border_after {
   position: relative;
 }
@@ -497,16 +509,26 @@ body h6 {
   border-radius: inherit;
   pointer-events: none;
 }
+
 .arrow_icon svg,
-.btn_icon svg{
+.btn_icon svg {
   width: 1.5625vw;
   height: 1.5625vw;
   min-width: 1.5625vw;
   min-height: 1.5625vw;
 }
-.gap_10{
+
+.arrow_icon:hover svg {
+  transform: rotate(45deg);
+}
+
+.arrow_icon:hover svg * {
+	stroke: var(--global-palette2);
+}
+.gap_10 {
   gap: 0.6510416666666667vw;
 }
+
 .comm_work {
   background-color: var(--global-palette10);
   border-radius: 6.510416666666667vw;
@@ -539,10 +561,10 @@ body h6 {
   --global-palette10: rgb(38, 38, 38);
   --global-palette11: rgb(242, 242, 242);
   --global-palette12: rgb(153, 153, 153);
-  --global-palette13: rgb(45, 45,45);
-  --global-palette14: rgb(56, 56,56);
-  --global-palette15: rgb(36, 36,36);
-  --global-palette16: rgb(10, 10,10);
+  --global-palette13: rgb(45, 45, 45);
+  --global-palette14: rgb(56, 56, 56);
+  --global-palette15: rgb(36, 36, 36);
+  --global-palette16: rgb(10, 10, 10);
 
 
 

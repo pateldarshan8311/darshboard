@@ -3,8 +3,8 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 const getResponsiveSpeed = () => {
-  const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  return vw < 1536 ? 0.25 : vw < 1920 ? 0.25 : 0.7;
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    return vw < 1536 ? 0.25 : vw < 1920 ? 0.25 : 0.7;
 };
 
 const ClientsComponent = ({ clientData }) => {
@@ -19,11 +19,10 @@ const ClientsComponent = ({ clientData }) => {
     } = clientData;
 
     return (
-        <div className="comm_inner d_flex my_client_box flex_column no_gap">
-            <div className="my_client_list_row d_flex flex_column">
+        <div className="comm_inner d_flex my_client_box flex_column comm_box_design comm_border_after no_gap my_client_list_row p_0">
                 {/* Topbar Section */}
-                <div className="stack_titlebar d_flex flex_column align_center">
-                    <div className="stack_top_head d_flex justify_center align_center">
+                <div className="stack_titlebar d_flex flex_column ">
+                    <div className="stack_top_head d_inline_flex align_center ">
                         {client_topbar_icon && (
                             <span
                                 className="top_icon line_none"
@@ -32,8 +31,12 @@ const ClientsComponent = ({ clientData }) => {
                         )}
                         {client_topbar_text && <p className="stack_top_para mb_0">{client_topbar_text}</p>}
                     </div>
+                    <div className="happy_client_leftbar d_flex align_center text_center">
+                        {happy_clients_numbers && <h2 className=" mb_0">{happy_clients_numbers}</h2>}
+                        {happy_clients_text && <p className=" mb_0">{happy_clients_text}</p>}
+                    </div>
                 </div>
-
+            
                 {/* Splide Left-to-Right Slider */}
                 <Splide
                     className="ltr_list"
@@ -46,7 +49,7 @@ const ClientsComponent = ({ clientData }) => {
                         gap: '0.6510416666666667vw',
                         direction: 'ltr',
                         autoScroll: {
-                            speed:  getResponsiveSpeed(),
+                            speed: getResponsiveSpeed(),
                             pauseOnHover: false,
                             pauseOnFocus: false,
                         },
@@ -65,16 +68,7 @@ const ClientsComponent = ({ clientData }) => {
                         </SplideSlide>
                     ))}
                 </Splide>
-            </div>
-
-            <div className="my_happy_client_list_row d_flex flex_column">
-                {/* Happy Clients Section */}
-                <div className="happy_client_leftbar align_center text_center mt_20 mb_20">
-                    {happy_clients_numbers && <p className="stack_top_para mb_0">{happy_clients_numbers}</p>}
-                    {happy_clients_text && <p className="stack_top_para mb_0">{happy_clients_text}</p>}
-                </div>
-
-                {/* Splide Right-to-Left Slider */}
+                 {/* Splide Right-to-Left Slider */}
                 <Splide
                     className="rtl_list"
                     options={{
@@ -86,7 +80,7 @@ const ClientsComponent = ({ clientData }) => {
                         gap: '0.6510416666666667vw',
                         direction: 'rtl',
                         autoScroll: {
-                            speed:  getResponsiveSpeed(),
+                            speed: getResponsiveSpeed(),
                             pauseOnHover: false,
                             pauseOnFocus: false,
                         },
@@ -105,7 +99,6 @@ const ClientsComponent = ({ clientData }) => {
                         </SplideSlide>
                     ))}
                 </Splide>
-            </div>
         </div>
     );
 };
