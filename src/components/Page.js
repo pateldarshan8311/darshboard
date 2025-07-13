@@ -87,7 +87,7 @@ const Page = ({ pageData }) => {
           <AnimatedBox index={0} className="flex_column services_card_main p_0" disableDefaultClass={true}>
             <ServiceCardsComponent serviceCards={acf.service_cards} />
           </AnimatedBox>
-          <AnimatedBox index={1} className="flex_column p_0">
+          <AnimatedBox index={1} className="flex_column p_0 skills_row">
             <BenefitsComponent data={pageData} />
           </AnimatedBox>
           <AnimatedBox index={2} className="flex_column p_0">
@@ -114,11 +114,9 @@ const Page = ({ pageData }) => {
             </AnimatedBox>
             {/* Stats & Counters */}
             <AnimatedBox index={1} className=" work_cards" >
-              <StatsComponent statsData={acf.statistics_items} />
               <CountersComponent countersData={acf.my_counters} />
             </AnimatedBox>
           </div>
-
           <AnimatedBox index={2} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
