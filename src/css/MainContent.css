@@ -901,7 +901,7 @@ a:hover .btn_txt {
 
 .verticle-slider::before {
     content: "";
-    background: linear-gradient(180deg, rgba(84, 84, 84, 0) 0%,  rgb(20, 20, 20) 90.54054054054053%);
+    background: linear-gradient(180deg, rgba(84, 84, 84, 0) 0%, rgb(20, 20, 20) 90.54054054054053%);
     left: 0;
     right: 0;
     position: absolute;
@@ -910,4 +910,27 @@ a:hover .btn_txt {
     height: 8.59375vw;
     z-index: 2;
     pointer-events: none;
+}
+
+.projects_cols .comm_box_design {
+    max-width: 100%;
+}
+
+.projects_cols .stack_titlebar {
+    width: auto;
+}
+
+.projects_cols .projects_button_wrapper {
+    padding-right: 1.3020833333333335vw;
+}
+.projects_topbar {
+	box-shadow: rgb(15, 15, 15) 0px -0.13020833333333331vw 0.06510416666666666vw 0px inset;
+}
+.projects_list .stack_item {
+	padding: 0;
+	overflow: hidden;
+	box-shadow: rgba(15, 15, 15, 0.49) 0px 0.06510416666666666vw 0.32552083333333337vw 0.06510416666666666vw;
+}
+.project_card_img {
+	box-shadow: inset 1px 2px 4px 1px #1e1e1e;
 }
