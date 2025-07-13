@@ -10,6 +10,7 @@ import FaqsComponent from './FaqsComponent';
 import ClientSuccessComponent from "./ClientSuccessComponent";
 import BenefitsComponent from './BenefitsComponent';
 import ClientsComponent from './ClientsComponent';
+import ProjectsComponent from "./ProjectsComponent";
 
 
 import { motion } from 'framer-motion';
@@ -117,9 +118,18 @@ const Page = ({ pageData }) => {
               <CountersComponent countersData={acf.my_counters} />
             </AnimatedBox>
           </div>
-          <AnimatedBox index={2} className="flex_column p_0">
+             <AnimatedBox index={3} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
+          <div className='services_card_main d_flex flex_column projects_cols work_2_cols'>
+            <AnimatedBox index={2} className="flex_column p_0">
+              <ProjectsComponent projectsData={acf} />
+            </AnimatedBox>
+          </div>
+               <AnimatedBox index={3} className="flex_column p_0">
+            <ContactForm />
+          </AnimatedBox>
+       
         </div>
       )}
 
