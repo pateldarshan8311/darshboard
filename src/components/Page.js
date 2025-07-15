@@ -121,7 +121,7 @@ const Page = ({ pageData }) => {
              <AnimatedBox index={3} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
-          <div className='services_card_main d_flex flex_column projects_cols work_2_cols'>
+          <div className='services_card_main d_flex flex_column projects_cols w_100 work_2_cols'>
             <AnimatedBox index={2} className="flex_column p_0">
               <ProjectsComponent projectsData={acf} />
             </AnimatedBox>

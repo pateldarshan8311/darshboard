@@ -33,43 +33,45 @@ const ProjectsComponent = ({ projectsData }) => {
                 {projects_button && (
                     <div className="projects_button_wrapper">
                         <a href="darshboard.com" className="view_all_btn d_mail_box">
+                            <span>{projects_button}</span>
                             {projects_button_icon && (
                                 <span className="d_inline_flex"
                                     dangerouslySetInnerHTML={{ __html: projects_button_icon }}
                                 />
                             )}
-                            <span>{projects_button}</span>
                         </a>
                     </div>
                 )}
             </div>
             <div className="stack_icon_list comm_inner d_flex flex_wrap projects_list">
                 {project_card?.map((item, index) => (
-                    <div   key={index}  className="stack_item stat_item d_flex align_center">
-                        <div className="stack_content d_flex align_center flex_column justify_center">
-                            <div className="project_card_img w_100">
+                    <div key={index} className="stack_item stat_item d_flex align_center">
+                        <a href={item.project_card_link} className="stack_content d_flex align_center flex_column justify_center w_100">
+                            <div className="project_card_img_box w_100">
                                 {item.project_card_image?.url && (
                                     <img
-                                    src={item.project_card_image.url}
-                                    alt={item.project_card_image.alt || item.project_card_title}
-                                    className="project_card_img"
+                                        src={item.project_card_image.url}
+                                        alt={item.project_card_image.alt || item.project_card_title}
+                                        className="project_card_img"
                                     />
                                 )}
                             </div>
-
-                            <div className="stack_icon_list_inner d_flex flex_column">
-                                {item.project_card_title && (
-                                    <h6 className="mb_0 stack_title btn_txt">
-                                        {item.project_card_title}
-                                    </h6>
-                                )}
-                                {item.project_card_category && (
-                                    <div className="stack_label comm_work_txt mb_0">
-                                        {item.project_card_category}
-                                    </div>
-                                )}
+                            <div className="d_flex w_100 project_card_footer">
+                                <div className="stack_icon_list_inner d_flex flex_column w_100">
+                                    {item.project_card_title && (
+                                        <h6 className="mb_0 stack_title btn_txt">
+                                            {item.project_card_title}
+                                        </h6>
+                                    )}
+                                    {item.project_card_category && (
+                                        <div className="stack_label comm_work_txt mb_0">
+                                            {item.project_card_category}
+                                        </div>
+                                    )}
+                                </div>
+                                <span class="top_icon line_none custom_arrow" ><svg xmlns="http://www.w3.org/2000/svg" width="1.5625vw" height="1.5625vw" viewBox="0 0 24 24" fill="none"><path stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1.393 12h21.214m0 0-7.955-7.955M22.607 12l-7.955 7.955"></path></svg></span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 ))}
             </div>

@@ -2,36 +2,29 @@ import React, { useEffect } from 'react';
 
 const BasicDetailsComponent = ({ basicDetails }) => {
     useEffect(() => {
-       const handleAwardsToggle = () => {
-    const $ = window.jQuery;
+        const handleAwardsToggle = () => {
+            const $ = window.jQuery;
 
-    // 🟢 Show the first award_item based on the first button's data-value
-    const $firstBtn = $(".award_button").first();
-    const firstId = $firstBtn.data("value");
+            const $firstBtn = $(".award_button").first();
+            const firstId = $firstBtn.data("value");
 
-    $(".award_item").hide();
-    if (firstId) {
-        $(".award_button").removeClass("active");
-        $firstBtn.addClass("active");
-        $("#" + firstId).slideDown();
-    }
+            $(".award_item").hide();
+            if (firstId) {
+                $(".award_button").removeClass("active");
+                $firstBtn.addClass("active");
+                $("#" + firstId).slideDown();
+            }
 
-    // 🟢 Handle click for each button
-    $(".award_button").off("click").on("click", function () {
-        const targetId = $(this).data("value");
+            $(".award_button").off("click").on("click", function () {
+                const targetId = $(this).data("value");
 
-        // Remove active from all and set active on this
-        $(".award_button").removeClass("active");
-        $(this).addClass("active");
+                $(".award_button").removeClass("active");
+                $(this).addClass("active");
 
-        // Slide all up, show selected
-        $(".award_item").stop(true, true).slideUp();
-        $("#" + targetId).stop(true, true).slideDown();
-    });
-};
-
-
-
+                $(".award_item").stop(true, true).slideUp();
+                $("#" + targetId).stop(true, true).slideDown();
+            });
+        };
 
         if (basicDetails?.awards_details?.award_types?.length > 0 && window.jQuery) {
             handleAwardsToggle();
@@ -46,8 +39,9 @@ const BasicDetailsComponent = ({ basicDetails }) => {
         availability_details,
         awards_details
     } = basicDetails;
+
     const slugify = (text) => {
-        return text.toString().toLowerCase().replace(/\s+/g, '-'); // replace spaces with hyphens
+        return text.toString().toLowerCase().replace(/\s+/g, '-');
     };
 
     return (
@@ -133,11 +127,10 @@ const BasicDetailsComponent = ({ basicDetails }) => {
                             </div>
                         </div>
                     )}
-
                 </div>
             )}
 
-            {/* Availability Details */}
+            {/* Availability Details (Updated with Industries Served) */}
             {availability_details && (
                 <div className="basic_section availability_details stat_item p_0">
                     <div className="stack_top_head education_top_head stack_titlebar d_flex justify_center align_center">
@@ -155,6 +148,17 @@ const BasicDetailsComponent = ({ basicDetails }) => {
                                 <span className='availability_separator'>{availability_details.availability_separator}</span>
                                 <span className='comm_box_txt'>{availability_details.availability_to}</span>
                             </div>
+                        )}
+
+                        {/* 🟡 Industries Served List */}
+                        {Array.isArray(availability_details.industries_served) && availability_details.industries_served.length > 0 && (
+                            <ul className="industries_served_list comm_inner d_flex flex_wrap justify_center">
+                                {availability_details.industries_served.map((industry, index) => (
+                                    <li key={index} className="d_inline_flex align_center comm_box_txt justify_center">
+                                        {industry.industries_name}
+                                    </li>
+                                ))}
+                            </ul>
                         )}
                     </div>
                 </div>
