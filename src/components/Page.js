@@ -95,13 +95,8 @@ const Page = ({ pageData }) => {
             <FaqsComponent stackData={acf} />
           </AnimatedBox>
           <AnimatedBox index={3} className="flex_column p_0">
-            <ClientSuccessComponent clientData={pageData.acf} />
-          </AnimatedBox>
-
-          <AnimatedBox index={3} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
-
         </div>
       )}
 
@@ -118,18 +113,18 @@ const Page = ({ pageData }) => {
               <CountersComponent countersData={acf.my_counters} />
             </AnimatedBox>
           </div>
-             <AnimatedBox index={3} className="flex_column p_0">
-            <ContactForm />
+         <AnimatedBox index={3} className="flex_column p_0">
+            <ClientSuccessComponent clientData={pageData.acf} />
           </AnimatedBox>
           <div className='services_card_main d_flex flex_column projects_cols w_100 work_2_cols'>
             <AnimatedBox index={2} className="flex_column p_0">
               <ProjectsComponent projectsData={acf} />
             </AnimatedBox>
           </div>
-               <AnimatedBox index={3} className="flex_column p_0">
+          <AnimatedBox index={3} className="flex_column p_0">
             <ContactForm />
           </AnimatedBox>
-       
+
         </div>
       )}
 

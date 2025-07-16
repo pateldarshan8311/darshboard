@@ -4,7 +4,7 @@ import "@splidejs/react-splide/css";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 const getResponsiveSpeed = () => {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    return vw < 1536 ? 0.25 : vw < 1920 ? 0.25 : 0.7;
+    return vw < 1536 ? 0.3 : vw < 1920 ? 0.3 : 0.75;
 };
 
 const ClientsComponent = ({ clientData }) => {
@@ -32,7 +32,7 @@ const ClientsComponent = ({ clientData }) => {
                         {client_topbar_text && <p className="stack_top_para mb_0">{client_topbar_text}</p>}
                     </div>
                     <div className="happy_client_leftbar d_flex align_center text_center">
-                        {happy_clients_numbers && <h2 className=" mb_0">{happy_clients_numbers}</h2>}
+                        {happy_clients_numbers && <h1 className=" mb_0">{happy_clients_numbers}</h1>}
                         {happy_clients_text && <p className=" mb_0">{happy_clients_text}</p>}
                     </div>
                 </div>
