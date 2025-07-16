@@ -106,13 +106,12 @@ a:hover .btn_txt {
 
 
 .stat_item {
-    padding: 1.5625vw 1.171875vw;
-    gap: 0.6510416666666667vw;
-    background-color: var(--global-palette4);
-    border-radius: 1.0416666666666665vw;
-    box-shadow: 0 0 0 0.13020833333333331vw var(--global-palette5), inset 0.06510416666666666vw 0.13020833333333331vw 0.13020833333333331vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e, 0.06510416666666666vw 0.06510416666666666vw 0.390625vw 0.13020833333333331vw #0f0f0f80;
+	padding: 1.0416666666666665vw;
+	gap: 0.6510416666666667vw;
+	background-color: var(--global-palette4);
+	border-radius: 1.0416666666666665vw;
+	box-shadow: 0 0 0 0.13020833333333331vw var(--global-palette5), inset 0.06510416666666666vw 0.13020833333333331vw 0.13020833333333331vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e, 0.06510416666666666vw 0.06510416666666666vw 0.390625vw 0.13020833333333331vw #0f0f0f80;
 }
-
 
 .comm_inner {
     gap: 1.0416666666666665vw;
@@ -648,7 +647,7 @@ a:hover .btn_txt {
 }
 
 .vertical-faq-slider {
-    padding: 1.5625vw;
+    padding:  1.0416666666666665vw;
 }
 
 .vertical-faq-slider .stack_item {
@@ -751,11 +750,6 @@ a:hover .btn_txt {
 .avatars> :not(:first-child) {
     margin-left: -0.6510416666666667vw;
 }
-
-.benefits_slider_container {
-    overflow: hidden;
-}
-
 .benefit_percentage_data {
     color: var(--global-palette6);
     font-weight: 700;
@@ -794,7 +788,8 @@ a:hover .btn_txt {
 }
 
 .benefits_slider_container {
-    padding: 1.5625vw;
+    padding: 1.0416666666666665vw;
+    overflow: hidden;
     box-shadow: inset 0 0.06510416666666666vw #1e1e1e;
 }
 
@@ -839,23 +834,25 @@ a:hover .btn_txt {
     gap: 1.953125vw;
     pointer-events: none;
     position: absolute;
-    padding: 1.953125vw 2.604166666666667vw 1.3020833333333335vw 1.3020833333333335vw;
+    padding: 1.0416666666666665vw 2.604166666666667vw 1.3020833333333335vw 1.3020833333333335vw;
     max-width: 19.010416666666664vw;
     height: 100%;
 }
 
 .my_client_list_row .stack_titlebar::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url("https://darshboard.com/wp-content/uploads/2025/07/shape.svg") no-repeat;
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
-    max-width: 19.010416666666664vw;
-    z-index: 1;
-    pointer-events: none;
+	content: "";
+	position: absolute;
+	left: -0.13020833333333331vw;
+	top: -0.06510416666666666vw;
+	background: url("https://darshboard.com/wp-content/uploads/2025/07/shape.svg") no-repeat;
+	width: auto;
+	height: auto;
+	background-size: 100% 100%;
+	max-width: 19.010416666666664vw;
+	z-index: 1;
+	pointer-events: none;
+	right: -1px;
+	bottom: -0.1953125vw;
 }
 
 .work_cards .comm_inner {
@@ -873,11 +870,11 @@ a:hover .btn_txt {
 .my_client_list_row .stack_titlebar>div {
     z-index: 1;
     pointer-events: all;
-    height: 5.208333333333334vw;
+    height:6.510416666666667vw;
 }
 
 .my_client_list_row .splide--loop {
-    height: 5.208333333333334vw;
+    height:6.510416666666667vw;
     box-shadow: inset 0px -0.13020833333333331vw 0.06510416666666666vw 0px var(--global-palette5);
     display: flex;
     align-items: center;
@@ -902,7 +899,8 @@ a:hover .btn_txt {
 .services_card_main .single_box_design {
     max-width: calc(33.33% - 0.866vw);
 }
-
+.faq_main_sec  .vertical-faq-slider::after,
+.success_stories_section .vertical-faq-slider::after,
 .verticle-slider::before {
     content: "";
     background: linear-gradient(180deg, rgba(84, 84, 84, 0) 0%, rgb(20, 20, 20) 90.54054054054053%);
@@ -937,31 +935,45 @@ a:hover .btn_txt {
     overflow: hidden;
     box-shadow: rgba(15, 15, 15, 0.49) 0px 0.06510416666666666vw 0.32552083333333337vw 0.06510416666666666vw;
 }
+
 .project_card_img_box {
-	box-shadow: inset 0.06510416666666666vw 0.13020833333333331vw 0.26041666666666663vw 0.06510416666666666vw #1e1e1e;
-	overflow: hidden;
-	position: relative;
-	padding-top: 65.35%;
+    box-shadow: inset 0.06510416666666666vw 0.13020833333333331vw 0.26041666666666663vw 0.06510416666666666vw #1e1e1e;
+    overflow: hidden;
+    position: relative;
+    padding-top: 65.35%;
 }
+
 .project_card_img_box img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: top;
-	position: absolute;
-	left: 0;
-	top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
+
 .projects_list .stack_content {
-	gap: 0;
+    gap: 0;
 }
+
 .projects_list {
-	padding: 1.3020833333333335vw;
+    padding: 1.3020833333333335vw;
 }
+
 .projects_list .project_card_footer {
-	padding:0.9114583333333334vw 1.0416666666666665vw;
+    padding: 0.9114583333333334vw 1.0416666666666665vw;
 }
+
 .projects_list .stack_icon_list_inner .stack_title {
-	font-size: var(--f16);
-	color: var(--global-palette7);
+    font-size: var(--f16);
+    color: var(--global-palette7);
+}
+
+.projects_list .stack_content:hover svg {
+    transform: rotate(45deg);
+}
+
+.projects_list .stack_content:hover * {
+    stroke: var(--global-palette2);
 }

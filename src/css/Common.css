@@ -391,7 +391,7 @@ body h6 {
 	width: 100%;
 	height: auto;
 	gap: 1.0416666666666665vw;
-	max-width: calc(33.33% - 0.865vw);
+	max-width: calc(33.33% - 0.866vw);
 	overflow: hidden;
 	box-shadow: 0 0 0 0.26041666666666663vw var(--global-palette9), 0 0 0.32552083333333337vw 0.6510416666666667vw #0d0d0db3;
 	background: var(--global-palette9);

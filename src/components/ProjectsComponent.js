@@ -5,6 +5,7 @@ const ProjectsComponent = ({ projectsData }) => {
         projects_icon,
         projects_label,
         projects_title,
+        projects_subtitle,
         projects_button,
         projects_button_icon,
         project_card,
@@ -28,6 +29,7 @@ const ProjectsComponent = ({ projectsData }) => {
                     </div>
                     <div className="stack_top_body">
                         {projects_title && <h4>{projects_title}</h4>}
+                        {projects_subtitle && <p className="mb_0">{projects_subtitle}</p>}
                     </div>
                 </div>
                 {projects_button && (
@@ -69,7 +71,8 @@ const ProjectsComponent = ({ projectsData }) => {
                                         </div>
                                     )}
                                 </div>
-                                <span class="top_icon line_none custom_arrow" ><svg xmlns="http://www.w3.org/2000/svg" width="1.5625vw" height="1.5625vw" viewBox="0 0 24 24" fill="none"><path stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1.393 12h21.214m0 0-7.955-7.955M22.607 12l-7.955 7.955"></path></svg></span>
+                                <span class="top_icon line_none custom_arrow" ><svg xmlns="http://www.w3.org/2000/svg"  width="1.5625vw" height="1.5625vw" viewBox="0 0 24 24" fill="none"><path stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/></svg>
+                                </span>
                             </div>
                         </a>
                     </div>

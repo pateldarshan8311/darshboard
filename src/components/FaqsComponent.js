@@ -67,7 +67,7 @@ const StacksComponent = ({ stackData }) => {
     };
 
     return (
-        <div className="comm_inner d_flex flex_column no_gap">
+        <div className="comm_inner d_flex flex_column no_gap faq_main_sec">
             {/* Top Section */}
             <div className="stack_titlebar arrows_topbar d_flex flex_column align_center">
                 <div className="stack_top_head d_flex justify_center align_center">
