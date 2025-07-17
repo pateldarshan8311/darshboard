@@ -13,7 +13,7 @@ const ProjectsComponent = ({ projectsData }) => {
 
     return (
         <div className="comm_inner d_flex flex_column no_gap ">
-            <div className="d_flex align_center justify_between gap_10 projects_topbar">
+            <div className="d_flex  justify_between gap_10 projects_topbar">
 
                 <div className="stack_titlebar d_flex flex_column ">
                     <div className="stack_top_head d_flex  align_center">

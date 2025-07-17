@@ -21,7 +21,7 @@ const WorkExperience = ({ data }) => {
         height: '41vh', // Double the height to show 2 slides
         perPage: 2,       // Show 2 slides
         perMove: 1,
-        gap: '1rem', // Add some gap between slides
+        gap: '1.0416666666666665vw', // Add some gap between slides
         autoHeight: true,
         autoplay: true,
         interval: 3000,

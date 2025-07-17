@@ -32,7 +32,7 @@ a:hover .btn_txt {
     flex-wrap: nowrap;
     gap: 0.6510416666666667vw;
     overflow: hidden;
-    padding: 1.171875vw;
+    padding: 1.5625vw;
     width: 100%;
 }
 
@@ -45,11 +45,11 @@ a:hover .btn_txt {
 }
 
 .profile_img {
-    border-radius: 1.3020833333333335vw;
-    box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8), 0 0 0 0.26041666666666663vw #242424;
-    max-width: 11.067708333333332vw;
-    overflow: hidden;
-    position: relative;
+	border-radius: 1.3020833333333335vw;
+	box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8), 0 0 0 0.26041666666666663vw #242424;
+	max-width: 10.416666666666668vw;
+	overflow: hidden;
+	position: relative;
 }
 
 .profile_box {
@@ -65,7 +65,7 @@ a:hover .btn_txt {
 .profile_content {
     width: 100%;
     gap: 0.5208333333333333vw;
-    max-width: calc(100% - 1.3020833333333335vw - 11.067708333333332vw);
+    max-width: calc(100% - 1.3020833333333335vw - 10.416666666666668vw);
 }
 
 .profile_content h1 {
@@ -106,7 +106,7 @@ a:hover .btn_txt {
 
 
 .stat_item {
-	padding: 1.0416666666666665vw;
+	padding:1.5625vw 1.0416666666666665vw;
 	gap: 0.6510416666666667vw;
 	background-color: var(--global-palette4);
 	border-radius: 1.0416666666666665vw;
@@ -924,6 +924,7 @@ a:hover .btn_txt {
 
 .projects_cols .projects_button_wrapper {
     padding-right: 1.3020833333333335vw;
+    padding-top: 1.3020833333333335vw;
 }
 
 .projects_topbar {
@@ -969,11 +970,17 @@ a:hover .btn_txt {
     font-size: var(--f16);
     color: var(--global-palette7);
 }
-
+.view_all_btn:hover svg, 
 .projects_list .stack_content:hover svg {
     transform: rotate(45deg);
 }
 
 .projects_list .stack_content:hover * {
     stroke: var(--global-palette2);
+}
+.my_client_list_row h1 {
+	font-size: 3.2552083333333335vw;
+}
+.projects_cols .stack_titlebar {
+	 max-width: calc(100% - 16.276041666666664vw);
 }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const delayStep = 0.2;
+const delayStep = 0.1;
 
-const ServiceCardsComponent = ({ serviceCards }) => {
+const ServiceCardsComponent = ({ serviceCards, baseDelay = 0 }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   if (!Array.isArray(serviceCards)) return null;
@@ -15,9 +15,8 @@ const ServiceCardsComponent = ({ serviceCards }) => {
           key={index}
           className="single_box_design comm_box_design p_0 comm_border_after d_flex flex_column"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: index * delayStep }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, delay: baseDelay + index * delayStep }}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -57,7 +56,6 @@ const ServiceCardsComponent = ({ serviceCards }) => {
                     Startes From <strong>${card.service_starting_price}</strong>
                   </p>
                 </div>
-
               </motion.div>
               <div className='small_shadow_box_footer w_100'>
                 <a href={card.button_url} className="d_mail_box justify_center d_flex w_100">
