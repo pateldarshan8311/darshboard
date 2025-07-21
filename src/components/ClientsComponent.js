@@ -1,22 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import React, { useEffect, useRef } from "react";
 
-// ⏱ Speed should be fixed, not state-dependent
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-const scrollSpeed = vw < 1536 ? 0.3 : vw < 1920 ? 0.3 : 0.75;
+const scrollSpeedLTR = 30; // pixels per second
+const scrollSpeedRTL = 30; // pixels per second
 
 const ClientsComponent = ({ clientData }) => {
-    const [startScroll, setStartScroll] = useState(false);
+    const ltrRef = useRef(null);
+    const rtlRef = useRef(null);
+    const ltrContainerRef = useRef(null);
+    const rtlContainerRef = useRef(null);
 
     useEffect(() => {
-        // ⏳ Delay autoScroll start to let layout settle
-        const timeout = setTimeout(() => {
-            setStartScroll(true);
-        }, 500); // 500ms delay — adjust if needed
+        let ltrX = 0;
+        let rtlX = 0;
+        let lastTime = performance.now();
 
-        return () => clearTimeout(timeout);
+        const animate = (time) => {
+            const delta = (time - lastTime) / 1000; // seconds
+            lastTime = time;
+
+            if (ltrRef.current && ltrContainerRef.current) {
+                const width = ltrRef.current.scrollWidth / 2;
+                ltrX -= scrollSpeedLTR * delta;
+                if (Math.abs(ltrX) >= width) ltrX = 0;
+                ltrRef.current.style.transform = `translateX(${ltrX}px)`;
+            }
+
+            if (rtlRef.current && rtlContainerRef.current) {
+                const width = rtlRef.current.scrollWidth / 2;
+                rtlX += scrollSpeedRTL * delta;
+                if (rtlX >= width) rtlX = 0;
+                rtlRef.current.style.transform = `translateX(${rtlX}px)`;
+            }
+
+            requestAnimationFrame(animate);
+        };
+
+        const frame = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(frame);
     }, []);
 
     if (!clientData) return null;
@@ -48,73 +68,41 @@ const ClientsComponent = ({ clientData }) => {
                 </div>
             </div>
 
-            {/* Splide Left-to-Right Slider */}
-            <Splide
-                className="ltr_list"
-                options={{
-                    type: "loop",
-                    arrows: false,
-                    pagination: false,
-                    drag: false,
-                    autoWidth: true,
-                    gap: '0.6510416666666667vw',
-                    direction: 'ltr',
-                    autoScroll: {
-                        speed: startScroll ? scrollSpeed : 0,
-                        pauseOnHover: false,
-                        pauseOnFocus: false,
-                        pauseOnVisibilityChange: false,
-                    },
-                }}
-                extensions={{ AutoScroll }}
-            >
-                {client_list?.map((item, index) => (
-                    <SplideSlide key={`normal-${index}`}>
-                        {item.client_logo?.url && (
-                            <img
-                                src={item.client_logo.url}
-                                alt={item.client_logo.alt || "Client Logo"}
-                                className="client_logo"
-                                loading="lazy"
-                            />
-                        )}
-                    </SplideSlide>
-                ))}
-            </Splide>
+            {/* LTR */}
+            <div className="ltr_list overflow_hidden comm_logo_slider" ref={ltrContainerRef}>
+                <div className="scroll_track d_flex" ref={ltrRef}>
+                    {[...client_list, ...client_list]?.map((item, index) => (
+                        <div className="scroll_item" key={`ltr-${index}`}>
+                            {item.client_logo?.url && (
+                                <img
+                                    src={item.client_logo.url}
+                                    alt={item.client_logo.alt || "Client Logo"}
+                                    className="client_logo"
+                                    loading="lazy"
+                                />
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
 
-            {/* Splide Right-to-Left Slider */}
-            <Splide
-                className="rtl_list"
-                options={{
-                    type: "loop",
-                    arrows: false,
-                    pagination: false,
-                    drag: false,
-                    autoWidth: true,
-                    gap: '0.6510416666666667vw',
-                    direction: 'rtl',
-                    autoScroll: {
-                        speed: startScroll ? scrollSpeed : 0,
-                        pauseOnHover: false,
-                        pauseOnFocus: false,
-                        pauseOnVisibilityChange: false,
-                    },
-                }}
-                extensions={{ AutoScroll }}
-            >
-                {client_list?.slice().reverse().map((item, index) => (
-                    <SplideSlide key={`reverse-${index}`}>
-                        {item.client_logo?.url && (
-                            <img
-                                src={item.client_logo.url}
-                                alt={item.client_logo.alt || "Client Logo"}
-                                className="client_logo"
-                                loading="lazy"
-                            />
-                        )}
-                    </SplideSlide>
-                ))}
-            </Splide>
+            {/* RTL */}
+            <div className="rtl_list overflow_hidden comm_logo_slider" ref={rtlContainerRef}>
+                <div className="scroll_track d_flex" ref={rtlRef}>
+                    {[...client_list.slice().reverse(), ...client_list.slice().reverse()]?.map((item, index) => (
+                        <div className="scroll_item" key={`rtl-${index}`}>
+                            {item.client_logo?.url && (
+                                <img
+                                    src={item.client_logo.url}
+                                    alt={item.client_logo.alt || "Client Logo"}
+                                    className="client_logo"
+                                    loading="lazy"
+                                />
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };
