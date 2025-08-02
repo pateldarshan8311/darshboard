@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 import Header from './components/Header';
 import Page from './components/Page';
@@ -25,17 +26,17 @@ function App() {
             Authorization: `Bearer ${JWT_TOKEN}`
           }
         };
-const [siteRes, pagesRes] = await Promise.all([
-  axios.get('https://darshboard.com/wp-json/custom/v1/site-info', config),
-  axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
-]);
+        const [siteRes, pagesRes] = await Promise.all([
+          axios.get('https://darshboard.com/wp-json/custom/v1/site-info', config),
+          axios.get('https://darshboard.com/wp-json/wp/v2/pages?per_page=100', config)
+        ]);
 
-      setSiteData({
-  logo: siteRes.data.logo || '',
-  favicon: siteRes.data.favicon || '',
-  main_menu: Array.isArray(siteRes.data.main_menu) ? siteRes.data.main_menu : [],
-  pages: Array.isArray(pagesRes.data) ? pagesRes.data : []
-});
+        setSiteData({
+          logo: siteRes.data.logo || '',
+          favicon: siteRes.data.favicon || '',
+          main_menu: Array.isArray(siteRes.data.main_menu) ? siteRes.data.main_menu : [],
+          pages: Array.isArray(pagesRes.data) ? pagesRes.data : []
+        });
       } catch (err) {
         console.error('❌ App init error:', err);
       } finally {
@@ -54,6 +55,68 @@ const [siteRes, pagesRes] = await Promise.all([
 
   return (
     <Router>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                "@id": "https://darshboard.com/#website",
+                "url": "https://darshboard.com/",
+                "name": "Darshboard",
+                "description": "Darshan Patel – Frontend Developer with 4+ years of experience building responsive React.js & WordPress websites.",
+                "publisher": {
+                  "@id": "https://darshboard.com/#organization"
+                }
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://darshboard.com/#organization",
+                "name": "Darshboard",
+                "url": "https://darshboard.com/",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://darshboard.com/wp-content/uploads/2025/06/darshboard_logo.svg"
+                },
+                "sameAs": [
+                  "https://www.linkedin.com/in/pateldarshan8311",
+                  "https://github.com/pateldarshan8311",
+                  "https://www.youtube.com/@darshboard",
+                  "https://www.behance.net/pateldarshan8311",
+                  "https://dribbble.com/pateldarshan8311",
+                  "https://stackoverflow.com/users/7642929/pateldarshan8311",
+                  "https://www.quora.com/profile/Darshan-Patel-2422"
+                ]
+              },
+              {
+                "@type": "Person",
+                "@id": "https://darshboard.com/#person",
+                "name": "Darshan Patel",
+                "url": "https://darshboard.com/",
+                "image": {
+                  "@type": "ImageObject",
+                  "url": "https://darshboard.com/wp-content/uploads/2025/06/darshboard_logo.svg"
+                },
+                "jobTitle": "Frontend Developer",
+                "worksFor": {
+                  "@id": "https://darshboard.com/#organization"
+                },
+                "sameAs": [
+                  "https://www.linkedin.com/in/pateldarshan8311",
+                  "https://github.com/pateldarshan8311",
+                  "https://www.youtube.com/@darshboard",
+                  "https://www.behance.net/pateldarshan8311",
+                  "https://dribbble.com/pateldarshan8311",
+                  "https://stackoverflow.com/users/7642929/pateldarshan8311",
+                  "https://www.quora.com/profile/Darshan-Patel-2422"
+                ]
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
+
       <Header
         menuItems={siteData.main_menu}
         loading={loading}
