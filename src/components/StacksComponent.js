@@ -21,7 +21,7 @@ const StacksComponent = ({ stackData }) => {
                     {stack_top_text && <p className="stack_top_para mb_0">{stack_top_text}</p>}
                 </div>
                 <div className="stack_top_body">
-                    {stack_top_title && <h4>{stack_top_title}</h4>}
+                    {stack_top_title && <h2 className="h4">{stack_top_title}</h2>}
                 </div>
             </div>
             <div className="stack_icon_list comm_inner d_flex flex_wrap">
