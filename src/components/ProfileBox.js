@@ -63,7 +63,7 @@ const ProfileBox = ({ acfData }) => {
       <div className='about_data comm_border_after d_flex flex_column align_start'>
         <div className='d_flex w_100 align_center justify_between gap_10'>
           {acfData.about_me_title && (
-            <h6 className='mb_0'>{acfData.about_me_title}</h6>
+            <h3 className='mb_0 h6'>{acfData.about_me_title}</h3>
           )}
           {/* Available For Work */}
           {acfData.available_for_work && (

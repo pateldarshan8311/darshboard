@@ -343,18 +343,21 @@ svg * {
 
 /* START COMMON CSS */
 
-body h1 {
+body h1,
+body .h1 {
   font-size: var(--f45);
   line-height: 1.5;
   color: var(--global-palette3);
 }
 
-body h2 {
+body h2,
+body .h2 {
   font-size: var(--f35);
   line-height: 131.45%;
 }
 
-body h3 {
+body h3,
+body .h3 {
   font-size: var(--f28);
   line-height: 132.12%;
 }
@@ -371,15 +374,18 @@ body hr {
   border-bottom: 0.065vw solid var(--global-palette3);
 }
 
-body h4 {
+body h4,
+body .h4 {
   font-size: var(--f24);
 }
 
-body h5 {
+body h5,
+body .h5 {
   font-size: var(--f20);
 }
 
-body h6 {
+body h6,
+body .h6 {
   font-size: var(--f18);
 }
 

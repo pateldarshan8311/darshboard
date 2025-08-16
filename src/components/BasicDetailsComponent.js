@@ -119,7 +119,7 @@ const BasicDetailsComponent = ({ basicDetails }) => {
                                                 rel="noopener noreferrer"
                                                 className="award_link"
                                             >
-                                                {award.award_link}
+                                           Udemy
                                             </a>
                                         )}
                                     </div>
