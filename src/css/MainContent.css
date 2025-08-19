@@ -32,7 +32,7 @@ a:hover .btn_txt {
     flex-wrap: nowrap;
     gap: 0.6510416666666667vw;
     overflow: hidden;
-    padding: 1.5625vw;
+    padding: 1.0416666666666665vw;
     width: 100%;
 }
 
@@ -417,7 +417,7 @@ a:hover .btn_txt {
 }
 
 .comapny_info_item {
-    width: 38%;
+    width: 35%;
     flex: 0 0 auto;
     flex-flow: column;
 }
@@ -431,7 +431,7 @@ a:hover .btn_txt {
     bottom: 0;
     background: linear-gradient(180deg, rgba(56, 56, 56, 0) 0%, rgb(56, 56, 56) 36.03603603603604%, rgba(56, 56, 56, 0) 100%);
     flex: 0 0 auto;
-    left: calc(54.8% - 0.06510416666666666vw);
+    left: calc(57.5% - 0.06510416666666666vw);
     position: absolute;
     top: 0;
     width: 0.13020833333333331vw;
