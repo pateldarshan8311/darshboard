@@ -123,7 +123,7 @@ function App() {
         logo={siteData.logo}
         favicon={siteData.favicon}
       />
-
+    <main role="main" id="main-content">
       <Routes>
         {aboutPage && (
           <>
@@ -142,6 +142,8 @@ function App() {
             />
           ))}
       </Routes>
+      </main>
+
     </Router>
   );
 }
