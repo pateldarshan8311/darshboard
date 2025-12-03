@@ -33,7 +33,7 @@ const StatsComponent = ({ statsData }) => {
                             className="arrow_link btn_link d_inline_flex align_center"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Profile Link">
+                            aria-label="Profile Link"
                         >
                             {item.arrow_icon && (
                                 <span
