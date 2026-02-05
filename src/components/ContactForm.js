@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { loadRecaptcha } from "../utils/loadRecaptcha";
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -65,7 +67,16 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="stack_icon_list">
-        <form className="contact-form flex_column d_flex" onSubmit={handleSubmit}>
+   <form
+  className="contact-form flex_column d_flex"
+  onFocus={loadRecaptcha}
+  onMouseEnter={loadRecaptcha}
+  onSubmit={(e) => {
+    loadRecaptcha();
+    handleSubmit(e);
+  }}
+>
+
           <input
             type="text"
             className="d_mail_box"
