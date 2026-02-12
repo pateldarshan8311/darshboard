@@ -45,11 +45,11 @@ a:hover .btn_txt {
 }
 
 .profile_img {
-	border-radius: 1.3020833333333335vw;
-	box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8), 0 0 0 0.26041666666666663vw #242424;
-	max-width: 10.416666666666668vw;
-	overflow: hidden;
-	position: relative;
+    border-radius: 1.3020833333333335vw;
+    box-shadow: 0 0 0 0.06510416666666666vw var(--global-palette8), 0 0 0 0.26041666666666663vw #242424;
+    max-width: 10.416666666666668vw;
+    overflow: hidden;
+    position: relative;
 }
 
 .profile_box {
@@ -106,11 +106,11 @@ a:hover .btn_txt {
 
 
 .stat_item {
-	padding:1.5625vw 1.0416666666666665vw;
-	gap: 0.6510416666666667vw;
-	background-color: var(--global-palette4);
-	border-radius: 1.0416666666666665vw;
-	box-shadow: 0 0 0 0.13020833333333331vw var(--global-palette5), inset 0.06510416666666666vw 0.13020833333333331vw 0.13020833333333331vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e, 0.06510416666666666vw 0.06510416666666666vw 0.390625vw 0.13020833333333331vw #0f0f0f80;
+    padding: 1.5625vw 1.0416666666666665vw;
+    gap: 0.6510416666666667vw;
+    background-color: var(--global-palette4);
+    border-radius: 1.0416666666666665vw;
+    box-shadow: 0 0 0 0.13020833333333331vw var(--global-palette5), inset 0.06510416666666666vw 0.13020833333333331vw 0.13020833333333331vw #3339, inset 0 -0.13020833333333331vw 0.06510416666666666vw #1e1e1e, 0.06510416666666666vw 0.06510416666666666vw 0.390625vw 0.13020833333333331vw #0f0f0f80;
 }
 
 .comm_inner {
@@ -647,7 +647,7 @@ a:hover .btn_txt {
 }
 
 .vertical-faq-slider {
-    padding:  1.0416666666666665vw;
+    padding: 1.0416666666666665vw;
 }
 
 .vertical-faq-slider .stack_item {
@@ -750,6 +750,7 @@ a:hover .btn_txt {
 .avatars> :not(:first-child) {
     margin-left: -0.6510416666666667vw;
 }
+
 .benefit_percentage_data {
     color: var(--global-palette6);
     font-weight: 700;
@@ -831,28 +832,28 @@ a:hover .btn_txt {
 }
 
 .my_client_list_row .stack_titlebar {
-	gap: 0;
-	pointer-events: none;
-	position: absolute;
-	padding: 0 2.604166666666667vw 0 1.3020833333333335vw;
-	max-width: 19.010416666666664vw;
-	height: 100%;
+    gap: 0;
+    pointer-events: none;
+    position: absolute;
+    padding: 0 2.604166666666667vw 0 1.3020833333333335vw;
+    max-width: 19.010416666666664vw;
+    height: 100%;
 }
 
 .my_client_list_row .stack_titlebar::before {
-	content: "";
-	position: absolute;
-	left: -0.13020833333333331vw;
-	top: -0.06510416666666666vw;
-	background: url("https://darshboard.com/wp-content/uploads/2025/07/shape.svg") no-repeat;
-	width: auto;
-	height: auto;
-	background-size: 100% 100%;
-	max-width: 19.010416666666664vw;
-	z-index: 1;
-	pointer-events: none;
-	right: -1px;
-	bottom: -0.1953125vw;
+    content: "";
+    position: absolute;
+    left: -0.13020833333333331vw;
+    top: -0.06510416666666666vw;
+    background: url("https://darshboard.com/wp-content/uploads/2025/07/shape.svg") no-repeat;
+    width: auto;
+    height: auto;
+    background-size: 100% 100%;
+    max-width: 19.010416666666664vw;
+    z-index: 1;
+    pointer-events: none;
+    right: -1px;
+    bottom: -0.1953125vw;
 }
 
 .work_cards .comm_inner {
@@ -870,11 +871,11 @@ a:hover .btn_txt {
 .my_client_list_row .stack_titlebar>div {
     z-index: 1;
     pointer-events: all;
-    height:6.510416666666667vw;
+    height: 6.510416666666667vw;
 }
 
 .my_client_list_row .splide--loop {
-    height:6.510416666666667vw;
+    height: 6.510416666666667vw;
     box-shadow: inset 0px -0.13020833333333331vw 0.06510416666666666vw 0px var(--global-palette5);
     display: flex;
     align-items: center;
@@ -899,7 +900,8 @@ a:hover .btn_txt {
 .services_card_main .single_box_design {
     max-width: calc(33.33% - 0.866vw);
 }
-.faq_main_sec  .vertical-faq-slider::after,
+
+.faq_main_sec .vertical-faq-slider::after,
 .success_stories_section .vertical-faq-slider::after,
 .verticle-slider::before {
     content: "";
@@ -909,7 +911,7 @@ a:hover .btn_txt {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height:5.859375vw;
+    height: 5.859375vw;
     z-index: 2;
     pointer-events: none;
 }
@@ -970,7 +972,8 @@ a:hover .btn_txt {
     font-size: var(--f16);
     color: var(--global-palette7);
 }
-.view_all_btn:hover svg, 
+
+.view_all_btn:hover svg,
 .projects_list .stack_content:hover svg {
     transform: rotate(45deg);
 }
@@ -978,50 +981,154 @@ a:hover .btn_txt {
 .projects_list .stack_content:hover * {
     stroke: var(--global-palette2);
 }
+
 .my_client_list_row h1 {
-	font-size: 3.2552083333333335vw;
+    font-size: 3.2552083333333335vw;
 }
+
 .projects_cols .stack_titlebar {
-	 max-width: calc(100% - 16.276041666666664vw);
+    max-width: calc(100% - 16.276041666666664vw);
 }
 
 
 .ltr_list,
 .rtl_list {
-  width: 100%;
-  overflow: hidden;
-  height: 5.859375vw;
-  position: relative;
-  align-content: center;
+    width: 100%;
+    overflow: hidden;
+    height: 5.859375vw;
+    position: relative;
+    align-content: center;
 }
 
 .scroll_track {
-  display: flex;
-  white-space: nowrap;
-  will-change: transform;
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
 }
 
 .scroll_item {
-  flex: 0 0 auto;
-  margin-right: 0.6510416666666667vw;
+    flex: 0 0 auto;
+    margin-right: 0.6510416666666667vw;
 }
 
 .rtl_list .scroll_track {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
 }
-.comm_logo_slider::after{
-	content: "";
-	background: linear-gradient(80deg, rgba(84, 84, 84, 0) 0%, rgb(20, 20, 20) 90.54054054054053%);
-	left: auto;
-	right: 0;
-	position: absolute;
-	bottom: 0;
-	width: 8.594vw;
-	height: 100%;
-	z-index: 3;
-	pointer-events: none;
+
+.comm_logo_slider::after {
+    content: "";
+    background: linear-gradient(80deg, rgba(84, 84, 84, 0) 0%, rgb(20, 20, 20) 90.54054054054053%);
+    left: auto;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    width: 8.594vw;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
 }
 
 #splide06 {
-	height: 100%;
+    height: 100%;
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .comm_box_design {
+        padding: 16px;
+        border-radius: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+        max-width: 100%;
+        box-shadow: 0 0 0 4px var(--global-palette9), 0 0 5px 10px #0d0d0db3;
+    }
+
+    .comm_inner {
+        gap: 16px;
+        flex: 100%;
+        width: 100%;
+    }
+
+    .profile_img {
+        border-radius: 14px;
+        box-shadow: 0 0 0 1px var(--global-palette8), 0 0 0 4px #242424;
+        max-width: 110px;
+    }
+
+    .profile_box {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .profile_content {
+        width: 100%;
+        gap: 10px;
+        max-width: calc(100% - 110px - 10px);
+    }
+
+    .services_card_grid .services_card_main {
+        max-width: 100%;
+    }
+
+    .stack_icon_list {
+        box-shadow: inset 0 1px #1e1e1e;
+        padding: 16px;
+        flex-direction: column;
+    }
+
+    .services_card_main .single_box_design {
+        max-width: 100%;
+    }
+
+    .comm_box_grid {
+        gap: 16px;
+    }
+
+    .arrow_icon svg,
+    .btn_icon svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+    }
+
+    .counter_title_icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .counter_item_btm {
+        gap: 6px;
+        padding: 12px;
+        box-shadow: inset 0 1px #1e1e1e;
+    }
+
+    .stack_top_para,
+    .counter_title,
+    .social_label,
+    .comm_work_txt {
+        font-size: 14px;
+    }
+
+    .counter_icon,
+    .counter_number {
+        font-size: 40px;
+    }
+
+    .basic_section {
+        width: 100%;
+    }
+
+    .industries_served_list li,
+    .languages_list .comm_box_txt {
+        flex: unset;
+    }
+
+    .comm_box_txt {
+        font-size: 14px;
+        padding: 8px 18px;
+        border-radius: 100px;
+        box-shadow: 0 0 0 2px var(--global-palette5), 0 2px 5px 1px #0f0f0f80, inset 1px 2px 4px #3339, inset 0 -2px 1px #1e1e1e;
+    }
 }
