@@ -110,7 +110,7 @@ const BasicDetailsComponent = ({ basicDetails }) => {
                                         style={{ display: "none" }}
                                     >
                                         {award.award_text && (
-                                            <div className="award_text">{award.award_text}</div>
+                                            <div className="award_text h5">{award.award_text}</div>
                                         )}
                                         {award.award_link && (
                                             <a

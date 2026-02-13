@@ -97,6 +97,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
     .d_hamburger_menu {
         display: block;
         border-radius: 8px;
@@ -106,6 +107,7 @@
         cursor: pointer;
         line-height: 0;
         margin-left: auto;
+        background: rgb(25, 25, 25);
     }
 
     .site_header .d_mail_box span {
@@ -118,9 +120,6 @@
         visibility: hidden;
         transition: all 0.4s linear;
     }
-
-
-
     .d_logo,
     .d_logo a {
         max-width: 140px;
@@ -136,7 +135,7 @@
         min-height: 49px;
         align-items: stretch;
         gap: 15px;
-        padding-top: 20px;
+        padding-block: 20px;
     }
 
     .d_main_menu {

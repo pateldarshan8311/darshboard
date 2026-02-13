@@ -20,6 +20,48 @@ const ProfileBox = ({ acfData }) => {
 
           {/* Email */}
           {acfData?.email && (
+            <div className='comm_email line_none no_mobile'>
+              <a
+                href={`mailto:${encodeURIComponent(acfData.email)}`}
+                className="btn_link d_inline_flex align_center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {acfData?.email_icon && (
+                  <span
+                    className="icon btn_icon line_none"
+                    dangerouslySetInnerHTML={{ __html: acfData.email_icon }}
+                  />
+                )}
+                <span className='btn_txt'>{acfData.email}</span>
+              </a>
+            </div>
+          )}
+
+          {/* Birthplace - Changed from p to div */}
+          {acfData.birthplace && (
+            <div className='line_none mb_0 no_mobile'>
+              <a
+                href={acfData.location_url || "#"}
+                className="btn_link d_inline_flex align_center"
+                onClick={(e) => e.stopPropagation()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {acfData?.location_icon && (
+                  <span
+                    className="icon btn_icon line_none"
+                    dangerouslySetInnerHTML={{ __html: acfData.location_icon }}
+                  />
+                )}
+                <span className='btn_txt'>{acfData.birthplace}</span>
+              </a>
+            </div>
+          )}
+
+        </div>
+        <div className='no_desktop profile_info'>
+            {/* Email */}
+          {acfData?.email && (
             <div className='comm_email line_none'>
               <a
                 href={`mailto:${encodeURIComponent(acfData.email)}`}
@@ -57,7 +99,6 @@ const ProfileBox = ({ acfData }) => {
               </a>
             </div>
           )}
-
         </div>
       </div>
       <div className='about_data comm_border_after d_flex flex_column align_start'>
