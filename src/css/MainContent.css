@@ -1032,11 +1032,13 @@ a:hover .btn_txt {
     height: 100%;
 }
 
-
+.no_desktop {
+    display: none;
+}
 
 @media screen and (max-width: 767px) {
     .comm_box_design {
-        padding: 16px;
+        padding: 10px;
         border-radius: 20px;
         gap: 10px;
         flex-wrap: wrap;
@@ -1045,8 +1047,8 @@ a:hover .btn_txt {
     }
 
     .comm_inner {
-        gap: 16px;
-        flex: 100%;
+        gap: 10px;
+        flex: 1;
         width: 100%;
     }
 
@@ -1054,17 +1056,25 @@ a:hover .btn_txt {
         border-radius: 14px;
         box-shadow: 0 0 0 1px var(--global-palette8), 0 0 0 4px #242424;
         max-width: 110px;
+        margin-top: 7px;
     }
 
     .profile_box {
-        gap: 10px;
+        gap: 12px 16px;
         margin-bottom: 10px;
+    }
+
+    .profile_box .profile_info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        width: 100%;
     }
 
     .profile_content {
         width: 100%;
         gap: 10px;
-        max-width: calc(100% - 110px - 10px);
+        max-width: calc(100% - 110px - 16px);
     }
 
     .services_card_grid .services_card_main {
@@ -1073,8 +1083,8 @@ a:hover .btn_txt {
 
     .stack_icon_list {
         box-shadow: inset 0 1px #1e1e1e;
-        padding: 16px;
-        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
     }
 
     .services_card_main .single_box_design {
@@ -1100,8 +1110,8 @@ a:hover .btn_txt {
 
     .counter_item_btm {
         gap: 6px;
-        padding: 12px;
-        box-shadow: inset 0 1px #1e1e1e;
+        padding: 12px 10px;
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
     }
 
     .stack_top_para,
@@ -1115,6 +1125,20 @@ a:hover .btn_txt {
     .counter_number {
         font-size: 40px;
     }
+
+    .about_data {
+        border-radius: 14px;
+        box-shadow: 0 0 0 2px var(--global-palette5), inset 1px 2px 2px #3339, inset 0 -2px 1px #1e1e1e, 1px 1px 6px 2px #0f0f0f80;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .stack_titlebar,
+    .stack_top_head,
+    .btn_link {
+        gap: 6px;
+    }
+
 
     .basic_section {
         width: 100%;
@@ -1130,5 +1154,182 @@ a:hover .btn_txt {
         padding: 8px 18px;
         border-radius: 100px;
         box-shadow: 0 0 0 2px var(--global-palette5), 0 2px 5px 1px #0f0f0f80, inset 1px 2px 4px #3339, inset 0 -2px 1px #1e1e1e;
+    }
+
+    .home_counters {
+        order: -1;
+        gap: 10px;
+        flex-direction: row;
+    }
+
+    .counter_item {
+        border-radius: 16px;
+        box-shadow: 0 0 0 2px var(--global-palette5), inset 1px 2px 2px #3339, inset 0 -2px 1px #1e1e1e, 1px 1px 6px 2px #0f0f0f80;
+    }
+
+    .counter_item_top {
+        padding: 10px;
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset;
+    }
+
+    .stat_item {
+        padding: 12px;
+        gap: 10px;
+        border-radius: 14px;
+        box-shadow: 0 0 0 2px var(--global-palette5), inset 1px 2px 2px #3339, inset 0 -2px 1px #1e1e1e, 1px 1px 6px 2px #0f0f0f80;
+    }
+
+    .stat_item .btn_icon svg {
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+    }
+
+    .social_followers {
+        gap: 4px;
+    }
+
+    .languages_list,
+    .stack_content,
+    .social_content {
+        gap: 10px;
+    }
+
+    .home_followers {
+        gap: 10px;
+    }
+
+    .comm_btn {
+        border-radius: 50px;
+        box-shadow: 0px 0px 0px 2px #0f0f0f, inset 1px 1px 3px 0px rgb(43, 43, 43);
+        padding: 10px;
+    }
+
+    .top_icon svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+    }
+
+    .stack_item {
+        flex: 100%;
+    }
+
+    .comm_info {
+        gap: 8px;
+        padding: 16px;
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
+    }
+
+    .stack_titlebar {
+        padding: 16px;
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset;
+    }
+
+    .award_btn_wrapper,
+    .availability_range {
+        gap: 4px;
+    }
+
+    .award_text {
+        margin-bottom: 6px;
+    }
+
+    .languages_list {
+        justify-content: center;
+    }
+
+    .awards_list_row {
+        padding-top: 8px;
+    }
+
+    .award_button {
+        width: 14px;
+        height: 14px;
+        box-shadow: inset 0 1px 3px 0 rgba(56, 56, 56, 1), 0 0 0 1px rgb(15, 15, 15);
+    }
+
+    .expriance_info_item_topbar {
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset;
+        gap: 5px;
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .stack_label.comm_work_txt.job_profile {
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset, rgb(30, 30, 30) 0px 1px 0px 0px inset;
+        gap: 5px;
+        padding: 12px;
+    }
+
+    .expriance_info_item .job_profile p {
+        text-align: left;
+    }
+
+    .expriance_info_item {
+        border-radius: 16px;
+        box-shadow: rgba(15, 15, 15, 0.5) 0px 2px 6.9px 1px, rgba(51, 51, 51, 0.6) 2px 4px 2px 0px inset, rgb(30, 30, 30) 0px -2px 1px 0px inset;
+    }
+
+    .work_experience_slider .slide_item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 0px 0px 40px;
+    }
+
+    .dot_container {
+        border-radius: 100px;
+        gap: 10px;
+        padding: 6px;
+    }
+
+    .comapny_info_item {
+        order: -1;
+    }
+
+    .dot-box {
+        gap: 10px;
+        width: min-content;
+        position: absolute;
+        left: 6px;
+        top: 44px;
+    }
+
+    .verticle-slider::after {
+        left: 21px;
+        width: 2px;
+    }
+
+    .dot {
+        border-radius: 100px;
+        width: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0px 0px 0px 2px rgb(10, 10, 10), 0px 2px 5px 1px rgba(10, 10, 10, 0.5), inset 3px 3px 4px 0px rgb(30, 30, 30), inset -2px -2px 3px 0px rgb(20, 20, 20);
+    }
+
+    .d_mail_box:hover {
+        box-shadow: 0px 0px 0px 2px rgb(10, 10, 10), 0px 2px 5px 1px rgba(10, 10, 10, 0.5), inset 2px 4px 3px 0px rgb(38, 38, 38), inset -2px -3px 3px 0px rgb(28, 28, 28);
+    }
+
+    .contact-form {
+        gap: 10px;
+    }
+
+    .comm-btn {
+        border-radius: 10px;
+        gap: 6px;
+        padding: 16px;
+        box-shadow: inset 0px 2px 2px 0px rgb(233, 75, 47), inset 0px -1px 2px 1px rgb(185, 44, 19), 0px 0px 0px 2px rgb(15, 15, 15);
+    }
+
+    .comm-btn:hover {
+        box-shadow: inset 1px 2px 3px 0px rgba(31, 31, 31, 1), inset -1px -2px 3px 0px rgba(20, 20, 20, 1), 0px 0px 0px 2px rgb(15, 15, 15);
     }
 }

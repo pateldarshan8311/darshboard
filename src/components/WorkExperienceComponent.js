@@ -36,7 +36,7 @@ const WorkExperience = ({ data }) => {
         wheelMinThreshold: 10, // Minimum wheel delta
         breakpoints: {
           768: {
-            height: '60vh', // Adjust for smaller screens
+            height: '300px', // Adjust for smaller screens
             perPage: 1 // Show only 1 slide on mobile
           },
         },
@@ -53,7 +53,7 @@ const WorkExperience = ({ data }) => {
   if (!data) return null;
 
   return (
-    <div className="comm_inner d_flex flex_column no_gap">
+    <div className="comm_inner d_flex flex_column no_gap work_experience_slider">
       {/* Topbar section */}
       {experience_topbar && (
         <div className="stack_titlebar d_flex flex_column align_center">

@@ -647,8 +647,6 @@ body .h6 {
     --f35: 24px;
     --f28: 20px;
     --f24: 19px;
-    --f20: 16px;
-    --f18: 15px;
     --f16: 14px;
     --space_60: 50px;
   }
@@ -662,8 +660,6 @@ body .h6 {
     --f35: 22px;
     --f28: 20px;
     --f24: 18px;
-    --f20: 16px;
-    --f18: 15px;
     --space_60: 40px;
   }
 
@@ -676,6 +672,13 @@ body .h6 {
     font-size: 14px;
   }
 
+  body h1,
+  body .h1 {
+    line-height: 1.4;
+  }
+  .no_mobile{
+    display: none !important;
+  }
   .pulse_circle {
     width: 8px;
     height: 8px;
@@ -684,22 +687,10 @@ body .h6 {
   .comm_work {
     border-radius: 100px;
     box-shadow: inset 2px 4px 2px #3339, inset 0 -2px 1px #1e1e1e;
-    gap: 6px;
-    padding: 7px 16px 6px 10px;
-  }
-
-  .about_data {
-    border-radius: 14px;
-    box-shadow: 0 0 0 2px var(--global-palette5), inset 1px 2px 2px #3339, inset 0 -2px 1px #1e1e1e, 1px 1px 6px 2px #0f0f0f80;
     gap: 10px;
-    padding: 16px;
+    padding: 6px 14px 6px 16px;
   }
 
-  .stack_titlebar,
-  .stack_top_head,
-  .btn_link {
-    gap: 6px;
-  }
 
   .page-content {
     padding: 20px;
@@ -709,9 +700,30 @@ body .h6 {
     width: 100%;
   }
 
-   body {
-        padding-top: 78px;
+  body {
+    padding-top: 78px;
+  }
+
+
+  @keyframes animate-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(109, 211, 61, 0.7), 0 0 0 0 rgba(109, 211, 61, 0.7);
     }
+
+    40% {
+      box-shadow: 0 0 0 8px rgba(109, 211, 61, 0.0), 0 0 0 0 rgba(109, 211, 61, 0.7);
+    }
+
+    80% {
+      box-shadow: 0 0 0 8px rgba(109, 211, 61, 0.0), 0 0 0 5px rgba(109, 211, 61, 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(109, 211, 61, 0.0), 0 0 0 5px rgba(109, 211, 61, 0);
+    }
+
+  }
+
 }
 
 /* END COMMON CSS */
