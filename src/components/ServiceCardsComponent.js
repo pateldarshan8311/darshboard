@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const delayStep = 0.1;
 
 const ServiceCardsComponent = ({ serviceCards, baseDelay = 0 }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false); // ✅ added
+
+  useEffect(() => { // ✅ added
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!Array.isArray(serviceCards)) return null;
 
@@ -37,7 +49,12 @@ const ServiceCardsComponent = ({ serviceCards, baseDelay = 0 }) => {
               <motion.div
                 className="small_shadow_box d_flex flex_column align_start"
                 animate={{
-                  y: hoveredIndex === index ? '-4.557291666666666vw' : '0vw',
+                  y:
+                    hoveredIndex === index
+                      ? isMobile
+                        ? '-55px' // ✅ mobile value
+                        : '-4.557291666666666vw' // desktop value
+                      : '0',
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 40 }}
               >

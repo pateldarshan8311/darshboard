@@ -99,7 +99,7 @@
 @media screen and (max-width: 767px) {
 
     .d_hamburger_menu {
-        display: block;
+        display: flex;
         border-radius: 8px;
         padding: 12px;
         box-shadow: rgb(31, 31, 31) 0px -2px 2px 0px inset, rgba(31, 31, 31, 0.65) 0px 2px 2px 0px inset;
@@ -108,6 +108,8 @@
         line-height: 0;
         margin-left: auto;
         background: rgb(25, 25, 25);
+        align-items: center;
+        justify-content: center;
     }
 
     .site_header .d_mail_box span {
@@ -120,6 +122,7 @@
         visibility: hidden;
         transition: all 0.4s linear;
     }
+
     .d_logo,
     .d_logo a {
         max-width: 140px;
@@ -141,19 +144,19 @@
     .d_main_menu {
         position: fixed;
         top: 82px;
-        left: 50%;
+        left: 20px;
         width: 100%;
-        height: 100%;
+        height: auto;
         flex-direction: column;
         gap: 10px;
         border-radius: 18px;
         border-width: 1px;
-        padding: 16px;
-        max-width: calc(100% - 40px);
-        transform: translateX(-50%);
+        padding: 10px;
+        max-width: 200px;
         opacity: 0;
         transition: all 0.4s linear;
         visibility: hidden;
+        box-shadow: rgb(20, 20, 20) 0px 1px 0px 3px, rgba(13, 13, 13, 0.55) 0px 4px 5px 7px;
     }
 
     .d_hamburger_menu.active+.d_main_menu {
@@ -176,6 +179,13 @@
         border-radius: 12px;
         gap: 6px;
         padding: 14px 24px;
+        box-shadow: inset 1px 2px 3px 0px rgb(31, 31, 31), inset -1px -2px 3px 0px rgb(20, 20, 20), 0px 0px 0px 2px rgb(15, 15, 15);
+        background: var(--global-palette4);
+    }
+
+    .d_main_menu li a {
+        width: 100%;
+        justify-content: center;
     }
 
     .d_main_menu li.active a,
@@ -186,4 +196,72 @@
     .d_mail_box {
         padding: 14px;
     }
+
+
+
+    /* Base Icon Style (shared originally with 1 & 4) */
+    .d_hamburger_menu #nav-icon3 {
+        position: relative;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        align-content: center;
+    }
+
+    /* Span Base Style */
+    .d_hamburger_menu span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: #fff;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+
+    /* Positioning */
+    .d_hamburger_menu span:nth-child(1) {
+        top: 1px;
+    }
+
+    .d_hamburger_menu span:nth-child(2),
+    .d_hamburger_menu span:nth-child(3) {
+        top: 10px;
+    }
+
+    .d_hamburger_menu span:nth-child(4) {
+        top: 21px;
+        width: 70%;
+        right: 0;
+        left: auto;
+    }
+
+    /* Open State Animation */
+    .d_hamburger_menu.active span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+    .d_hamburger_menu.active span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .d_hamburger_menu.active span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .d_hamburger_menu.active span:nth-child(4) {
+        top: 10px;
+        width: 100%;
+        left: 0;
+        right: auto;
+        transform: rotate(-45deg);
+    }
+
 }

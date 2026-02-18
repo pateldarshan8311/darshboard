@@ -1219,12 +1219,12 @@ a:hover .btn_txt {
 
     .comm_info {
         gap: 8px;
-        padding: 16px;
+        padding: 16px 10px;
         box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
     }
 
     .stack_titlebar {
-        padding: 16px;
+        padding: 16px 10px;
         box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset;
     }
 
@@ -1276,7 +1276,11 @@ a:hover .btn_txt {
     .work_experience_slider .slide_item {
         flex-direction: column;
         gap: 10px;
-        padding: 20px 0px 0px 40px;
+        padding: 20px 0px 0px 33px;
+    }
+
+    .contact-form textarea {
+        min-height: 106px;
     }
 
     .dot_container {
@@ -1293,12 +1297,12 @@ a:hover .btn_txt {
         gap: 10px;
         width: min-content;
         position: absolute;
-        left: 6px;
+        left: 0;
         top: 44px;
     }
 
     .verticle-slider::after {
-        left: 21px;
+        left: 20px;
         width: 2px;
     }
 
@@ -1322,6 +1326,10 @@ a:hover .btn_txt {
         gap: 10px;
     }
 
+    .comm-space-16 {
+        padding: 16px 10px;
+    }
+
     .comm-btn {
         border-radius: 10px;
         gap: 6px;
@@ -1332,4 +1340,170 @@ a:hover .btn_txt {
     .comm-btn:hover {
         box-shadow: inset 1px 2px 3px 0px rgba(31, 31, 31, 1), inset -1px -2px 3px 0px rgba(20, 20, 20, 1), 0px 0px 0px 2px rgb(15, 15, 15);
     }
+
+    .vertical-faq-slider .stack_title {
+        padding: 16px;
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset;
+    }
+
+    .single_box_design .btn_icon {
+        padding: 10px;
+    }
+
+    .single_box_design .stack_titlebar {
+        padding: 16px 10px;
+    }
+
+    .small_shadow_box_head {
+        padding: 14px 20px;
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset, rgb(15, 15, 15) 0px -2px 1px 0px inset;
+    }
+
+    .services_card_main .stack_icon_list {
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset, rgb(15, 15, 15) 0px -2px 1px 0px inset;
+        padding: 10px;
+    }
+
+    .vertical-faq-slider .comm_work_txt {
+        padding: 14px 16px;
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
+    }
+
+    .small_shadow_box_price strong {
+        font-size: 16px;
+    }
+
+    .single_box_design h6 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .small_shadow_box_price {
+        padding: 13px 20px;
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset, rgb(15, 15, 15) 0px -2px 1px 0px inset;
+    }
+
+    .small_shadow_box_body {
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset, rgb(30, 30, 30) 0px 1px 0px 0px inset;
+        padding: 14px 20px;
+    }
+
+    .small_shadow_box {
+        border-radius: 12px;
+        box-shadow: 0px 0px 0px 2px rgb(15, 15, 15), 0px 2px 5px 1px rgba(15, 15, 15, 0.5), inset 1px 2px 5px 1px rgb(30, 30, 30), inset -1px -2px 4px 1px rgb(20, 20, 20);
+    }
+
+    .small_shadow_box_footer .d_mail_box {
+        gap: 6px;
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: rgb(10, 10, 10) 0px 0px 0px 1px, rgba(10, 10, 10, 0.5) 0px 2px 5px 1px, rgb(43, 43, 43) 2px 4px 3px 0px inset, rgb(36, 36, 36) -2px -3px 3px 0px inset;
+    }
+
+    .small_shadow_box_footer .d_mail_box:hover {
+        box-shadow: rgb(10, 10, 10) 0px 0px 0px 1px, rgba(10, 10, 10, 0.5) 0px 2px 5px 1px, rgb(46, 46, 46) 2px 4px 3px 0px inset, rgb(41, 41, 41) -2px -3px 3px 0px inset;
+    }
+
+    .small_shadow_box_footer {
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
+        bottom: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .small_shadow_box_footer svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        min-height: 20px;
+    }
+
+    .custom_arrow {
+        width: 60px;
+        padding: 10px;
+        border-radius: 50px;
+        box-shadow: rgb(10, 10, 10) 0px 0px 0px 1px, rgba(10, 10, 10, 0.5) 0px 2px 5px 1px, rgb(46, 46, 46) 1px 2px 3px 0px inset, rgb(33, 33, 33) -2px -2px 3px 0px inset;
+    }
+
+    .custom-arrows {
+        gap: 10px;
+    }
+
+    .custom_arrow:hover {
+        box-shadow: rgb(10, 10, 10) 0px 0px 0px 1px, rgba(10, 10, 10, 0.5) 0px 2px 5px 1px, rgb(51, 51, 51) 2px 3px 3px 0px inset, rgb(36, 36, 36) -1px -2px 3px 0px inset;
+    }
+
+    .benefit_icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .benefit_icon {
+        max-width: 42px;
+        max-height: 42px;
+        width: 42px;
+        height: 42px;
+        min-height: 42px;
+        min-width: 42px;
+    }
+
+    .custom-dot {
+        width: 2px;
+        height: 22px;
+        border-radius: 10px;
+    }
+
+    .vertical-faq-slider {
+        padding: 10px;
+    }
+
+    .custom-pagination {
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 0px 2px rgb(15, 15, 15), 0px 2px 5px 1px rgba(15, 15, 15, 0.5), inset 1px 2px 3px 0px rgba(51, 51, 51, 0.6000000238418579), inset -1px -2px 2px 0px rgba(30, 30, 30, 1)
+    }
+
+    .benefits_slider_container {
+        padding: 10px;
+        box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
+    }
+
+    .benefit_percentage {
+        padding: 12px;
+        box-shadow: rgb(15, 15, 15) -2px 0px 1px 0px inset;
+    }
+
+    .benefit_percentage_data {
+        font-size: 34px;
+    }
+
+    .vertical-faq-slider .stack_item {
+        box-shadow: 0px 2px 5px 1px rgba(15, 15, 15, 0.5), inset 2px 3px 3px 0px rgba(36, 36, 36, 0.6), inset -1px -2px 2px 0px rgb(23, 23, 23), 0px 0px 0px 2px rgb(15, 15, 15);
+        border-radius: 14px;
+    }
+
+    .benefit_card {
+        position: relative;
+        gap: 10px;
+    }
+
+    .benefit_card::after,
+    .benefit_card .dot-box {
+        display: none;
+    }
+
+    .benefit_text {
+        box-shadow: rgb(30, 30, 30) 2px 0px 0px 0px inset;
+        padding: 16px 12px;
+    }
+
+    .skills_row .comm_inner::after {
+        height: 40px;
+    }
+
+    .benifit_data_box {
+        border-radius: 16px;
+        box-shadow: 0px 0px 0px 2px rgb(15, 15, 15), 0px 2px 5px 1px rgba(15, 15, 15, 0.5), inset 1px 2px 2px 0px rgb(38, 38, 38), inset -1px -2px 2px 0px rgb(20, 20, 20);
+    }
+
 }

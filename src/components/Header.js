@@ -27,6 +27,16 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
 
     const handleClick = () => {
       toggle.classList.toggle('active');
+
+      const isActive = toggle.classList.contains('active');
+
+      if (isActive) {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden'; // ✅ html tag
+      } else {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+      }
     };
 
     toggle.addEventListener('click', handleClick);
@@ -35,6 +45,7 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
       toggle.removeEventListener('click', handleClick);
     };
   }, []);
+
 
   return (
     <header className="site_header">
@@ -50,12 +61,12 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
 
           {/* Hamburger */}
           <div id="toggle" className="d_hamburger_menu">
-            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd"
-                d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
-                fill="#fff"
-              />
-            </svg>
+            <div id="nav-icon3">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
 
           {/* Menu */}
