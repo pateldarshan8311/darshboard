@@ -1112,6 +1112,7 @@ a:hover .btn_txt {
         gap: 6px;
         padding: 12px 10px;
         box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset;
+        flex-wrap: wrap;
     }
 
     .stack_top_para,
@@ -1362,6 +1363,7 @@ a:hover .btn_txt {
     .services_card_main .stack_icon_list {
         box-shadow: rgb(30, 30, 30) 0px 1px 0px 0px inset, rgb(15, 15, 15) 0px -2px 1px 0px inset;
         padding: 10px;
+        gap: 12px;
     }
 
     .vertical-faq-slider .comm_work_txt {
@@ -1492,6 +1494,19 @@ a:hover .btn_txt {
         display: none;
     }
 
+    .projects_list .stack_item {
+        box-shadow: rgba(15, 15, 15, 0.49) 0px 1px 5px 1px;
+    }
+
+    .projects_list .project_card_footer {
+        padding: 12px 14px;
+    }
+
+    .project_card_img_box {
+        box-shadow: inset 1px 2px 4px 1px #1e1e1e;
+        padding-top: 56.35%;
+    }
+
     .benefit_text {
         box-shadow: rgb(30, 30, 30) 2px 0px 0px 0px inset;
         padding: 16px 12px;
@@ -1506,4 +1521,143 @@ a:hover .btn_txt {
         box-shadow: 0px 0px 0px 2px rgb(15, 15, 15), 0px 2px 5px 1px rgba(15, 15, 15, 0.5), inset 1px 2px 2px 0px rgb(38, 38, 38), inset -1px -2px 2px 0px rgb(20, 20, 20);
     }
 
+    .projects_cols .stack_titlebar {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .projects_cols .stack_titlebar .stack_top_head {
+        justify-content: center;
+    }
+
+    .projects_cols .projects_button_wrapper svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .projects_cols .projects_button_wrapper {
+        padding: 0 16px 16px;
+    }
+
+    .projects_cols .projects_button_wrapper .view_all_btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .projects_topbar {
+        box-shadow: rgb(15, 15, 15) 0px -2px 1px 0px inset;
+        gap: 16px;
+        flex-direction: column;
+    }
+
+    .avatars {
+        padding: 6px 10px;
+        border-radius: 100px;
+        box-shadow: rgba(15, 15, 15, 0.5) 0px 2px 5px 1px, rgba(51, 51, 51, 0.6) 2px 4px 2px 0px inset, rgb(30, 30, 30) 0px -2px 1px 0px inset;
+    }
+
+    .success_stories_section .story-footer img,
+    .avatars * {
+        border-radius: 36px;
+        box-shadow: inset 2px 4px 2px 0px rgb(237, 115, 93), inset 0px -2px 1px 0px rgb(235, 95, 70), 0px 0px 0px 2px rgb(15, 15, 15);
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        aspect-ratio: 1;
+    }
+
+    .avatars .stack_top_para {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        text-indent: -3px;
+        font-size: 11px;
+    }
+
+    .avatars> :not(:first-child) {
+        margin-left: -3px;
+    }
+
+    .story-footer {
+        gap: 10px;
+    }
+
+    .work_cards .comm_inner {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .success_stories_section .stack_icon_list_inner {
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .services_card_main .home_counters .counter_item {
+        width: 100%;
+        max-width: calc(50% - 8px);
+    }
+
+    .my_client_list_row .stack_titlebar {
+        padding: 16px 60px 16px 10px;
+        max-width: 220px;
+        gap: 8px;
+    }
+
+    .my_client_list_row .stack_titlebar>div {
+        height: 44px;
+        min-height: 44px;
+    }
+
+    .my_client_list_row h1 {
+        font-size: var(--f45);
+    }
+
+    .work_2_cols {
+        gap: 16px;
+    }
+
+    .comm_logo_slider::after {
+        width: 35px;
+        opacity: 0.8;
+        right: 0px;
+    }
+
+    .happy_client_leftbar {
+        gap: 10px;
+    }
+
+    .stories_header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .scroll_item {
+        margin-right: 10px;
+    }
+
+    .ltr_list,
+    .rtl_list {
+        height: 60px;
+    }
+
+    .my_client_box .client_logo {
+        width: 115px;
+        height: 46px;
+    }
+
+    .my_client_list_row .stack_titlebar::before {
+        left: -2px;
+        top: -1px;
+        max-width: 220px;
+        right: -1px;
+        bottom: -3px;
+    }
+
+    .ltr_list.comm_logo_slider {
+        box-shadow: inset 0px -2px 1px 0px #0f0f0f;
+    }
+
+    .rtl_list.comm_logo_slider {
+        box-shadow: inset 0px 1px 2px 0px #1e1e1e;
+    }
 }

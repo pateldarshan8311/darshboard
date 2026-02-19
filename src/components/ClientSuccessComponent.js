@@ -25,6 +25,13 @@ const ClientSuccessComponent = ({ clientData }) => {
         easing: "ease",
         gap: "1.0416666666666665vw",
         drag: false,
+        breakpoints: {
+          768: {
+            height: '220px', // Adjust for smaller screens
+            perPage: 1,// Show only 1 slide on mobile
+            gap: "16px", // Negative gap for overlap
+          },
+        },
       });
 
       splide.on("move", (newIndex) => {

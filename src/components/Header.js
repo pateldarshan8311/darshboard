@@ -21,30 +21,38 @@ const Header = ({ menuItems = [], loading, logo, favicon }) => {
   }, [favicon]);
 
   // Hamburger toggle fix
-  useEffect(() => {
-    const toggle = document.getElementById('toggle');
-    if (!toggle) return;
+useEffect(() => {
+  const toggle = document.getElementById('toggle');
+  if (!toggle) return;
 
-    const handleClick = () => {
+  const handleClick = (e) => {
+    // Agar toggle button pe click hua
+    if (toggle.contains(e.target)) {
       toggle.classList.toggle('active');
+    } 
+    // Agar bahar click hua aur already active hai
+    else if (toggle.classList.contains('active')) {
+      toggle.classList.remove('active');
+    }
 
-      const isActive = toggle.classList.contains('active');
+    const isActive = toggle.classList.contains('active');
 
-      if (isActive) {
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden'; // ✅ html tag
-      } else {
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-      }
-    };
+    if (isActive) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+  };
 
-    toggle.addEventListener('click', handleClick);
+  document.addEventListener('click', handleClick);
 
-    return () => {
-      toggle.removeEventListener('click', handleClick);
-    };
-  }, []);
+  return () => {
+    document.removeEventListener('click', handleClick);
+  };
+}, []);
+
 
 
   return (

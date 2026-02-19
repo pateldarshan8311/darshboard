@@ -650,9 +650,21 @@ body .h6 {
     --f16: 14px;
     --f14: 14px;
     --space_60: 50px;
-    
+
   }
 
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6 {
+    margin: 0 0 10px;
+  }
+
+  .comm_border_after::after {
+    border-width: 1px;
+  }
 
 }
 
@@ -678,9 +690,11 @@ body .h6 {
   body .h1 {
     line-height: 1.4;
   }
-  .no_mobile{
+
+  .no_mobile {
     display: none !important;
   }
+
   .pulse_circle {
     width: 8px;
     height: 8px;
