@@ -35,7 +35,11 @@ const WorkExperience = ({ data }) => {
         wheelSleep: 100, // Delay between wheel events
         wheelMinThreshold: 10, // Minimum wheel delta
         breakpoints: {
-          768: {
+          1024: {
+            height: '200px', // Adjust for smaller screens
+            perPage: 1 // Show only 1 slide on mobile
+          },
+          767: {
             height: '300px', // Adjust for smaller screens
             perPage: 1 // Show only 1 slide on mobile
           },

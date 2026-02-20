@@ -97,11 +97,10 @@
 }
 
 @media screen and (max-width: 767px) {
-
     .d_hamburger_menu {
         display: flex;
         border-radius: 8px;
-        padding: 12px;
+        padding: 14px 12px;
         box-shadow: rgb(31, 31, 31) 0px -2px 2px 0px inset, rgba(31, 31, 31, 0.65) 0px 2px 2px 0px inset;
         width: 48px;
         cursor: pointer;
@@ -113,7 +112,7 @@
     }
 
     .site_header .d_mail_box span {
-      display: none;
+        display: none;
     }
 
     .d_logo,
@@ -224,11 +223,11 @@
 
     .d_hamburger_menu span:nth-child(2),
     .d_hamburger_menu span:nth-child(3) {
-        top: 10px;
+        top: 9px;
     }
 
     .d_hamburger_menu span:nth-child(4) {
-        top: 21px;
+        top: 17px;
         width: 70%;
         right: 0;
         left: auto;

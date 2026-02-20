@@ -26,7 +26,10 @@ const ClientSuccessComponent = ({ clientData }) => {
         gap: "1.0416666666666665vw",
         drag: false,
         breakpoints: {
-          768: {
+          1024: {
+            height: '15vw', // Adjust for smaller screens
+          },
+          767: {
             height: '220px', // Adjust for smaller screens
             perPage: 1,// Show only 1 slide on mobile
             gap: "16px", // Negative gap for overlap

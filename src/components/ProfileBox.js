@@ -16,8 +16,12 @@ const ProfileBox = ({ acfData }) => {
 
         <div className='profile_content d_flex flex_column align_start'>
           {/* Name */}
-          {acfData.name && <h1>{acfData.name}</h1>}
-
+{acfData.name && (
+  <h1
+    className="page_title"
+    dangerouslySetInnerHTML={{ __html: acfData.name }}
+  />
+)}
           {/* Email */}
           {acfData?.email && (
             <div className='comm_email line_none no_mobile'>

@@ -346,7 +346,7 @@ svg * {
 body h1,
 body .h1 {
   font-size: var(--f45);
-  line-height: 1.5;
+  line-height: 1.3;
   color: var(--global-palette3);
 }
 
@@ -590,67 +590,55 @@ body .h6 {
 
 
 
-
-
-
-
   --manrope-font: "Manrope";
 }
 
-@media screen and (max-width: 1200px) {
+
+@media screen and (max-width: 1024px) {
+
   :root {
-    --f45: 30px;
-    --f35: 28px;
-    --f28: 24px;
-    --f24: 22px;
-    --f20: 18px;
-    --f18: 16px;
-    --f16: 15px;
-    --space_60: 60px;
+    --f45: 2.5vw;
+    --f35: 2.3vw;
+    --f28: 2.1vw;
+    --f24: 2vw;
+    --f20: 1.8vw;
+    --f18: 1.6vw;
+    --f16: 1.4vw;
+    --f14: 1.3vw;
   }
 
-  body h1,
-  body h2,
-  body h3,
-  body h4,
-  body h5,
-  body h6 {
-    margin: 0 0 0.9765625vw;
+  body p {
+    font-size: 1.2vw;
+  }
+
+  .comm_border_after::after {
+    border-width: 1px;
   }
 
   body p {
     margin-bottom: 0.9765625vw;
   }
 
-  div select option {
-    padding: 2px 5px;
-  }
-
-  .container {
-    padding: 0 30px;
-  }
-
-  label em {
-    padding-left: 5px;
-  }
-
   body hr {
     border-bottom: 1px solid var(--global-palette3);
   }
 
+  .comm_box_design {
+    max-width: calc(50% - 0.652vw);
+  }
 }
 
-@media screen and (max-width: 1024px) {
-
+@media screen and (max-width: 767px) {
   :root {
-    --f45: 30px;
-    --f35: 24px;
+    --f45: 26px;
+    --f35: 22px;
     --f28: 20px;
-    --f24: 19px;
+    --f24: 18px;
+    --f20: 18px;
+    --f18: 16px;
     --f16: 14px;
     --f14: 14px;
-    --space_60: 50px;
-
+    --space_60: 40px;
   }
 
   body h1,
@@ -662,23 +650,12 @@ body .h6 {
     margin: 0 0 10px;
   }
 
-  .comm_border_after::after {
-    border-width: 1px;
-  }
-
-}
-
-@media screen and (max-width: 767px) {
-  :root {
-    --f45: 26px;
-    --f35: 22px;
-    --f28: 20px;
-    --f24: 18px;
-    --space_60: 40px;
-  }
-
   .container {
     padding: 0 20px;
+  }
+
+  .gap_10 {
+    gap: 10px;
   }
 
   body p,

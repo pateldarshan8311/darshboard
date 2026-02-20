@@ -140,7 +140,7 @@ const Page = ({ pageData }) => {
             </AnimatedBox>
           </div>
 
-          <AnimatedBox index={3} className="flex_column p_0">
+          <AnimatedBox index={3} className="flex_column p_0 success_stories_sec">
             <ClientSuccessComponent clientData={pageData.acf} />
           </AnimatedBox>
 
@@ -150,7 +150,7 @@ const Page = ({ pageData }) => {
             </AnimatedBox>
           </div>
 
-          <AnimatedBox index={3} className="flex_column p_0">
+          <AnimatedBox index={3} className="flex_column p_0 cf7_form_sec">
             <ContactForm />
           </AnimatedBox>
         </div>
