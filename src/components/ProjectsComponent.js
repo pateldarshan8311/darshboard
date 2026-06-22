@@ -48,7 +48,7 @@ const ProjectsComponent = ({ projectsData }) => {
             <div className="stack_icon_list comm_inner d_flex flex_wrap projects_list">
                 {project_card?.map((item, index) => (
                     <div key={index} className="stack_item stat_item d_flex align_center">
-                        <a href={item.project_card_link} className="stack_content d_flex align_center flex_column justify_center w_100">
+                        <a href={item.project_card_link} target="_blank" rel="noreferrer" className="stack_content d_flex align_center flex_column justify_center w_100">
                             <div className="project_card_img_box w_100">
                                 {item.project_card_image?.url && (
                                     <img
@@ -71,7 +71,8 @@ const ProjectsComponent = ({ projectsData }) => {
                                         </div>
                                     )}
                                 </div>
-                                <span class="top_icon line_none custom_arrow" ><svg xmlns="http://www.w3.org/2000/svg"  width="1.5625vw" height="1.5625vw" viewBox="0 0 24 24" fill="none"><path stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/></svg>
+                                <span class="top_icon line_none custom_arrow" >
+                                <svg xmlns="http://www.w3.org/2000/svg"  width="1.5625vw" height="1.5625vw" viewBox="0 0 24 24" fill="none"><path stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/></svg>
                                 </span>
                             </div>
                         </a>

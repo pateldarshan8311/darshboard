@@ -63,7 +63,11 @@ useEffect(() => {
           {/* Logo */}
           <div className="d_logo">
             <Link to="/">
-              {logo ? <img src={logo} alt="Site Logo" /> : null}
+              {loading ? (
+                <span className="header-skeleton header-skeleton--logo" aria-hidden="true" />
+              ) : logo ? (
+                <img src={logo} alt="Site Logo" />
+              ) : null}
             </Link>
           </div>
 
@@ -78,7 +82,13 @@ useEffect(() => {
           </div>
 
           {/* Menu */}
-          {loading ? null : menuItems.length > 0 ? (
+          {loading ? (
+            <ul className="d_main_menu d_main_menu--loading" aria-hidden="true">
+              <li><span className="header-skeleton header-skeleton--pill" /></li>
+              <li><span className="header-skeleton header-skeleton--pill" /></li>
+              <li><span className="header-skeleton header-skeleton--pill" /></li>
+            </ul>
+          ) : menuItems.length > 0 ? (
             <ul className="d_main_menu">
               {menuItems.map((item, idx) => {
                 const linkPath = item.url === '/about-me/' ? '/' : item.url;
@@ -107,10 +117,17 @@ useEffect(() => {
 
           {/* Email Section */}
           <div className="d_mail">
-            <a href="mailto:hello@darshboard.com" className="d_mail_box">
-              <ImageComponent imageId={54} />
-              <span>hello@darshboard.com</span>
-            </a>
+            {loading ? (
+              <div className="d_mail_box d_mail_box--loading" aria-hidden="true">
+                <span className="header-skeleton header-skeleton--icon" />
+                <span className="header-skeleton header-skeleton--text" />
+              </div>
+            ) : (
+              <a href="mailto:hello@darshboard.com" className="d_mail_box">
+                <ImageComponent imageId={54} />
+                <span>hello@darshboard.com</span>
+              </a>
+            )}
           </div>
 
         </div>
