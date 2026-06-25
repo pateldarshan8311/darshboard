@@ -7,16 +7,24 @@ import '../css/Header.css';
 const Header = ({ menuItems = [], loading, logo, favicon }) => {
   const location = useLocation();
 
-  // Dynamically update the favicon
+  // Keep all icon link tags in sync with the WordPress-provided site icon.
   useEffect(() => {
     if (favicon) {
-      let link = document.querySelector("link[rel~='icon']");
-      if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-      }
-      link.href = favicon;
+      const ensureLink = (rel) => {
+        let link = document.querySelector(`link[rel='${rel}']`);
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = rel;
+          document.head.appendChild(link);
+        }
+
+        link.href = favicon;
+        return link;
+      };
+
+      ensureLink('icon');
+      ensureLink('shortcut icon');
+      ensureLink('apple-touch-icon');
     }
   }, [favicon]);
 
