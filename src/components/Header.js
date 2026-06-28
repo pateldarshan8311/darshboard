@@ -4,29 +4,8 @@ import ImageComponent from './ImageComponent';
 import '../css/Common.css';
 import '../css/Header.css';
 
-const Header = ({ menuItems = [], loading, logo, favicon }) => {
+const Header = ({ menuItems = [], loading, logo }) => {
   const location = useLocation();
-
-  // Keep all icon link tags in sync with the WordPress-provided site icon.
-  useEffect(() => {
-    if (favicon) {
-      const ensureLink = (rel) => {
-        let link = document.querySelector(`link[rel='${rel}']`);
-        if (!link) {
-          link = document.createElement('link');
-          link.rel = rel;
-          document.head.appendChild(link);
-        }
-
-        link.href = favicon;
-        return link;
-      };
-
-      ensureLink('icon');
-      ensureLink('shortcut icon');
-      ensureLink('apple-touch-icon');
-    }
-  }, [favicon]);
 
   // Hamburger toggle fix
 useEffect(() => {

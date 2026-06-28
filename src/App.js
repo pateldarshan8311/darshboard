@@ -161,7 +161,6 @@ function App() {
         menuItems={siteData.main_menu}
         loading={loading}
         logo={siteData.logo}
-        favicon={siteData.favicon}
       />
 
       <main role="main" id="main-content">
